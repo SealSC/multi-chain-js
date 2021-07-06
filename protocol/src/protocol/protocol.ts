@@ -1,3 +1,4 @@
 import TypesExtend from './Types/index'
+import finedStatus  from './Consts/consts'
 
-export { TypesExtend }
+export { TypesExtend , finedStatus}

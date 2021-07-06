@@ -10,8 +10,8 @@
 </template>
 <script lang="ts">
 import { Component, Vue } from "vue-property-decorator";
-import { TypesExtend  } from "../src/protocol/protocol";
-import { ProxyExtend } from '../src/protocol/proxy'
+import { component } from "vue/types/umd";
+import { TypesExtend ,finedStatus } from "../src/protocol/protocol";
 
 @Component({
   components: {
@@ -23,8 +23,7 @@ export default class Home extends Vue {
   
   public OpenWallet(): any {
     console.log(TypesExtend.operational.getAccount())
-    console.log(TypesExtend.operational.getBlock())
-    console.log(ProxyExtend.link('web3'))
+    console.log(finedStatus.SUCCESS(null))
   }
 
   get myName(): string {
