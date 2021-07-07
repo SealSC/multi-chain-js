@@ -9,10 +9,11 @@
   </div>
 </template>
 <script lang="ts">
+import web3  from '../src/protocol/web3'
 import { Component, Vue } from "vue-property-decorator";
 import { component } from "vue/types/umd";
 import { TypesExtend ,finedStatus } from "../src/protocol/protocol";
-
+import { getBlockField } from '../src/protocol/Types/fieldDefinition/getBlockField'
 @Component({
   components: {
 
@@ -21,9 +22,14 @@ import { TypesExtend ,finedStatus } from "../src/protocol/protocol";
 export default class Home extends Vue {
   private message: number = 1
   
-  public OpenWallet(): any {
-    console.log(TypesExtend.operational.getAccount())
-    console.log(finedStatus.SUCCESS(null))
+  public async OpenWallet() {
+    // console.log(TypesExtend.operational.getAccount())
+    // console.log(finedStatus.SUCCESS(null))
+    let loadWallet= await web3.web3web3Install()
+    let blockNumber= await loadWallet.eth.getAccounts()
+    let BlockField = new getBlockField()
+    BlockField.number=5
+    console.log(BlockField)
   }
 
   get myName(): string {

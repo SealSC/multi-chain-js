@@ -12,10 +12,4 @@ class Proxy {
 
 let ProxyExtend = new Proxy()
 
-let ProxyWallet = function(){
-  let loadProxy = new Proxy()
-  console.log(loadProxy)
-}
-console.log(ProxyWallet())
-
 export default ProxyExtend
