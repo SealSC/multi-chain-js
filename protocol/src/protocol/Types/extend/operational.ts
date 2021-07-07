@@ -1,15 +1,27 @@
 import { Result } from '../result'
 import finedStatus  from '../../Consts/consts'
+import {  
+  getAccountInterface,
+  getBlockInterface,
+  getBlockNumbeInterface,
+  getBalanceInterface,
+  getTransactionInterface,
+  getTransactionCountInterface,
+  signInterface,
+  signTransactionInterface,
+  sendSignedTransactionInterface 
+} from './interface'
+
 interface OperationalInterface{
-  getAccount(): Object
-  getBlock(blockNumber:string): Object 
-  getBlockNumber(): Object
-  getBalance(address:string): Object
-  getTransaction(): Object
-  getTransactionCount(address:string): object
-  sign(dataToSign:any,address:string): object
-  signTransaction(trabsactionObject:any,address:string): object
-  sendSignedTransaction(signedTransactionData:any): object
+  getAccount():getAccountInterface
+  getBlock(blockNumber:string): getBlockInterface 
+  getBlockNumber(): getBlockNumbeInterface
+  getBalance(address:string): getBalanceInterface
+  getTransaction(): getTransactionInterface
+  getTransactionCount(address:string): getTransactionCountInterface
+  sign(dataToSign:any,address:string): signInterface
+  signTransaction(trabsactionObject:any,address:string): signTransactionInterface
+  sendSignedTransaction(signedTransactionData:any): sendSignedTransactionInterface
 }
 
 class Operational implements OperationalInterface{
