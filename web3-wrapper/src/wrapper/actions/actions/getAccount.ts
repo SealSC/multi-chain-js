@@ -1,0 +1,4 @@
+class GetAccount{
+  
+}
+export { GetAccount }
