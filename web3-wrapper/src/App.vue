@@ -16,6 +16,7 @@
 </template>
 <script>
 import wallet from '../src/wrapper/web3'
+import { ActionsExtend } from '../src/wrapper/wrapper'
 export default {
   async mounted() {
     window.web3 = await wallet.web3web3Install()
@@ -29,23 +30,23 @@ export default {
         console.log(account)
       })
     },
-    getAccount() {
-      console.log('getAccount')
+    async getAccount() {
+      console.log(await ActionsExtend.actions.getAccount())
     },
-    getBlock() {
-      
+    async getBlock() {
+      console.log(await ActionsExtend.block.getBlock(9603492))
     },
-    getBlockNumber() {
-      
+    async getBlockNumber() {
+      console.log(await ActionsExtend.blockNumber.getBlockNumber())
     },
-    getBalance() {
-      
+    async getBalance() {
+       console.log(await ActionsExtend.Balance.getBalance(''))
     },
-    getTransaction() {
-      
+    async getTransaction() {
+      console.log(await ActionsExtend.Transaction.getTransaction('0x65d3cada398bfcd70098ed955ff645b072c6df0d001f61f4b1c181cfdf7d1309'))
     },
-    getTransactionCount() {
-      
+    async getTransactionCount() {
+      console.log(await ActionsExtend.TransactionCount.getTransactionCount('0x5B6C6709d1000db91252c8c6E84B8987D1D10829'))
     },
     sign() {
       
