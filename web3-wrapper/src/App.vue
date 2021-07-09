@@ -34,19 +34,19 @@ export default {
       console.log(await ActionsExtend.actions.getAccount())
     },
     async getBlock() {
-      console.log(await ActionsExtend.block.getBlock(9603492))
+      console.log(await ActionsExtend.actions.getBlock(9603492))
     },
     async getBlockNumber() {
-      console.log(await ActionsExtend.blockNumber.getBlockNumber())
+      console.log(await ActionsExtend.actions.getBlockNumber())
     },
     async getBalance() {
-       console.log(await ActionsExtend.Balance.getBalance(''))
+      console.log(await ActionsExtend.actions.getBalance('0x5B6C6709d1000db91252c8c6E84B8987D1D10829'))
     },
     async getTransaction() {
-      console.log(await ActionsExtend.Transaction.getTransaction('0x65d3cada398bfcd70098ed955ff645b072c6df0d001f61f4b1c181cfdf7d1309'))
+      console.log(await ActionsExtend.actions.getTransaction('0x65d3cada398bfcd70098ed955ff645b072c6df0d001f61f4b1c181cfdf7d1309'))
     },
     async getTransactionCount() {
-      console.log(await ActionsExtend.TransactionCount.getTransactionCount('0x5B6C6709d1000db91252c8c6E84B8987D1D10829'))
+      console.log(await ActionsExtend.actions.getTransactionCount('0x5B6C6709d1000db91252c8c6E84B8987D1D10829'))
     },
     sign() {
       
