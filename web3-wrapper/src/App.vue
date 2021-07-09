@@ -26,9 +26,7 @@ export default {
   },
   methods:{
     async openWallet() {
-      ethereum.enable().then((account)=>{
-        console.log(account)
-      })
+      console.log(await ActionsExtend.connector.link())
     },
     async getAccount() {
       console.log(await ActionsExtend.actions.getAccount())

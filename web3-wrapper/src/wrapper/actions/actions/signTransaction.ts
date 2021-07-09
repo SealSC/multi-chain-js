@@ -13,7 +13,6 @@ class SignTransaction{
     }catch(err){
       return new Result(finedStatus.DEFAULT_STATE(err))
     }
-   
   }
 }
 export { SignTransaction }
