@@ -1,7 +1,8 @@
 <template>
   <div id="app">
     <div id="nav">
-      <div @click="openWallet">吊起钱包</div>
+      <div @click="WalletInit">初始化</div>
+      <div @click="openWallet">调起钱包</div>
       <div @click="getAccount">getAccount</div>
       <div @click="getBlock">getBlock</div>
       <div @click="getBlockNumber">getBlockNumber</div>
@@ -15,16 +16,18 @@
   </div>
 </template>
 <script>
-import wallet from '../src/wrapper/web3'
 import { ActionsExtend } from '../src/wrapper/wrapper'
 export default {
   async mounted() {
-    window.web3 = await wallet.web3web3Install()
+    // window.web3 = await wallet.web3web3Install()
   },
   created() {
     console.log("created")
   },
   methods:{
+    async WalletInit() {
+      console.log(await ActionsExtend.init())
+    },
     async openWallet() {
       console.log(await ActionsExtend.connector.link())
     },
