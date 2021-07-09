@@ -1,6 +1,6 @@
 import  { ActionsIn }  from '../actions/actions/actions'
 class Actions {
-  public actions
+  public actions:object
   constructor() {
     this.actions=new ActionsIn()
   }
