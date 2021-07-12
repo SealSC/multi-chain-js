@@ -7,10 +7,11 @@ import { GetTransactionCount } from './getTransactionCount'
 import { SendSignedTransaction } from './sendSignedTransaction'
 import { Sign } from './sign'
 import { SignTransaction } from './signTransaction'
+import { LoadContract } from './loadContract'
 
 class ActionsIn{
   public async getAccount(){
-    return await new GetAccount().getAccount()
+    return await GetAccount.call(this)
   }
   public async getBalance(address:string){
     return await new GetBalance().getBalance(address)
@@ -33,8 +34,11 @@ class ActionsIn{
   public async sign(dataToSign:object|string,address:string){
     return await new Sign().sign(dataToSign,address)
   }
-  public async SignTransaction(dataToSign:object|string,address:string){
+  public async signTransaction(dataToSign:object|string,address:string){
     return await new SignTransaction().signTransaction(dataToSign,address)
+  }
+  public async loadContract(contract:any,address:string){
+    return await new LoadContract().loadContract(contract,address)
   }
 }
 

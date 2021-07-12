@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <div id="nav">
-      <div @click="WalletInit">初始化</div>
+      <div @click="WalletInit">初始化web3</div>
       <div @click="openWallet">调起钱包</div>
       <div @click="getAccount">getAccount</div>
       <div @click="getBlock">getBlock</div>
@@ -12,12 +12,21 @@
       <div @click="sign">sign</div>
       <div @click="signTransaction">signTransaction</div>
       <div @click="sendSignedTransaction">sendSignedTransaction</div>
+      <div @click="loadContract">初始化合约</div>
+      <div @click="onChainCall">onChainCall</div>
+      <div @click="offChainCall">offChainCall</div>
     </div>
   </div>
 </template>
 <script>
 import { ActionsExtend } from '../src/wrapper/wrapper'
+import ERC20ABI from '../src/abis/ERC20-ABI.json'
 export default {
+  data(){
+    return{
+      ERC20ABIContract:null
+    }
+  },
   async mounted() {
     // window.web3 = await wallet.web3web3Install()
   },
@@ -25,6 +34,17 @@ export default {
     console.log("created")
   },
   methods:{
+    async loadContract(){
+      this.ERC20ABIContract=await ActionsExtend.actions.loadContract(ERC20ABI,'0xdac17f958d2ee523a2206206994597c13d831ec7')
+    },
+    async offChainCall(){
+      //call调用
+      console.log(await ActionsExtend.contract.offChainCall(this.ERC20ABIContract.data,'decimals',[]))
+    },
+    async onChainCall(){
+      //send调用
+      console.log(await ActionsExtend.contract.onChainCall(this.ERC20ABIContract.data,'approve',['0x1942B97fa1bd85Cc3ee98269032ff05285569749','0xffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff'],{gasPrice:'4000000000',gasLimit:'150000'}))
+    },
     async WalletInit() {
       console.log(await ActionsExtend.init())
     },
