@@ -4,7 +4,7 @@ interface TransactionField{
   blockHash: string
   blockNumber:Number
   transactionIndex: number
-  form: string
+  from: string
   to: string
   value: number
   gas: number
@@ -18,7 +18,7 @@ class getTransactionField implements TransactionField{
   public blockHash
   public blockNumber
   public transactionIndex
-  public form
+  public from
   public to
   public value
   public gas

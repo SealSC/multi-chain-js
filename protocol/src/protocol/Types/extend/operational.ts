@@ -9,10 +9,12 @@ import {
   getTransactionCountInterface,
   signInterface,
   signTransactionInterface,
-  sendSignedTransactionInterface 
+  sendSignedTransactionInterface,
+  loadContractInterface
 } from './interface'
 
 interface OperationalInterface{
+  loadContract():loadContractInterface
   getAccount():getAccountInterface
   getBlock(blockNumber:string): getBlockInterface 
   getBlockNumber(): getBlockNumbeInterface
@@ -25,6 +27,9 @@ interface OperationalInterface{
 }
 
 class Operational implements OperationalInterface{
+  public loadContract(){
+    return new Result(finedStatus.DEFAULT_STATE(null))
+  }
   public getAccount(){
     return new Result(finedStatus.DEFAULT_STATE(null))
   }

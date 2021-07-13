@@ -3,6 +3,10 @@ interface dataInterface{
   message:string
 }
 
+interface loadContractInterface extends dataInterface {
+  data: null | object
+}
+
 interface getAccountInterface extends dataInterface {
   data: null | Array<string>
 }
@@ -30,8 +34,15 @@ interface signTransactionInterface extends dataInterface{
 interface sendSignedTransactionInterface extends dataInterface{
   data: null | string
 }
+interface offChainCallInterface extends dataInterface{
+  data: any
+}
+interface onChainCallInterface extends dataInterface{
+  data: null | object
+}
 
-export{ 
+export{
+  loadContractInterface,
   getAccountInterface,
   getBlockInterface,
   getBlockNumbeInterface,
@@ -40,5 +51,7 @@ export{
   getTransactionCountInterface,
   signInterface,
   signTransactionInterface,
-  sendSignedTransactionInterface
+  sendSignedTransactionInterface,
+  offChainCallInterface,
+  onChainCallInterface
 }
