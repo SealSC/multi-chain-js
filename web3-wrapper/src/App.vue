@@ -19,7 +19,7 @@
   </div>
 </template>
 <script>
-import { ActionsExtend } from '../src/wrapper/wrapper'
+// import { ActionsExtend } from '../src/wrapper/wrapper'
 import ERC20ABI from '../src/abis/ERC20-ABI.json'
 export default {
   data(){
@@ -35,39 +35,39 @@ export default {
   },
   methods:{
     async loadContract(){
-      this.ERC20ABIContract=await ActionsExtend.actions.loadContract(ERC20ABI,'0xdac17f958d2ee523a2206206994597c13d831ec7')
+      // this.ERC20ABIContract=await ActionsExtend.actions.loadContract(ERC20ABI,'0xdac17f958d2ee523a2206206994597c13d831ec7')
     },
     async offChainCall(){
       //call调用
-      console.log(await ActionsExtend.contract.offChainCall(this.ERC20ABIContract.data,'decimals',[]))
+      // console.log(await ActionsExtend.contract.offChainCall(this.ERC20ABIContract.data,'decimals',[]))
     },
     async onChainCall(){
       //send调用
-      console.log(await ActionsExtend.contract.onChainCall(this.ERC20ABIContract.data,'approve',['0x1942B97fa1bd85Cc3ee98269032ff05285569749','0xffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff'],{gasPrice:'4000000000',gasLimit:'150000'}))
+      // console.log(await ActionsExtend.contract.onChainCall(this.ERC20ABIContract.data,'approve',['0x1942B97fa1bd85Cc3ee98269032ff05285569749','0xffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff'],{gasPrice:'4000000000',gasLimit:'150000'}))
     },
     async WalletInit() {
-      console.log(await ActionsExtend.init())
+      // console.log(await ActionsExtend.init())
     },
     async openWallet() {
-      console.log(await ActionsExtend.connector.link())
+      // console.log(await ActionsExtend.connector.link())
     },
     async getAccount() {
-      console.log(await ActionsExtend.actions.getAccount())
+      // console.log(await ActionsExtend.actions.getAccount())
     },
     async getBlock() {
-      console.log(await ActionsExtend.actions.getBlock(9603492))
+      // console.log(await ActionsExtend.actions.getBlock(9603492))
     },
     async getBlockNumber() {
-      console.log(await ActionsExtend.actions.getBlockNumber())
+      // console.log(await ActionsExtend.actions.getBlockNumber())
     },
     async getBalance() {
-      console.log(await ActionsExtend.actions.getBalance('0x5B6C6709d1000db91252c8c6E84B8987D1D10829'))
+      // console.log(await ActionsExtend.actions.getBalance('0x5B6C6709d1000db91252c8c6E84B8987D1D10829'))
     },
     async getTransaction() {
-      console.log(await ActionsExtend.actions.getTransaction('0x65d3cada398bfcd70098ed955ff645b072c6df0d001f61f4b1c181cfdf7d1309'))
+      // console.log(await ActionsExtend.actions.getTransaction('0x65d3cada398bfcd70098ed955ff645b072c6df0d001f61f4b1c181cfdf7d1309'))
     },
     async getTransactionCount() {
-      console.log(await ActionsExtend.actions.getTransactionCount('0x5B6C6709d1000db91252c8c6E84B8987D1D10829'))
+      // console.log(await ActionsExtend.actions.getTransactionCount('0x5B6C6709d1000db91252c8c6E84B8987D1D10829'))
     },
     sign() {
       
