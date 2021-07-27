@@ -18,7 +18,7 @@ module.exports = {
         maxAssetSize: 3000000000,
         //只给出 js 文件的性能提示
         assetFilter: function(assetFilename) {
-          return assetFilename.endsWith('.js');
+          return assetFilename.endsWith('.ts');
         }
       }
     }

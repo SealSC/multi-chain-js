@@ -15,8 +15,8 @@ module.exports = function(config) {
 
     // list of files / patterns to load in the browser
     files: [
-      'test/**/*test.js',
-      'test/**/*spec.js'
+      'test/**/*test.ts',
+      'test/**/*spec.ts'
     ],
 
 
@@ -29,8 +29,8 @@ module.exports = function(config) {
     // available preprocessors: https://www.npmjs.com/search?q=keywords:karma-preprocessor
     preprocessors: {
       // add webpack as preprocessor
-      './test/*.js': [ 'webpack','coverage' ],
-      './src/*.js' : ['coverage']
+      './test/*.ts': [ 'webpack','coverage' ],
+      './src/*.ts' : ['coverage']
     },
 
     // test results reporter to use
