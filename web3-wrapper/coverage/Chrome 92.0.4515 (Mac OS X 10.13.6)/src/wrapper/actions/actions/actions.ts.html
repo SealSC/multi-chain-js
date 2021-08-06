@@ -22,9 +22,9 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">36.36% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>0/10</span>
+                <span class='fraction'>4/11</span>
             </div>
         
             
@@ -36,16 +36,16 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">36.36% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>0/10</span>
+                <span class='fraction'>4/11</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">36.36% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>0/10</span>
+                <span class='fraction'>4/11</span>
             </div>
         
             
@@ -102,7 +102,11 @@
 <a name='L44'></a><a href='#L44'>44</a>
 <a name='L45'></a><a href='#L45'>45</a>
 <a name='L46'></a><a href='#L46'>46</a>
-<a name='L47'></a><a href='#L47'>47</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L47'></a><a href='#L47'>47</a>
+<a name='L48'></a><a href='#L48'>48</a>
+<a name='L49'></a><a href='#L49'>49</a>
+<a name='L50'></a><a href='#L50'>50</a>
+<a name='L51'></a><a href='#L51'>51</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -113,6 +117,23 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -131,19 +152,6 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -151,7 +159,7 @@
 <span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import { GetAccount } from "./getAccount"
 import { GetBalance } from "./getBalance"
 import { GetBlock } from './getBlock'
-import { GetBlockNumber } from './getBlockNumber' 
+import { GetBlockNumber }  from './getBlockNumber' 
 import { GetTransaction } from './getTransaction'
 import { GetTransactionCount } from './getTransactionCount'
 import { SendSignedTransaction } from './sendSignedTransaction'
@@ -160,17 +168,22 @@ import { SignTransaction } from './signTransaction'
 import { LoadContract } from './loadContract'
 &nbsp;
 class ActionsIn{
-  public async <span class="fstat-no" title="function not covered" >getAccount(</span>){
-<span class="cstat-no" title="statement not covered" >    return await GetAccount.call(this)</span>
+  public name 
+  constructor(){
+    this.name = 1
   }
-  public async <span class="fstat-no" title="function not covered" >getBalance(</span>address:string){
-<span class="cstat-no" title="statement not covered" >    return await new GetBalance().getBalance(address)</span>
+  public async getAccount(){
+    // return 1
+    return await new GetAccount().getAccount()
+  }
+  public async getBalance(address:string){
+    return await new GetBalance().getBalance(address)
   }
   public async <span class="fstat-no" title="function not covered" >getBlock(</span>block:string|number){
 <span class="cstat-no" title="statement not covered" >    return await new GetBlock().getBlock(block)</span>
   }
-  public async <span class="fstat-no" title="function not covered" >getBlockNumber(</span>){
-<span class="cstat-no" title="statement not covered" >    return await new GetBlockNumber().getBlockNumber()</span>
+  public async getBlockNumber(){
+    return await new GetBlockNumber().getBlockNumber()
   }
   public async <span class="fstat-no" title="function not covered" >getTransaction(</span>txHash:string){
 <span class="cstat-no" title="statement not covered" >    return await new GetTransaction().getTransaction(txHash)</span>
@@ -192,16 +205,15 @@ class ActionsIn{
   }
 }
 &nbsp;
-export { 
-  ActionsIn
- }</pre></td></tr></table></pre>
+export { ActionsIn } 
+ </pre></td></tr></table></pre>
 
                 <div class='push'></div><!-- for sticky footer -->
             </div><!-- /wrapper -->
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank">istanbul</a>
-                at Tue Jul 27 2021 18:06:07 GMT+0800 (中国标准时间)
+                at Fri Aug 06 2021 19:29:45 GMT+0800 (中国标准时间)
             </div>
         </div>
         <script src="../../../../prettify.js"></script>

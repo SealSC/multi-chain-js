@@ -1,7 +1,7 @@
 import { GetAccount } from "./getAccount"
 import { GetBalance } from "./getBalance"
 import { GetBlock } from './getBlock'
-import { GetBlockNumber } from './getBlockNumber' 
+import { GetBlockNumber }  from './getBlockNumber' 
 import { GetTransaction } from './getTransaction'
 import { GetTransactionCount } from './getTransactionCount'
 import { SendSignedTransaction } from './sendSignedTransaction'
@@ -10,8 +10,13 @@ import { SignTransaction } from './signTransaction'
 import { LoadContract } from './loadContract'
 
 class ActionsIn{
+  public name 
+  constructor(){
+    this.name = 1
+  }
   public async getAccount(){
-    return await GetAccount.call(this)
+    // return 1
+    return await new GetAccount().getAccount()
   }
   public async getBalance(address:string){
     return await new GetBalance().getBalance(address)
@@ -42,6 +47,5 @@ class ActionsIn{
   }
 }
 
-export { 
-  ActionsIn
- }
+export { ActionsIn } 
+ 
