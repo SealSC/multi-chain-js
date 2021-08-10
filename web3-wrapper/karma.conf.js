@@ -16,12 +16,8 @@ module.exports = config => {
       'text/x-typescript': ['ts', 'tsx']
     },
     colors:true,
-    reporters: ['spec', 'coverage','mocha'],
+    reporters: ['spec', 'coverage-istanbul','coveralls'],
     browsers: process.env.CI ? ['Chrome', 'Firefox'] : ['Chrome'],
-
-    reporters: process.env.CI
-      ? [ 'coverage-istanbul', 'coveralls']
-      : [ 'coverage-istanbul'],
 
     webpackMiddleware: {
       noInfo: true,

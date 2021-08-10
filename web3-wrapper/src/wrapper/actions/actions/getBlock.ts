@@ -27,7 +27,7 @@ class GetBlock{
       blockDataField.uncles = blockData.uncles
       return new Result(PredefinedStatus.SUCCESS(blockDataField))
     }catch(err){
-      return new Result(PredefinedStatus.DEFAULT_STATE(err))
+      return new Result(PredefinedStatus.ERROR_STATE(null))
     }
   }
 }
