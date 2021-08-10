@@ -11,7 +11,7 @@ class SignTransaction{
       signTransactionData.tx = signTransaction.tx
       return new Result(PredefinedStatus.SUCCESS(signTransactionData))
     }catch(err){
-      return new Result(PredefinedStatus.DEFAULT_STATE(err))
+      return new Result(PredefinedStatus.ERROR_STATE(null))
     }
   }
 }

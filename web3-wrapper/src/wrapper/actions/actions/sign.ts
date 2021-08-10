@@ -8,7 +8,7 @@ class Sign{
       let sign = await (window as any).web3.eth.sign(dataSign,address)
       return new Result(PredefinedStatus.SUCCESS(sign))
     }catch(err){
-      return new Result(PredefinedStatus.DEFAULT_STATE(err))
+      return new Result(PredefinedStatus.ERROR_STATE(null))
     }
     
   }

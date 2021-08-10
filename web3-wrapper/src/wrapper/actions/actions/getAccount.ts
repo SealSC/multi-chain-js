@@ -4,17 +4,15 @@ import {getAccountInterface } from '../classInterface'
 
 class GetAccount{
   public async getAccount(){
-    if((window as any).ethereum){
-      return (window as any).ethereum.selectedAddress?
-      new Result(PredefinedStatus.SUCCESS((window as any).ethereum.selectedAddress)):
-      new Result(PredefinedStatus.DEFAULT_STATE(null))
-    }else{
-      let accounts = await (window as any).web3.eth.getAccounts()
-      if(accounts.length>0){
+    try{
+      if((window as any).ethereum){
+        let accounts = await (window as any).web3.eth.getAccounts()
         return new Result(PredefinedStatus.SUCCESS(accounts))
       }else{
         return new Result(PredefinedStatus.DEFAULT_STATE(null))
       }
+    }catch(err){
+      return new Result(PredefinedStatus.ERROR_STATE(null))
     }
   }
 }

@@ -7,9 +7,8 @@ class LoadContract{
       let Contract: any = await new (window as any).web3.eth.Contract(abi,address)
       return new Result(PredefinedStatus.SUCCESS(Contract))
     }catch(err){
-      return new Result(PredefinedStatus.DEFAULT_STATE(err))
+      return new Result(PredefinedStatus.ERROR_STATE(null))
     }
-    
   }
 }
 export { LoadContract }

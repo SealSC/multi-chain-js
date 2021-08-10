@@ -22,9 +22,9 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">40% </span>
+                <span class="strong">90% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>4/10</span>
+                <span class='fraction'>9/10</span>
             </div>
         
             
@@ -36,16 +36,16 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">45.45% </span>
+                <span class="strong">90.91% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>5/11</span>
+                <span class='fraction'>10/11</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">40% </span>
+                <span class="strong">90% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>4/10</span>
+                <span class='fraction'>9/10</span>
             </div>
         
             
@@ -54,7 +54,7 @@
             Press <em>n</em> or <em>j</em> to go to the next uncovered block, <em>b</em>, <em>p</em> or <em>k</em> for the previous block.
         </p>
     </div>
-    <div class='status-line low'></div>
+    <div class='status-line high'></div>
     <pre><table class="coverage">
 <tr><td class="line-count quiet"><a name='L1'></a><a href='#L1'>1</a>
 <a name='L2'></a><a href='#L2'>2</a>
@@ -132,22 +132,22 @@
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -179,23 +179,23 @@ class ActionsIn{
   public async getBlockNumber(){
     return await new GetBlockNumber().getBlockNumber()
   }
-  public async <span class="fstat-no" title="function not covered" >getTransaction(</span>txHash:string){
-<span class="cstat-no" title="statement not covered" >    return await new GetTransaction().getTransaction(txHash)</span>
+  public async getTransaction(txHash:string){
+    return await new GetTransaction().getTransaction(txHash)
   }
-  public async <span class="fstat-no" title="function not covered" >getTransactionCount(</span>txHash:string){
-<span class="cstat-no" title="statement not covered" >    return await new GetTransactionCount().getTransactionCount(txHash)</span>
+  public async getTransactionCount(txHash:string){
+    return await new GetTransactionCount().getTransactionCount(txHash)
   }
   public async <span class="fstat-no" title="function not covered" >sendSignedTransaction(</span>dataToSign:object){
 <span class="cstat-no" title="statement not covered" >    return await new SendSignedTransaction().sendSignedTransaction(dataToSign)</span>
   }
-  public async <span class="fstat-no" title="function not covered" >sign(</span>dataToSign:object|string,address:string){
-<span class="cstat-no" title="statement not covered" >    return await new Sign().sign(dataToSign,address)</span>
+  public async sign(dataToSign:object|string,address:string){
+    return await new Sign().sign(dataToSign,address)
   }
-  public async <span class="fstat-no" title="function not covered" >signTransaction(</span>dataToSign:object|string,address:string){
-<span class="cstat-no" title="statement not covered" >    return await new SignTransaction().signTransaction(dataToSign,address)</span>
+  public async signTransaction(dataToSign:object|string,address:string){
+    return await new SignTransaction().signTransaction(dataToSign,address)
   }
-  public async <span class="fstat-no" title="function not covered" >loadContract(</span>contract:any,address:string){
-<span class="cstat-no" title="statement not covered" >    return await new LoadContract().loadContract(contract,address)</span>
+  public async loadContract(contract:any,address:string){
+    return await new LoadContract().loadContract(contract,address)
   }
 }
 &nbsp;
@@ -207,7 +207,7 @@ export { ActionsIn }
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank">istanbul</a>
-                at Tue Aug 10 2021 11:39:15 GMT+0800 (中国标准时间)
+                at Tue Aug 10 2021 17:13:33 GMT+0800 (中国标准时间)
             </div>
         </div>
         <script src="../../../../prettify.js"></script>

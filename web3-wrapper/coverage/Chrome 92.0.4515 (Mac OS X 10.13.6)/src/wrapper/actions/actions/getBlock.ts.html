@@ -22,9 +22,9 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">13.04% </span>
+                <span class="strong">95.65% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>3/23</span>
+                <span class='fraction'>22/23</span>
             </div>
         
             
@@ -43,9 +43,9 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">13.04% </span>
+                <span class="strong">95.65% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>3/23</span>
+                <span class='fraction'>22/23</span>
             </div>
         
             
@@ -54,7 +54,7 @@
             Press <em>n</em> or <em>j</em> to go to the next uncovered block, <em>b</em>, <em>p</em> or <em>k</em> for the previous block.
         </p>
     </div>
-    <div class='status-line low'></div>
+    <div class='status-line high'></div>
     <pre><table class="coverage">
 <tr><td class="line-count quiet"><a name='L1'></a><a href='#L1'>1</a>
 <a name='L2'></a><a href='#L2'>2</a>
@@ -97,28 +97,28 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -130,28 +130,28 @@ class GetBlock{
   public async getBlock(block:number|string){
     try{
       let blockData = await (window as any).web3.eth.getBlock(block)
-      let blockDataField = <span class="cstat-no" title="statement not covered" >new getBlockField()</span>
-<span class="cstat-no" title="statement not covered" >      blockDataField.number = blockData.number</span>
-<span class="cstat-no" title="statement not covered" >      blockDataField.hash = blockData.hash</span>
-<span class="cstat-no" title="statement not covered" >      blockDataField.parentHash = blockData.parentHash</span>
-<span class="cstat-no" title="statement not covered" >      blockDataField.nonce = blockData.nonce</span>
-<span class="cstat-no" title="statement not covered" >      blockDataField.sha3Uncles = blockData.sha3Uncles</span>
-<span class="cstat-no" title="statement not covered" >      blockDataField.logsBloom = blockData.logsBloom</span>
-<span class="cstat-no" title="statement not covered" >      blockDataField.transactionsRoot = blockData.transactionsRoot</span>
-<span class="cstat-no" title="statement not covered" >      blockDataField.stateRoot = blockData.stateRoot</span>
-<span class="cstat-no" title="statement not covered" >      blockDataField.miner = blockData.miner</span>
-<span class="cstat-no" title="statement not covered" >      blockDataField.difficulty = blockData.difficulty</span>
-<span class="cstat-no" title="statement not covered" >      blockDataField.totalDifficulty = blockData.totalDifficulty</span>
-<span class="cstat-no" title="statement not covered" >      blockDataField.size = blockData.size</span>
-<span class="cstat-no" title="statement not covered" >      blockDataField.extraData = blockData.extraData</span>
-<span class="cstat-no" title="statement not covered" >      blockDataField.gasLimit = blockData.gasLimit</span>
-<span class="cstat-no" title="statement not covered" >      blockDataField.gasUsed = blockData.gasUsed</span>
-<span class="cstat-no" title="statement not covered" >      blockDataField.timestamp = blockData.timestamp</span>
-<span class="cstat-no" title="statement not covered" >      blockDataField.transactions = blockData.transactions</span>
-<span class="cstat-no" title="statement not covered" >      blockDataField.uncles = blockData.uncles</span>
-<span class="cstat-no" title="statement not covered" >      return new Result(PredefinedStatus.SUCCESS(blockDataField))</span>
+      let blockDataField = new getBlockField()
+      blockDataField.number = blockData.number
+      blockDataField.hash = blockData.hash
+      blockDataField.parentHash = blockData.parentHash
+      blockDataField.nonce = blockData.nonce
+      blockDataField.sha3Uncles = blockData.sha3Uncles
+      blockDataField.logsBloom = blockData.logsBloom
+      blockDataField.transactionsRoot = blockData.transactionsRoot
+      blockDataField.stateRoot = blockData.stateRoot
+      blockDataField.miner = blockData.miner
+      blockDataField.difficulty = blockData.difficulty
+      blockDataField.totalDifficulty = blockData.totalDifficulty
+      blockDataField.size = blockData.size
+      blockDataField.extraData = blockData.extraData
+      blockDataField.gasLimit = blockData.gasLimit
+      blockDataField.gasUsed = blockData.gasUsed
+      blockDataField.timestamp = blockData.timestamp
+      blockDataField.transactions = blockData.transactions
+      blockDataField.uncles = blockData.uncles
+      return new Result(PredefinedStatus.SUCCESS(blockDataField))
     }catch(err){
-      return new Result(PredefinedStatus.ERROR_STATE(null))
+<span class="cstat-no" title="statement not covered" >      return new Result(PredefinedStatus.ERROR_STATE(null))</span>
     }
   }
 }
@@ -162,7 +162,7 @@ export { GetBlock }</pre></td></tr></table></pre>
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank">istanbul</a>
-                at Tue Aug 10 2021 11:39:15 GMT+0800 (中国标准时间)
+                at Tue Aug 10 2021 17:13:33 GMT+0800 (中国标准时间)
             </div>
         </div>
         <script src="../../../../prettify.js"></script>
