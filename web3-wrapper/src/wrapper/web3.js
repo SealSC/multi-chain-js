@@ -5,6 +5,10 @@ let provider = null
 
 async function web3Install(){
   provider = await detectEthereumProvider()
-  return new Web3js(provider)
+  if(provider){
+    return new Web3js(provider)
+  }else{
+    return null
+  }
 }
 export { web3Install };

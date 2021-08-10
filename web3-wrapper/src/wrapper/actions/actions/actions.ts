@@ -10,12 +10,10 @@ import { SignTransaction } from './signTransaction'
 import { LoadContract } from './loadContract'
 
 class ActionsIn{
-  public name 
   constructor(){
-    this.name = 1
+     
   }
   public async getAccount(){
-    // return 1
     return await new GetAccount().getAccount()
   }
   public async getBalance(address:string){

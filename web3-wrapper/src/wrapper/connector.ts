@@ -1,5 +1,5 @@
 import { Result } from '../wrapper/actions/result'
-import finedStatus  from '../wrapper/consts/consts'
+import PredefinedStatus  from '../wrapper/consts/consts'
 
 class Connector {
   public link(){
@@ -8,13 +8,13 @@ class Connector {
         let account = (window as any).ethereum.selectedAddress
         if(!account){
           (window as any).ethereum.enable()
-          return new Result(finedStatus.DEFAULT_STATE(null))
+          return new Result(PredefinedStatus.DEFAULT_STATE(null))
         }else{
-          return new Result(finedStatus.SUCCESS('已连接'))
+          return new Result(PredefinedStatus.SUCCESS('已连接'))
         }
       }
     }else{
-      return new Result(finedStatus.ERROR_STATE('Please go and install'))
+      return new Result(PredefinedStatus.ERROR_STATE('Please go and install'))
     }
   }
 }

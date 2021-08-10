@@ -15,7 +15,8 @@ module.exports = config => {
     mime: {
       'text/x-typescript': ['ts', 'tsx']
     },
-
+    colors:true,
+    reporters: ['spec', 'coverage','mocha'],
     browsers: process.env.CI ? ['Chrome', 'Firefox'] : ['Chrome'],
 
     reporters: process.env.CI

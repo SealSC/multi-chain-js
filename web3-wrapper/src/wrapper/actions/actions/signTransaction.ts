@@ -1,5 +1,5 @@
 import { Result } from '../result'
-import finedStatus  from '../../consts/consts'
+import PredefinedStatus  from '../../consts/consts'
 import {signTransactionField } from '../../fieldDefinition/signTransactionField'
 
 class SignTransaction{
@@ -9,9 +9,9 @@ class SignTransaction{
       let signTransactionData = new signTransactionField()
       signTransactionData.raw = signTransaction.raw
       signTransactionData.tx = signTransaction.tx
-      return new Result(finedStatus.SUCCESS(signTransactionData))
+      return new Result(PredefinedStatus.SUCCESS(signTransactionData))
     }catch(err){
-      return new Result(finedStatus.DEFAULT_STATE(err))
+      return new Result(PredefinedStatus.DEFAULT_STATE(err))
     }
   }
 }

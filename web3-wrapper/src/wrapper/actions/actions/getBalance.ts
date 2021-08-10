@@ -1,15 +1,14 @@
 import { Result } from '../result'
-import finedStatus  from '../../consts/consts'
+import PredefinedStatus  from '../../consts/consts'
 
 class GetBalance{
   public async getBalance(address:string){
     try{
       let Balance = await (window as any).web3.eth.getBalance(address)
-      return new Result(finedStatus.SUCCESS(Balance))
+      return new Result(PredefinedStatus.SUCCESS(Balance))
     }catch(err){
-      return new Result(finedStatus.DEFAULT_STATE(err))
+      return new Result(PredefinedStatus.ERROR_STATE(null))
     }
-   
   }
 }
 export { GetBalance }

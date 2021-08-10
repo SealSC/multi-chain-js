@@ -1,6 +1,6 @@
 import { Actions } from '../src/wrapper/wrapper'
 import { Result } from '../src/wrapper/actions/result'
-import finedStatus  from '../src/wrapper/consts/consts'
+import PredefinedStatus  from '../src/wrapper/consts/consts'
 import { web3Install } from '../src/wrapper/web3'
 
 describe('getBlock', () => {
@@ -14,7 +14,7 @@ describe('getBlock', () => {
     // console.log(shouldGetBlock)
     // //equal
     // let getBlock = await (window as any).web3.eth.getBlock(9603492);
-    // let results = new Result(finedStatus.SUCCESS(getBlock));
+    // let results = new Result(PredefinedStatus.SUCCESS(getBlock));
     // console.log(results)
     // expect(shouldGetBlock).to.deep.equal(results)
     

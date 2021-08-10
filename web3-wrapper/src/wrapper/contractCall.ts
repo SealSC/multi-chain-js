@@ -1,5 +1,5 @@
 import { Result } from '../wrapper/actions/result'
-import finedStatus  from '../wrapper/consts/consts'
+import PredefinedStatus  from '../wrapper/consts/consts'
 import { GasSetting , transactionResultGetter } from '../wrapper/utils' 
 
 function getContractMethod(contract:any,methodName:string,param:any){
@@ -18,7 +18,7 @@ class ContractCall {
     let account = await (window as any).web3.eth.getAccounts()
     let method = getContractMethod(contract,methodName,param)
     if(!method){
-      return new Result(finedStatus.ERROR_STATE('参数有误'))
+      return new Result(PredefinedStatus.ERROR_STATE('参数有误'))
     }
     return await new Promise(res=>{
       method!.func(...param).call({from:account[0],gas:'100000000'},(err,result)=>{
@@ -34,7 +34,7 @@ class ContractCall {
     let account = await (window as any).web3.eth.getAccounts()
     let method = getContractMethod(contract,methodName,param)
     if(!method){
-      return new Result(finedStatus.ERROR_STATE('参数有误'))
+      return new Result(PredefinedStatus.ERROR_STATE('参数有误'))
     }
     let gasSetting = GasSetting(extra)
     let sendParam={

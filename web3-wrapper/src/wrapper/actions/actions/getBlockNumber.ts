@@ -1,15 +1,14 @@
 import { Result } from '../result'
-import finedStatus  from '../../consts/consts'
+import PredefinedStatus  from '../../consts/consts'
 
 class GetBlockNumber{
   public async getBlockNumber(){
     try{
       let blockNumber = await (window as any).web3.eth.getBlockNumber()
-      return new Result(finedStatus.SUCCESS(blockNumber))
+      return new Result(PredefinedStatus.SUCCESS(blockNumber))
     }catch(err){
-      return new Result(finedStatus.DEFAULT_STATE(err))
+      return new Result(PredefinedStatus.ERROR_STATE(null))
     }
-   
   }
 }
 export { GetBlockNumber }

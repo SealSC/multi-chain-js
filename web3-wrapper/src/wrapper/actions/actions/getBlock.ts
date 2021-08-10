@@ -1,5 +1,5 @@
 import { Result } from '../result'
-import finedStatus  from '../../consts/consts'
+import PredefinedStatus  from '../../consts/consts'
 import { getBlockField } from '../../fieldDefinition/getBlockField'
 
 class GetBlock{
@@ -25,9 +25,9 @@ class GetBlock{
       blockDataField.timestamp = blockData.timestamp
       blockDataField.transactions = blockData.transactions
       blockDataField.uncles = blockData.uncles
-      return new Result(finedStatus.SUCCESS(blockDataField))
+      return new Result(PredefinedStatus.SUCCESS(blockDataField))
     }catch(err){
-      return new Result(finedStatus.DEFAULT_STATE(err))
+      return new Result(PredefinedStatus.DEFAULT_STATE(err))
     }
   }
 }

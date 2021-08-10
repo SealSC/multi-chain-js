@@ -1,5 +1,5 @@
 import { Result } from '../result'
-import finedStatus  from '../../consts/consts'
+import PredefinedStatus  from '../../consts/consts'
 import { getTransactionField } from '../../fieldDefinition/getTransactionField'
 
 class GetTransaction{
@@ -18,9 +18,9 @@ class GetTransaction{
       TransactionDataField.gas = Transaction.gas
       TransactionDataField.gasPrice = Transaction.gasPrice
       TransactionDataField.input = Transaction.input
-      return new Result(finedStatus.SUCCESS(TransactionDataField))
+      return new Result(PredefinedStatus.SUCCESS(TransactionDataField))
     }catch(err){
-      return new Result(finedStatus.DEFAULT_STATE(err))
+      return new Result(PredefinedStatus.DEFAULT_STATE(err))
     }
   }
 }

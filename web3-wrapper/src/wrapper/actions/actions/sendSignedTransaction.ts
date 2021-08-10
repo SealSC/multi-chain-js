@@ -1,13 +1,13 @@
 import { Result } from '../result'
-import finedStatus  from '../../consts/consts'
+import PredefinedStatus  from '../../consts/consts'
 
 class SendSignedTransaction{
   public async sendSignedTransaction(dataToSign:object){
     try{
       let signTransaction = await (window as any).web3.eth.sendSignedTransaction(dataToSign)
-      return new Result(finedStatus.SUCCESS(signTransaction))
+      return new Result(PredefinedStatus.SUCCESS(signTransaction))
     }catch(err){
-      return new Result(finedStatus.DEFAULT_STATE(err))
+      return new Result(PredefinedStatus.DEFAULT_STATE(err))
     }
     
   }

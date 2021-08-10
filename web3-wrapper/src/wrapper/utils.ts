@@ -1,5 +1,5 @@
 import { Result } from '../wrapper/actions/result'
-import finedStatus  from '../wrapper/consts/consts'
+import PredefinedStatus  from '../wrapper/consts/consts'
 
 const defaultGas={
   price:'4000000000',
@@ -14,14 +14,12 @@ function GasSetting(setting):any{
 let transactionResultGetter = function (resolve, err, data) {
   let result
   if(err) {
-    result = new Result(finedStatus.ERROR_STATE(err))
+    result = new Result(PredefinedStatus.ERROR_STATE(err))
   } else {
-    result = new Result(finedStatus.SUCCESS(data))
+    result = new Result(PredefinedStatus.SUCCESS(data))
   }
-
   resolve(result)
 }
-
 
 export {
   GasSetting,

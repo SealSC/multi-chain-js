@@ -1,4 +1,4 @@
 import { Actions } from './actions/index'
-import finedStatus  from './consts/consts'
+import PredefinedStatus  from './consts/consts'
 
-export { Actions , finedStatus}
+export { Actions , PredefinedStatus}
