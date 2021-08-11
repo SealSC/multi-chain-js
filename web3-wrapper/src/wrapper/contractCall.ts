@@ -20,7 +20,7 @@ class ContractCall {
     if(!method){
       return new Result(PredefinedStatus.ERROR_STATE('参数有误'))
     }
-    return await new Promise(res=>{
+    return await new Promise(async res=>{
       method!.func(...param).call({from:account[0],gas:'100000000'},(err,result)=>{
         console.log(err)
         transactionResultGetter(res, err, result)
@@ -30,7 +30,7 @@ class ContractCall {
     })
   }
 
-  public async onChainCall(contract:any,methodName:string,param:[],extra:any){
+  public async onChainCall(contract:any,methodName:string,param:any,extra:any){
     let account = await (window as any).web3.eth.getAccounts()
     let method = getContractMethod(contract,methodName,param)
     if(!method){
