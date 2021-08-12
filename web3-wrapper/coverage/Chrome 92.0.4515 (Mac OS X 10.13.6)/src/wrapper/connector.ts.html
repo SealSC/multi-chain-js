@@ -22,30 +22,30 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">62.5% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>0/8</span>
+                <span class='fraction'>5/8</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">50% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>0/6</span>
+                <span class='fraction'>3/6</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">50% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>0/1</span>
+                <span class='fraction'>1/2</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">62.5% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>0/8</span>
+                <span class='fraction'>5/8</span>
             </div>
         
             
@@ -54,7 +54,7 @@
             Press <em>n</em> or <em>j</em> to go to the next uncovered block, <em>b</em>, <em>p</em> or <em>k</em> for the previous block.
         </p>
     </div>
-    <div class='status-line low'></div>
+    <div class='status-line medium'></div>
     <pre><table class="coverage">
 <tr><td class="line-count quiet"><a name='L1'></a><a href='#L1'>1</a>
 <a name='L2'></a><a href='#L2'>2</a>
@@ -76,19 +76,21 @@
 <a name='L18'></a><a href='#L18'>18</a>
 <a name='L19'></a><a href='#L19'>19</a>
 <a name='L20'></a><a href='#L20'>20</a>
-<a name='L21'></a><a href='#L21'>21</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L21'></a><a href='#L21'>21</a>
+<a name='L22'></a><a href='#L22'>22</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -100,15 +102,16 @@
 import PredefinedStatus  from '../wrapper/consts/consts'
 &nbsp;
 class Connector {
-  public <span class="fstat-no" title="function not covered" >link(</span>){
-<span class="cstat-no" title="statement not covered" >    if((window as any).ethereum){</span>
-<span class="cstat-no" title="statement not covered" >      if((window as any).ethereum.enable){</span>
-        let account = (<span class="cstat-no" title="statement not covered" >window as any).ethereum.selectedAddress</span>
-<span class="cstat-no" title="statement not covered" >        if(!account){</span>
-          (<span class="cstat-no" title="statement not covered" >window as any).ethereum.enable()</span>
-<span class="cstat-no" title="statement not covered" >          return new Result(PredefinedStatus.DEFAULT_STATE(null))</span>
+  public link(){
+    <span class="missing-if-branch" title="else path not taken" >E</span>if((window as any).ethereum){
+      <span class="missing-if-branch" title="else path not taken" >E</span>if((window as any).ethereum.enable){
+        let account = (window as any).ethereum.selectedAddress
+        <span class="missing-if-branch" title="if path not taken" >I</span>if(!(window as any).ethereum.isConnected){
+<span class="cstat-no" title="statement not covered" >          return (window as any).ethereum.enable().then(<span class="fstat-no" title="function not covered" >(a</span>ccount)=&gt;{</span>
+<span class="cstat-no" title="statement not covered" >            return new Result(PredefinedStatus.SUCCESS(account))</span>
+          })
         }else{
-<span class="cstat-no" title="statement not covered" >          return new Result(PredefinedStatus.SUCCESS('已连接'))</span>
+          return new Result(PredefinedStatus.SUCCESS(account))
         }
       }
     }else{
@@ -123,7 +126,7 @@ export { Connector }</pre></td></tr></table></pre>
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank">istanbul</a>
-                at Wed Aug 11 2021 18:21:12 GMT+0800 (中国标准时间)
+                at Thu Aug 12 2021 16:12:28 GMT+0800 (中国标准时间)
             </div>
         </div>
         <script src="../../prettify.js"></script>

@@ -5,12 +5,14 @@ class Connector {
   public link(){
     if((window as any).ethereum){
       if((window as any).ethereum.enable){
+        
         let account = (window as any).ethereum.selectedAddress
         if(!account){
-          (window as any).ethereum.enable()
-          return new Result(PredefinedStatus.DEFAULT_STATE(null))
+          return (window as any).ethereum.enable().then((account)=>{
+            return new Result(PredefinedStatus.SUCCESS(account[0]))
+          })
         }else{
-          return new Result(PredefinedStatus.SUCCESS('已连接'))
+          return new Result(PredefinedStatus.SUCCESS(account))
         }
       }
     }else{

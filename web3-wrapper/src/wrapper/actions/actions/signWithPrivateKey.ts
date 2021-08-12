@@ -1,11 +1,10 @@
 import { Result } from '../result'
 import PredefinedStatus  from '../../consts/consts'
 
-class Sign{
-  public async sign(dataToSign:object|string,address:string){
+class SignWithPrivateKey{
+  public async signWithPrivateKey(data:string|string,privateKey:string){
     try{
-      let dataSign = await (window as any).web3.utils.utf8ToHex(dataToSign)
-      let sign = await (window as any).web3.eth.sign(dataSign,address)
+      let sign = await (window as any).web3.eth.accounts.sign(data,privateKey)
       return new Result(PredefinedStatus.SUCCESS(sign))
     }catch(err){
       return new Result(PredefinedStatus.ERROR_STATE(null))
@@ -13,4 +12,4 @@ class Sign{
     
   }
 }
-export { Sign }
+export { SignWithPrivateKey }

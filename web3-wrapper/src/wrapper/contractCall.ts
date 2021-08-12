@@ -44,7 +44,7 @@ class ContractCall {
     }
     return await new Promise(res=>{
       method!.func(...param).send(sendParam,(err,tx)=>{
-        transactionResultGetter(res, err, tx)
+        // transactionResultGetter(res, err, tx)
       }).then(receipt=>{
         transactionResultGetter(res, receipt, null)
       })

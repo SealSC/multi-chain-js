@@ -19,6 +19,8 @@ describe('getBalance', () => {
       //equal
       let getBalance = await (window as any).web3.eth.getBalance('0x5B6C6709d1000db91252c8c6E84B8987D1D10829');
       let results = new Result(PredefinedStatus.SUCCESS(getBalance));
+      // console.log(shouldGetBalance)
+      // console.log(results)
       expect(shouldGetBalance).to.deep.equal(results)
     }else{
       //expect
