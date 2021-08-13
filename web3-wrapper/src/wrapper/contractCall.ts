@@ -3,7 +3,6 @@ import PredefinedStatus  from '../wrapper/consts/consts'
 import { GasSetting , transactionResultGetter } from '../wrapper/utils' 
 
 function getContractMethod(contract:any,methodName:string,param:any){
-  console.log(methodName)
   let method = contract.methods[methodName]
   if(!method) return null
   let prop = method(...param)._method
@@ -22,7 +21,6 @@ class ContractCall {
     }
     return await new Promise(async res=>{
       method!.func(...param).call({from:account[0],gas:'100000000'},(err,result)=>{
-        console.log(err)
         transactionResultGetter(res, err, result)
       }).catch(reason=>{
         transactionResultGetter(res, reason, null)
@@ -47,6 +45,8 @@ class ContractCall {
         // transactionResultGetter(res, err, tx)
       }).then(receipt=>{
         transactionResultGetter(res, receipt, null)
+      }).catch(reason=>{
+        transactionResultGetter(res, reason, null)
       })
     })
   }

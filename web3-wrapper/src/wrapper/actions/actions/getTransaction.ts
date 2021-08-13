@@ -6,7 +6,6 @@ class GetTransaction{
   public async getTransaction(txHash:string){
     try{
       let Transaction = await (window as any).web3.eth.getTransaction(txHash)
-      console.log(Transaction)
       let TransactionDataField = new getTransactionField()
       if(Transaction){
         TransactionDataField.hash = Transaction.hash
@@ -20,8 +19,10 @@ class GetTransaction{
         TransactionDataField.gas = Transaction.gas
         TransactionDataField.gasPrice = Transaction.gasPrice
         TransactionDataField.input = Transaction.input
+        return new Result(PredefinedStatus.SUCCESS(TransactionDataField))
+      }else{
+        return new Result(PredefinedStatus.ERROR_STATE(null))
       }
-      return new Result(PredefinedStatus.SUCCESS(TransactionDataField))
     }catch(err){
       return new Result(PredefinedStatus.ERROR_STATE(null))
     }

@@ -9,7 +9,7 @@ const entryName = 'get-selection-more'
 
 function baseConfig() {
   return {
-    input: `src/${entryName}.ts`,
+    input: `/${entryName}.ts`,
     output: [],
     // Indicate here external modules you don't wanna include in your bundle (i.e.: 'lodash')
     external: [],

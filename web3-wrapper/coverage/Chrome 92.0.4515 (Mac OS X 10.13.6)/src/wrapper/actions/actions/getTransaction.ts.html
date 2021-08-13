@@ -22,16 +22,16 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">94.44% </span>
+                <span class="strong">16.67% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>17/18</span>
+                <span class='fraction'>3/18</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">50% </span>
+                <span class="strong">0% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>1/2</span>
+                <span class='fraction'>0/2</span>
             </div>
         
             
@@ -43,9 +43,9 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">94.44% </span>
+                <span class="strong">16.67% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>17/18</span>
+                <span class='fraction'>3/18</span>
             </div>
         
             
@@ -54,7 +54,7 @@
             Press <em>n</em> or <em>j</em> to go to the next uncovered block, <em>b</em>, <em>p</em> or <em>k</em> for the previous block.
         </p>
     </div>
-    <div class='status-line high'></div>
+    <div class='status-line low'></div>
     <pre><table class="coverage">
 <tr><td class="line-count quiet"><a name='L1'></a><a href='#L1'>1</a>
 <a name='L2'></a><a href='#L2'>2</a>
@@ -93,24 +93,24 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -122,24 +122,24 @@ class GetTransaction{
   public async getTransaction(txHash:string){
     try{
       let Transaction = await (window as any).web3.eth.getTransaction(txHash)
-      console.log(Transaction)
-      let TransactionDataField = new getTransactionField()
-      <span class="missing-if-branch" title="else path not taken" >E</span>if(Transaction){
-        TransactionDataField.hash = Transaction.hash
-        TransactionDataField.nonce = Transaction.nonce
-        TransactionDataField.blockHash = Transaction.blockHash
-        TransactionDataField.blockNumber = Transaction.blockNumber
-        TransactionDataField.transactionIndex = Transaction.transactionIndex
-        TransactionDataField.from = Transaction.from
-        TransactionDataField.to = Transaction.to
-        TransactionDataField.value = Transaction.value
-        TransactionDataField.gas = Transaction.gas
-        TransactionDataField.gasPrice = Transaction.gasPrice
-        TransactionDataField.input = Transaction.input
+<span class="cstat-no" title="statement not covered" >      console.log(Transaction)</span>
+      let TransactionDataField = <span class="cstat-no" title="statement not covered" >new getTransactionField()</span>
+<span class="cstat-no" title="statement not covered" >      if(Transaction){</span>
+<span class="cstat-no" title="statement not covered" >        TransactionDataField.hash = Transaction.hash</span>
+<span class="cstat-no" title="statement not covered" >        TransactionDataField.nonce = Transaction.nonce</span>
+<span class="cstat-no" title="statement not covered" >        TransactionDataField.blockHash = Transaction.blockHash</span>
+<span class="cstat-no" title="statement not covered" >        TransactionDataField.blockNumber = Transaction.blockNumber</span>
+<span class="cstat-no" title="statement not covered" >        TransactionDataField.transactionIndex = Transaction.transactionIndex</span>
+<span class="cstat-no" title="statement not covered" >        TransactionDataField.from = Transaction.from</span>
+<span class="cstat-no" title="statement not covered" >        TransactionDataField.to = Transaction.to</span>
+<span class="cstat-no" title="statement not covered" >        TransactionDataField.value = Transaction.value</span>
+<span class="cstat-no" title="statement not covered" >        TransactionDataField.gas = Transaction.gas</span>
+<span class="cstat-no" title="statement not covered" >        TransactionDataField.gasPrice = Transaction.gasPrice</span>
+<span class="cstat-no" title="statement not covered" >        TransactionDataField.input = Transaction.input</span>
       }
-      return new Result(PredefinedStatus.SUCCESS(TransactionDataField))
+<span class="cstat-no" title="statement not covered" >      return new Result(PredefinedStatus.SUCCESS(TransactionDataField))</span>
     }catch(err){
-<span class="cstat-no" title="statement not covered" >      return new Result(PredefinedStatus.ERROR_STATE(null))</span>
+      return new Result(PredefinedStatus.ERROR_STATE(null))
     }
   }
 }
@@ -150,7 +150,7 @@ export { GetTransaction }</pre></td></tr></table></pre>
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank">istanbul</a>
-                at Thu Aug 12 2021 16:12:28 GMT+0800 (中国标准时间)
+                at Fri Aug 13 2021 14:55:10 GMT+0800 (中国标准时间)
             </div>
         </div>
         <script src="../../../../prettify.js"></script>

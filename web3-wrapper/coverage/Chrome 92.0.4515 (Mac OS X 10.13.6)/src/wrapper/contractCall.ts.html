@@ -22,9 +22,9 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">7.69% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>0/25</span>
+                <span class='fraction'>2/26</span>
             </div>
         
             
@@ -36,16 +36,16 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">18.18% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>0/10</span>
+                <span class='fraction'>2/11</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">8.33% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>0/23</span>
+                <span class='fraction'>2/24</span>
             </div>
         
             
@@ -110,7 +110,9 @@
 <a name='L52'></a><a href='#L52'>52</a>
 <a name='L53'></a><a href='#L53'>53</a>
 <a name='L54'></a><a href='#L54'>54</a>
-<a name='L55'></a><a href='#L55'>55</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L55'></a><a href='#L55'>55</a>
+<a name='L56'></a><a href='#L56'>56</a>
+<a name='L57'></a><a href='#L57'>57</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -127,21 +129,10 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -149,6 +140,17 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -157,6 +159,8 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -180,8 +184,8 @@ function <span class="fstat-no" title="function not covered" >getContractMethod(
 }
 &nbsp;
 class ContractCall {
-  public async <span class="fstat-no" title="function not covered" >offChainCall(</span>contract:any,methodName:string,param:[],amount,extra){
-    let account = <span class="cstat-no" title="statement not covered" >await (window as any).web3.eth.getAccounts()</span>
+  public async offChainCall(contract:any,methodName:string,param:[],amount,extra){
+    let account = await (window as any).web3.eth.getAccounts()
     let method = <span class="cstat-no" title="statement not covered" >getContractMethod(contract,methodName,param)</span>
 <span class="cstat-no" title="statement not covered" >    if(!method){</span>
 <span class="cstat-no" title="statement not covered" >      return new Result(PredefinedStatus.ERROR_STATE('参数有误'))</span>
@@ -196,8 +200,8 @@ class ContractCall {
     })
   }
 &nbsp;
-  public async <span class="fstat-no" title="function not covered" >onChainCall(</span>contract:any,methodName:string,param:any,extra:any){
-    let account = <span class="cstat-no" title="statement not covered" >await (window as any).web3.eth.getAccounts()</span>
+  public async onChainCall(contract:any,methodName:string,param:any,extra:any){
+    let account = await (window as any).web3.eth.getAccounts()
     let method = <span class="cstat-no" title="statement not covered" >getContractMethod(contract,methodName,param)</span>
 <span class="cstat-no" title="statement not covered" >    if(!method){</span>
 <span class="cstat-no" title="statement not covered" >      return new Result(PredefinedStatus.ERROR_STATE('参数有误'))</span>
@@ -213,6 +217,8 @@ class ContractCall {
         // transactionResultGetter(res, err, tx)
       }).then(<span class="fstat-no" title="function not covered" >receipt=</span>&gt;{
 <span class="cstat-no" title="statement not covered" >        transactionResultGetter(res, receipt, null)</span>
+      }).catch(<span class="fstat-no" title="function not covered" >reason=</span>&gt;{
+<span class="cstat-no" title="statement not covered" >        transactionResultGetter(res, reason, null)</span>
       })
     })
   }
@@ -225,7 +231,7 @@ export { ContractCall }</pre></td></tr></table></pre>
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank">istanbul</a>
-                at Thu Aug 12 2021 16:12:28 GMT+0800 (中国标准时间)
+                at Fri Aug 13 2021 14:55:10 GMT+0800 (中国标准时间)
             </div>
         </div>
         <script src="../../prettify.js"></script>

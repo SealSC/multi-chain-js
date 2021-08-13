@@ -5,29 +5,27 @@ import { web3Install } from '../src/wrapper/web3'
 let detectEthereumProvider = require('@metamask/detect-provider')
 
 describe('link', () => {
+  it('Wallet installed linkFunction', async ()=>{
+
+    (window as any).web3 = await web3Install()
+  
+    let Action = await new Actions()
+    let shouldAccount: any = await Action.connector.link();
+    let accountSelect =  (window as any).ethereum.selectedAddress
+    let results = new Result(PredefinedStatus.SUCCESS(accountSelect))  
+    expect(shouldAccount).to.deep.equal(results)
+
+  }).timeout(100000)
+
+  it('Wallet not installed linkFunction',async ()=>{
+
+    (window as any).web3 = {};
+    (window as any).ethereum = {};
+    let Action = await new Actions();
+    let shouldGetBalance: any = await Action.connector.link();
+    let results = new Result(PredefinedStatus.ERROR_STATE('Please go and install'))
+    expect(shouldGetBalance).to.deep.equal(results)
+
+  }).timeout(100000)
    
-  it('link Funtion', async() => {
-    let provider = await detectEthereumProvider();
-    if(provider){
-       //init web3
-      (window as any).web3 = await web3Install()
-      //expect
-      let Action = await new Actions();
-      let shouldGetBalance: any = await Action.connector.link();
-    
-      //equal
-      let account = (window as any).ethereum.selectedAddress
-      let results = new Result(PredefinedStatus.SUCCESS(account));
-     
-      expect(shouldGetBalance).to.deep.equal(results)
-     
-    }else{
-      //expect
-      let Action = await new Actions();
-      let link = await Action.connector.link();
-      //equal
-      let results = new Result(PredefinedStatus.ERROR_STATE('Please go and install'))
-      expect(link).to.deep.equal(results)
-    }
-  }).timeout(1000000)
 })

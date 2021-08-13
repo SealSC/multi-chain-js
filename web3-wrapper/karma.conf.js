@@ -25,7 +25,7 @@ module.exports = config => {
     },
     webpack: {
       mode: 'development',
-      entry: './src/get-selection-more.ts',
+      entry: './get-selection-more.ts',
       output: {
         filename: '[name].js'
       },

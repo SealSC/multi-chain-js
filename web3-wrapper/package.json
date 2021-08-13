@@ -10,7 +10,7 @@
     "serve": "vue-cli-service serve",
     "test": "karma start"
   },
-  "main": "dist/get-selection-more.umd.js",
+  "main": "src/wrapper/wrapper.ts",
   "module": "dist/get-selection-more.es.js",
   "typings": "dist/types/get-selection-more.d.ts",
   "files": [
