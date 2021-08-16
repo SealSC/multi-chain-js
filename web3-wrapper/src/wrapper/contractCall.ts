@@ -3,7 +3,13 @@ import PredefinedStatus  from '../wrapper/consts/consts'
 import { GasSetting , transactionResultGetter } from '../wrapper/utils' 
 
 function getContractMethod(contract:any,methodName:string,param:any){
-  let method = contract.methods[methodName]
+  let method;
+  try{
+    method = contract.methods[methodName]
+  }catch(error){
+    method = null
+  }
+  
   if(!method) return null
   let prop = method(...param)._method
   return {
@@ -14,22 +20,27 @@ function getContractMethod(contract:any,methodName:string,param:any){
 
 class ContractCall {
   public async offChainCall(contract:any,methodName:string,param:[],amount,extra){
-    let account = await (window as any).web3.eth.getAccounts()
+    let account = Object.keys((window as any).web3).length !== 0 ? await (window as any).web3.eth.getAccounts():[''];
     let method = getContractMethod(contract,methodName,param)
+   
     if(!method){
       return new Result(PredefinedStatus.ERROR_STATE('参数有误'))
     }
     return await new Promise(async res=>{
       method!.func(...param).call({from:account[0],gas:'100000000'},(err,result)=>{
-        transactionResultGetter(res, err, result)
+        transactionResultGetter(res, result, err)
       }).catch(reason=>{
+        console.log(2)
         transactionResultGetter(res, reason, null)
       })
     })
   }
 
   public async onChainCall(contract:any,methodName:string,param:any,extra:any){
-    let account = await (window as any).web3.eth.getAccounts()
+ 
+    let account = Object.keys((window as any).web3).length !== 0 ? await (window as any).web3.eth.getAccounts():[''];
+    console.log(account)
+  
     let method = getContractMethod(contract,methodName,param)
     if(!method){
       return new Result(PredefinedStatus.ERROR_STATE('参数有误'))
@@ -52,4 +63,4 @@ class ContractCall {
   }
   
 }
-export { ContractCall }
+export { ContractCall , getContractMethod }

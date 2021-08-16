@@ -18,7 +18,10 @@ module.exports = config => {
     colors:true,
     reporters: ['spec', 'coverage-istanbul','coveralls'],
     browsers: process.env.CI ? ['Chrome', 'Firefox'] : ['Chrome'],
-
+    captureTimeout: 210000,
+    browserDisconnectTolerance: 3, 
+    browserDisconnectTimeout : 210000,
+    browserNoActivityTimeout : 210000,
     webpackMiddleware: {
       noInfo: true,
       stats: 'errors-only'

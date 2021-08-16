@@ -37,7 +37,7 @@ class ActionsIn{
   public async sendSignedTransaction(dataToSign:string){
     return await new SendSignedTransaction().sendSignedTransaction(dataToSign)
   }
-  public async signWithWallet(dataToSign:object|string,address:string){
+  public async signWithWallet(dataToSign:any|string,address:string){
     return await new SignWithWallet().signWithWallet(dataToSign,address)
   }
   public async signWithPrivateKey(data:string|string,privateKey:string){

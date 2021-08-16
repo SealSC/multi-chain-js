@@ -13,6 +13,7 @@ function GasSetting(setting):any{
 
 let transactionResultGetter = function (resolve, data , err) {
   let result
+  console.log(data)
   if(err) {
     result = new Result(PredefinedStatus.ERROR_STATE(null))
   } else {
