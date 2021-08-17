@@ -14,7 +14,7 @@ describe('sendTransaction', () => {
     let shouldsendTranction = await Action.actions.sendTransaction({
         from:"0x5B6C6709d1000db91252c8c6E84B8987D1D10829",
         to: '0x11f4d0A3c12e86B4b5F39B213F7E19D048276DAe',
-        value: '1'
+        value: '10'
     });
     if(shouldsendTranction.data) expect(shouldsendTranction.data.status).to.be.true
 

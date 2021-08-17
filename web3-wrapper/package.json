@@ -1,7 +1,13 @@
 {
-  "name": "web3-wrapper",
+  "name": "@sealsc/web3-wrapper",
   "version": "0.1.0",
   "keywords": [
+    "sealsc",
+    "wallet",
+    "sdk",
+    "eth",
+    "ethereum",
+    "metamask",
     "web3-wrapper",
     "web3"
   ],
