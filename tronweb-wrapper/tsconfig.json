@@ -34,7 +34,7 @@
     "src/**/*.vue",
     "tests/**/*.ts",
     "tests/**/*.tsx"
-  ],
+, "src/wrapper/tronweb.js", "src/wrapper/tronweb.js"  ],
   "exclude": [
     "node_modules"
   ],
