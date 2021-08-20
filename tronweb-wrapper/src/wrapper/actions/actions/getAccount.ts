@@ -15,7 +15,6 @@ class GetAccount{
     }catch(err){
       return new Result(PredefinedStatus.ERROR_STATE(null))
     }
-    // return new Result(PredefinedStatus.NOT_SUPPORT(null))
   }
 }
 export { GetAccount }

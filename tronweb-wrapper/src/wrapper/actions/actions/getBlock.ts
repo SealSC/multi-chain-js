@@ -27,7 +27,7 @@ class GetBlock {
         'uncles': null
 
       }
-      return new Result(PredefinedStatus.SUCCESS(blockData))
+      return new Result(PredefinedStatus.SUCCESS(data))
     } catch (err) {
       return new Result(PredefinedStatus.ERROR_STATE(null))
     }
