@@ -1,9 +1,10 @@
 <template>
   <div id="app">
     <div id="nav">
-      <div @click="OpenWallet">OpenWallet</div>
-      <div>2-功能</div>
-      <div>3-功能</div>
+       <div @click="init()">init polkadot</div>
+      <div @click="OpenWallet()">OpenWallet</div>
+      <div @click="getAccount()">getAccount</div>
+      <div @click="getBlock()">getBlock</div>
       <div>4-功能</div>
     </div>
   </div>
@@ -11,6 +12,7 @@
 <script lang="ts">
 import { Component, Vue } from "vue-property-decorator";
 import { component } from "vue/types/umd";
+import { Actions } from './wrapper/wrapper' 
  
 @Component({
   components: {
@@ -19,9 +21,21 @@ import { component } from "vue/types/umd";
 })
 export default class Home extends Vue {
   private message: number = 1
-  
+  public async init() {
+    let ActionsIn = new Actions()
+    await ActionsIn.init();
+  }
   public async OpenWallet() {
     
+  }
+  public async getAccount(){
+    let ActionsIn = new Actions()
+    console.log(await ActionsIn.actions.getAccount())
+  }
+
+  public async getBlock(){
+    let ActionsIn = new Actions()
+    console.log(await ActionsIn.actions.getBlock(6521853))
   }
 
   public mounted() {

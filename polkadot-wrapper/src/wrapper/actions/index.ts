@@ -3,6 +3,7 @@ import { Connector } from '../connector'
 import PredefinedStatus  from '../consts/consts'
 import { Result } from '../actions/result'
 import { ContractCall } from '../contractCall'
+import {ApiPromise, WsProvider} from '@polkadot/api'
 
 class Actions {
   public actions:ActionsIn
@@ -14,6 +15,10 @@ class Actions {
     this.contract = new ContractCall()
   }
   public async init(){
+    const wsProvider = new WsProvider('wss://rpc.polkadot.io');
+    const api = await ApiPromise.create({ provider: wsProvider });
+    (window as any).api = api
+    console.log((window as any).api)
     return new Result(PredefinedStatus.SUCCESS(null))
   }
 }
