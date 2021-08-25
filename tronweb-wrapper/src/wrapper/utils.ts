@@ -1,3 +1,4 @@
+
 import { Result } from "../wrapper/actions/result";
 import PredefinedStatus from "../wrapper/consts/consts";
 
@@ -27,3 +28,4 @@ export {
     GasSetting,
     transactionResultGetter,
 };
+

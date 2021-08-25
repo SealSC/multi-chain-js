@@ -1,6 +1,8 @@
 import { tronWebInstall } from '../tronweb'
 import { ActionsIn }  from '../actions/actions/actions'
+
 // import { Connector } from '../connector'
+
 import PredefinedStatus  from '../consts/consts'
 import { Result } from '../actions/result'
 import { ContractCall } from '../contractCall'
@@ -16,6 +18,7 @@ class Actions {
   }
   public async init(){
     (window as any).tronWeb = await tronWebInstall()
+
     return new Result(PredefinedStatus.SUCCESS(null))
   }
 }

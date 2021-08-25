@@ -1,3 +1,4 @@
+
 import { Result } from '../result'
 import PredefinedStatus  from '../../consts/consts'
 import tronWeb from 'tronweb'
@@ -13,6 +14,7 @@ class SignTransactionPrivateKey{
       }
     }catch(err){
       console.log(err,"err")
+
       return new Result(PredefinedStatus.ERROR_STATE(null))
     }
   

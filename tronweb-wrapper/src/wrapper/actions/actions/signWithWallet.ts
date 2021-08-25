@@ -2,6 +2,7 @@ import { Result } from '../result'
 import PredefinedStatus  from '../../consts/consts'
 
 class SignWithWallet{
+
   public async signWithWallet(dataToSign:string){
     // try{
     //   console.log(1111)
@@ -13,6 +14,7 @@ class SignWithWallet{
     //   return new Result(PredefinedStatus.ERROR_STATE(null))
     // }
     return new Result(PredefinedStatus.NOT_SUPPORT(null))
+
   }
 }
 export { SignWithWallet }
