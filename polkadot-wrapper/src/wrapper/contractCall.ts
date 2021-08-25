@@ -20,11 +20,11 @@ function getContractMethod(contract:any,methodName:string,param:any){
 
 class ContractCall {
   public async offChainCall(contract:any,methodName:string,param:[],amount,extra){
-    
+    return new Result(PredefinedStatus.NOT_SUPPORT(null))
   }
 
   public async onChainCall(contract:any,methodName:string,param:any,extra:any){
-  
+    return new Result(PredefinedStatus.NOT_SUPPORT(null))
   }
   
 }
