@@ -18,7 +18,7 @@ describe('getBalance', () => {
 
   it('Wallet not installed getBalanceFunction',async ()=>{
 
-    // (window as any).tronWeb.trx = {}
+    (window as any).tronWeb = {}
     let Action = await new Actions();
     let shouldBalance = await Action.actions.getBalance('TPCgprwAAFBSgryLYUDiY9ifAoUYw');
     let results = new Result(PredefinedStatus.ERROR_STATE(null))

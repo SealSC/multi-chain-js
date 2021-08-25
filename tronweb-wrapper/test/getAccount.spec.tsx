@@ -17,7 +17,7 @@ describe('getAccount', () => {
   }).timeout(100000)
 
   it('Wallet not installed getAccountFunction',async ()=>{
-    // (window as any).tronWeb = {}
+    (window as any).tronWeb = {}
     let Action = await new Actions();
     let shouldAccount = await Action.actions.getAccount('TPCgprwAAFBSgryLYUDiY9ifAoUYwqd');
       

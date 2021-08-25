@@ -5,7 +5,7 @@ import { GasSetting , transactionResultGetter } from "../wrapper/utils"
 
 
 function getContractMethod(contract:any,methodName:string,param:any){
-  let method = contract.methods[methodName]
+  let method = contract ? contract.methods[methodName]:null
   if(!method) return null
   let prop = method(...param)._method
   return {
@@ -21,8 +21,6 @@ class ContractCall {
     if(!method){
       return new Result(PredefinedStatus.ERROR_STATE('参数有误'))
     }
-
-    
     return await new Promise(async res=>{
       method!.func(...param).call((err,result)=>{
         transactionResultGetter(res, result, err)
@@ -35,7 +33,7 @@ class ContractCall {
 
   public async onChainCall(contract:any,methodName:string,param:any,extra:any){
 
-    let method = getContractMethod(contract,methodName,param)
+    let method = getContractMethod(contract,methodName,param) 
     if(!method){
     return new Result(PredefinedStatus.ERROR_STATE("参数有误"))
 

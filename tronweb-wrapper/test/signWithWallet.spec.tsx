@@ -17,7 +17,6 @@ describe('SignWithWallet', () => {
 
     let shouldSign = await Action.actions.signWithWallet("eee");
       let results = new Result(PredefinedStatus.NOT_SUPPORT(null));
-      console.log(shouldSign,results,"PPP")
       expect(shouldSign).to.deep.equal(results)
   }).timeout(100000)
 

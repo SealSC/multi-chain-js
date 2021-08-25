@@ -14,12 +14,18 @@ class GetTransaction {
       let to = await (window as any).tronWeb.address.fromHex(transactionData.raw_data.contract[0].parameter.value.contract_address) ?
         await (window as any).tronWeb.address.fromHex(transactionData.raw_data.contract[0].parameter.value.contract_address) :
         await (window as any).tronWeb.address.fromHex(transactionData.raw_data.contract[0].parameter.value.to_address)
-
       function getIndex() {
-        for (let i = 0; i < blockData.transactions.length; i++) {
-          if (Transaction.id == blockData.transactions[i].txID) {
-            return i
+        if(blockData.transactions){
+          for (let i = 0; i < blockData.transactions.length; i++) {
+            if (Transaction.id == blockData.transactions[i].txID) {
+              return i
+            }else{
+              
+              return null
+            }
           }
+        }else{
+          return null
         }
       }
       function getAmount() {
@@ -33,7 +39,6 @@ class GetTransaction {
        return amount
       }
       let input= transactionData.raw_data.contract[0].parameter.value. data
-     
       if (Transaction) {
 
         let data = {
@@ -44,7 +49,7 @@ class GetTransaction {
           "transactionIndex": getIndex(),
           "from": from,
           "to": to,
-          "value": getAmount,
+          "value": getAmount(),
           "gas": null,
           "gasPrice": null,
           "input": input

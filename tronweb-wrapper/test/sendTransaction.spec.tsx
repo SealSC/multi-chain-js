@@ -8,8 +8,6 @@ let detectEthereumProvider = require('@metamask/detect-provider')
 describe('sendTransaction', () => {
 
   it('Wallet installed sendTransaction', async ()=>{
-
-    (window as any).tronWeb = await tronWebInstall()
     let Action = await new Actions();
     let shouldsendTranction = await Action.actions.sendTransaction({
         address:"TR4tZXQSn1L5DijAK2rDV2LCnXSgdwVJVF",
@@ -20,8 +18,6 @@ describe('sendTransaction', () => {
   }).timeout(100000)
 
   it('Wallet not installed sendTransaction',async ()=>{
-
-    // (window as any).tronWeb = {}
     let Action = await new Actions();
     let shouldsendTranction = await Action.actions.sendTransaction({
         address:"TR4tZXQSn1L5DijAK2rDV2LCnXSgdwVJVF",
