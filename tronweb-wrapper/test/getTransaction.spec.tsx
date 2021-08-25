@@ -39,7 +39,6 @@ describe('getTransaction', () => {
       !transactionData.raw_data.contract[0].parameter.value.amount){
         amount = 0
      }else {
-       
        amount = transactionData.raw_data.contract[0].parameter.value.amount
      }
      return amount
