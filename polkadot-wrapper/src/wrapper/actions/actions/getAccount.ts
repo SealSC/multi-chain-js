@@ -1,17 +1,16 @@
 import { Result } from '../result'
 import PredefinedStatus  from '../../consts/consts'
 import {getAccountInterface } from '../classInterface'
+import { web3Accounts, web3Enable ,web3FromSource } from '@polkadot/extension-dapp';
 
 class GetAccount{
   public async getAccount(){
-    const ADDR = '5DTestUPts3kjeXSTMyerHihn1uwMfLj8vU8sqF7qYrFabHE';
-    console.log(await (window as any).api.query.system.account(ADDR))
-    // console.log(await (window as any).api.rpc.system.chain())
-    // console.log(await (window as any).api.rpc.eth)
-    console.log(await (window as any).api.query.indices.accounts)
-    // const { nonce, data: balance } = await (window as any).api.query.system.account(ADDR);
-    // console.log(nonce)
-    // console.log( balance.free )
+    try{
+      const allAccounts = await web3Accounts();
+      return new Result(PredefinedStatus.SUCCESS(allAccounts))
+    }catch(error){
+      return new Result(PredefinedStatus.ERROR_STATE(null))
+    }
   }
 }
 export { GetAccount }

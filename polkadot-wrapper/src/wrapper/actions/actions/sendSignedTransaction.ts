@@ -1,13 +1,16 @@
 import { Result } from '../result'
 import PredefinedStatus  from '../../consts/consts'
 import { web3Accounts, web3Enable , web3FromSource} from '@polkadot/extension-dapp';
+import { Actions } from '../index'
 
 class SendSignedTransaction{
   public async sendSignedTransaction(dataToSign:string){
     try{
+      let ActionsIn = new Actions()
+      let api = await ActionsIn.init();
       const allAccounts = await web3Accounts();
       const account = allAccounts[0];
-      const transferExtrinsic =(window as any).api.tx.balances.transfer('5C5555yEXUcmEJ5kkcCMvdZjUo7NGJiQJMS7vZXEeoMhj3VQ', 123456)
+      const transferExtrinsic = api.data.tx.balances.transfer('5C5555yEXUcmEJ5kkcCMvdZjUo7NGJiQJMS7vZXEeoMhj3VQ', 123456)
       const injector = await web3FromSource(account.meta.source);
       transferExtrinsic.signAndSend(account.address, { signer: injector.signer }, ({ status }) => {
         if (status.isInBlock) {

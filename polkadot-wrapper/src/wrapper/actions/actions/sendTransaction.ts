@@ -1,11 +1,14 @@
 import { Result } from '../result'
 import PredefinedStatus  from '../../consts/consts'
+import { Actions } from '../index'
 
 class SendTransaction{
   public async sendTransaction(transactionObject:object){
     try{
-      const utx = (window as any).api.tx.claims.claim();
-      (window as any).api.tx.send(({ status }) => {
+      let ActionsIn = new Actions()
+      let api = await ActionsIn.init();
+      const utx =  api.data.tx.claims.claim();
+      api.data.tx.send(({ status }) => {
         if (status.isInBlock) {
           return new Result(PredefinedStatus.SUCCESS(`${status.asInBlock}`))
         }

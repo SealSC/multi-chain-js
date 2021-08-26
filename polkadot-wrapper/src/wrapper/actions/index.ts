@@ -17,9 +17,7 @@ class Actions {
   public async init(){
     const wsProvider = new WsProvider('wss://rpc.polkadot.io');
     const api = await ApiPromise.create({ provider: wsProvider });
-    (window as any).api = api
-    console.log((window as any).api)
-    return new Result(PredefinedStatus.SUCCESS(null))
+    return new Result(PredefinedStatus.SUCCESS(api))
   }
 }
 
