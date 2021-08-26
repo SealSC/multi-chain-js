@@ -16,11 +16,11 @@ function GasSetting(setting): any {
 
 const transactionResultGetter = (resolve, data, err) => {
     let result;
-    if (err) {
-        result = new Result(PredefinedStatus.ERROR_STATE(null));
-    } else {
+    // if (err) {
+    //     result = new Result(PredefinedStatus.ERROR_STATE(null));
+    // } else {
         result = new Result(PredefinedStatus.SUCCESS(data));
-    }
+    // }
     resolve(result);
 };
 

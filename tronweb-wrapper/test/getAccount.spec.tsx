@@ -16,14 +16,14 @@ describe('getAccount', () => {
     expect(shouldAccount).to.deep.equal(results)
   }).timeout(100000)
 
-  it('Wallet not installed getAccountFunction',async ()=>{
-    (window as any).tronWeb = {}
-    let Action = await new Actions();
-    let shouldAccount = await Action.actions.getAccount('TPCgprwAAFBSgryLYUDiY9ifAoUYwqd');
+  // it('Wallet not installed getAccountFunction',async ()=>{
+  //   // (window as any).tronWeb = {}
+  //   let Action = await new Actions();
+  //   let shouldAccount = await Action.actions.getAccount('TPCgprwAAFBSgryLYUDiY9ifAoUYwqd');
       
-    let results = new Result(PredefinedStatus.ERROR_STATE(null));
-    expect(shouldAccount).to.deep.equal(results)
+  //   let results = new Result(PredefinedStatus.ERROR_STATE(null));
+  //   expect(shouldAccount).to.deep.equal(results)
 
-  }).timeout(100000)
+  // }).timeout(100000)
 
 })

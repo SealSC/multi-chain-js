@@ -34,8 +34,8 @@ class ActionsIn{
   public async getTransactionCount(){
     return await new GetTransactionCount().getTransactionCount()
   }
-  public async sendSignedTransaction(privateKey:string){
-    return await new SendSignedTransaction().sendSignedTransaction(privateKey)
+  public async sendSignedTransaction(to,amount,from,options,privateKey:string){
+    return await new SendSignedTransaction().sendSignedTransaction(to,amount,from,options,privateKey)
   }
   public async signWithWallet(content:string,dataToSign?:object|string,address?:string){
     return await new SignWithWallet().signWithWallet(content)

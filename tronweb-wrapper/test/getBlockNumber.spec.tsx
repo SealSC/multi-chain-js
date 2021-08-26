@@ -16,13 +16,13 @@ describe('getBlockNumber', () => {
     expect(shouldGetBlockNumber).to.deep.equal(results)
   }).timeout(100000)
 
-  it('Wallet not installed getBlockNumberFunction',async ()=>{
-    (window as any).tronWeb = {}
-    let Action = await new Actions();
-    let shouldGetBlockNumber = await Action.actions.getBlockNumber(-9);
-    let results = new Result(PredefinedStatus.ERROR_STATE(null));
-    expect(shouldGetBlockNumber).to.deep.equal(results)
+  // it('Wallet not installed getBlockNumberFunction',async ()=>{
+  //   // (window as any).tronWeb = {}
+  //   let Action = await new Actions();
+  //   let shouldGetBlockNumber = await Action.actions.getBlockNumber(-9);
+  //   let results = new Result(PredefinedStatus.ERROR_STATE(null));
+  //   expect(shouldGetBlockNumber).to.deep.equal(results)
 
-  }).timeout(100000) 
+  // }).timeout(100000) 
 
 })

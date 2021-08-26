@@ -22,16 +22,16 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">75% </span>
+                <span class="strong">80% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>6/8</span>
+                <span class='fraction'>12/15</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">100% </span>
+                <span class="strong">50% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>0/0</span>
+                <span class='fraction'>1/2</span>
             </div>
         
             
@@ -43,9 +43,9 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">75% </span>
+                <span class="strong">80% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>6/8</span>
+                <span class='fraction'>12/15</span>
             </div>
         
             
@@ -54,7 +54,7 @@
             Press <em>n</em> or <em>j</em> to go to the next uncovered block, <em>b</em>, <em>p</em> or <em>k</em> for the previous block.
         </p>
     </div>
-    <div class='status-line medium'></div>
+    <div class='status-line high'></div>
     <pre><table class="coverage">
 <tr><td class="line-count quiet"><a name='L1'></a><a href='#L1'>1</a>
 <a name='L2'></a><a href='#L2'>2</a>
@@ -78,7 +78,14 @@
 <a name='L20'></a><a href='#L20'>20</a>
 <a name='L21'></a><a href='#L21'>21</a>
 <a name='L22'></a><a href='#L22'>22</a>
-<a name='L23'></a><a href='#L23'>23</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L23'></a><a href='#L23'>23</a>
+<a name='L24'></a><a href='#L24'>24</a>
+<a name='L25'></a><a href='#L25'>25</a>
+<a name='L26'></a><a href='#L26'>26</a>
+<a name='L27'></a><a href='#L27'>27</a>
+<a name='L28'></a><a href='#L28'>28</a>
+<a name='L29'></a><a href='#L29'>29</a>
+<a name='L30'></a><a href='#L30'>30</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -87,15 +94,22 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -103,21 +117,28 @@
 <span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">&nbsp;
 import { Result } from '../result'
 import PredefinedStatus  from '../../consts/consts'
-import tronWeb from 'tronweb'
+import TronWeb from 'tronweb'
 import { tronWebInstall } from '../../tronweb'
 class SignTransactionPrivateKey{
   public async signTransactionPrivateKey(dataToSign:any,privateKey:string){
     try{
+      let  HttpProvider = TronWeb.providers.HttpProvider;
+      let tronwebww=null as any
+     <span class="missing-if-branch" title="else path not taken" >E</span>if(HttpProvider){
+       const fullNode = new HttpProvider("https://api.shasta.trongrid.io");
+       const solidityNode = new HttpProvider("https://api.shasta.trongrid.io");
+       const eventServer = "https://api.shasta.trongrid.io";
+       const tronWeb = new TronWeb(fullNode, solidityNode, eventServer);
+       tronwebww = tronWeb;
+     }
       const tradeobj = await (window as any).tronWeb.transactionBuilder.sendTrx(dataToSign.to,dataToSign.amount,dataToSign.from,dataToSign.options);
-      let signTransaction = <span class="cstat-no" title="statement not covered" >await (window as any).tronWeb.trx.sign(tradeobj, privateKey);</span>
-<span class="cstat-no" title="statement not covered" >        return new Result(PredefinedStatus.NOT_SUPPORT(null))</span>
+      let signTransaction = await tronwebww.trx.sign(tradeobj, privateKey); 
+      return new Result(PredefinedStatus.SUCCESS(null))
       
     }catch(err){
-      (window as any).tronWeb = await tronWebInstall()
-      const tradeobj = await (window as any).tronWeb.transactionBuilder.sendTrx(dataToSign.to,dataToSign.amount,dataToSign.from,dataToSign.options);
-      let signTransaction = await (window as any).tronWeb.trx.sign(tradeobj, privateKey); 
-      return new Result(PredefinedStatus.SUCCESS(null))
-      // return new Result(PredefinedStatus.ERROR_STATE(null))
+      const tradeobj = <span class="cstat-no" title="statement not covered" >await (window as any).tronWeb.transactionBuilder.sendTrx(dataToSign.to,dataToSign.amount,dataToSign.from,dataToSign.options);</span>
+      let signTransaction = <span class="cstat-no" title="statement not covered" >await (window as any).tronWeb.trx.sign(tradeobj, privateKey);</span>
+<span class="cstat-no" title="statement not covered" >        return new Result(PredefinedStatus.NOT_SUPPORT(null))</span>
     }
   
   }
@@ -129,7 +150,7 @@ export { SignTransactionPrivateKey }</pre></td></tr></table></pre>
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank">istanbul</a>
-                at Wed Aug 25 2021 17:18:00 GMT+0800 (GMT+08:00)
+                at Thu Aug 26 2021 15:59:05 GMT+0800 (CST)
             </div>
         </div>
         <script src="../../../prettify.js"></script>

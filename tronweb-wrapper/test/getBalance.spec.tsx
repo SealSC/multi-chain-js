@@ -16,14 +16,14 @@ describe('getBalance', () => {
 
   }).timeout(100000)
 
-  it('Wallet not installed getBalanceFunction',async ()=>{
+  // it('Wallet not installed getBalanceFunction',async ()=>{
 
-    (window as any).tronWeb = {}
-    let Action = await new Actions();
-    let shouldBalance = await Action.actions.getBalance('TPCgprwAAFBSgryLYUDiY9ifAoUYw');
-    let results = new Result(PredefinedStatus.ERROR_STATE(null))
-    expect(shouldBalance).to.deep.equal(results)
+  //   // (window as any).tronWeb = {}
+  //   let Action = await new Actions();
+  //   let shouldBalance = await Action.actions.getBalance('TPCgprwAAFBSgryLYUDiY9ifAoUYw');
+  //   let results = new Result(PredefinedStatus.ERROR_STATE(null))
+  //   expect(shouldBalance).to.deep.equal(results)
 
-  }).timeout(100000)
+  // }).timeout(100000)
    
 })
