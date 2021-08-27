@@ -22,9 +22,9 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">92.31% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>0/13</span>
+                <span class='fraction'>12/13</span>
             </div>
         
             
@@ -36,16 +36,16 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">92.86% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>0/14</span>
+                <span class='fraction'>13/14</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">92.31% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>0/13</span>
+                <span class='fraction'>12/13</span>
             </div>
         
             
@@ -54,7 +54,7 @@
             Press <em>n</em> or <em>j</em> to go to the next uncovered block, <em>b</em>, <em>p</em> or <em>k</em> for the previous block.
         </p>
     </div>
-    <div class='status-line low'></div>
+    <div class='status-line high'></div>
     <pre><table class="coverage">
 <tr><td class="line-count quiet"><a name='L1'></a><a href='#L1'>1</a>
 <a name='L2'></a><a href='#L2'>2</a>
@@ -136,43 +136,43 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -193,47 +193,47 @@ import { SendTransaction } from './sendTransaction'
 import { LoadContract } from './loadContract'
 &nbsp;
 class ActionsIn{
-<span class="fstat-no" title="function not covered" >  constructor(){</span>
+  constructor(){
      
   }
-  public async <span class="fstat-no" title="function not covered" >getAccount(</span>){
-<span class="cstat-no" title="statement not covered" >    return await new GetAccount().getAccount()</span>
+  public async getAccount(){
+    return await new GetAccount().getAccount()
   }
-  public async <span class="fstat-no" title="function not covered" >getBalance(</span>address:string){
-<span class="cstat-no" title="statement not covered" >    return await new GetBalance().getBalance(address)</span>
+  public async getBalance(address:string){
+    return await new GetBalance().getBalance(address)
   }
-  public async <span class="fstat-no" title="function not covered" >getBlock(</span>block:string|number){
-<span class="cstat-no" title="statement not covered" >    return await new GetBlock().getBlock(block)</span>
+  public async getBlock(block:string|number){
+    return await new GetBlock().getBlock(block)
   }
-  public async <span class="fstat-no" title="function not covered" >getBlockNumber(</span>){
-<span class="cstat-no" title="statement not covered" >    return await new GetBlockNumber().getBlockNumber()</span>
+  public async getBlockNumber(){
+    return await new GetBlockNumber().getBlockNumber()
   }
-  public async <span class="fstat-no" title="function not covered" >getTransaction(</span>txHash:string){
-<span class="cstat-no" title="statement not covered" >    return await new GetTransaction().getTransaction(txHash)</span>
+  public async getTransaction(txHash:string){
+    return await new GetTransaction().getTransaction(txHash)
   }
-  public async <span class="fstat-no" title="function not covered" >getTransactionCount(</span>txHash:string){
-<span class="cstat-no" title="statement not covered" >    return await new GetTransactionCount().getTransactionCount(txHash)</span>
+  public async getTransactionCount(txHash:string){
+    return await new GetTransactionCount().getTransactionCount(txHash)
   }
   public async <span class="fstat-no" title="function not covered" >sendSignedTransaction(</span>dataToSign:string){
 <span class="cstat-no" title="statement not covered" >    return await new SendSignedTransaction().sendSignedTransaction(dataToSign)</span>
   }
-  public async <span class="fstat-no" title="function not covered" >signWithWallet(</span>dataToSign:any|string,address:string){
-<span class="cstat-no" title="statement not covered" >    return await new SignWithWallet().signWithWallet(dataToSign,address)</span>
+  public async signWithWallet(dataToSign:any|string,address:string){
+    return await new SignWithWallet().signWithWallet(dataToSign,address)
   }
-  public async <span class="fstat-no" title="function not covered" >signWithPrivateKey(</span>data:string|string,privateKey:string){
-<span class="cstat-no" title="statement not covered" >    return await new SignWithPrivateKey().signWithPrivateKey(data,privateKey)</span>
+  public async signWithPrivateKey(data:string|string,privateKey:string){
+    return await new SignWithPrivateKey().signWithPrivateKey(data,privateKey)
   }
-  public async <span class="fstat-no" title="function not covered" >signTransaction(</span>dataToSign:object|string,address:string){
-<span class="cstat-no" title="statement not covered" >    return await new SignTransaction().signTransaction(dataToSign,address)</span>
+  public async signTransaction(dataToSign:object|string,address:string){
+    return await new SignTransaction().signTransaction(dataToSign,address)
   }
-  public async <span class="fstat-no" title="function not covered" >signTransactionPrivateKey(</span>dataToSign:object|string,privateKey:string){
-<span class="cstat-no" title="statement not covered" >    return await new SignTransactionPrivateKey().signTransactionPrivateKey(dataToSign,privateKey)</span>
+  public async signTransactionPrivateKey(dataToSign:object|string,privateKey:string){
+    return await new SignTransactionPrivateKey().signTransactionPrivateKey(dataToSign,privateKey)
   }
-  public async <span class="fstat-no" title="function not covered" >sendTransaction(</span>transactionObject:any){
-<span class="cstat-no" title="statement not covered" >    return await new SendTransaction().sendTransaction(transactionObject)</span>
+  public async sendTransaction(transactionObject:any){
+    return await new SendTransaction().sendTransaction(transactionObject)
   }
-  public async <span class="fstat-no" title="function not covered" >loadContract(</span>contract:any,address:string){
-<span class="cstat-no" title="statement not covered" >    return await new LoadContract().loadContract(contract,address)</span>
+  public async loadContract(contract:any,address:string){
+    return await new LoadContract().loadContract(contract,address)
   }
  
 }
@@ -246,7 +246,7 @@ export { ActionsIn }
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank">istanbul</a>
-                at Fri Aug 27 2021 11:30:48 GMT+0800 (中国标准时间)
+                at Fri Aug 27 2021 18:33:33 GMT+0800 (中国标准时间)
             </div>
         </div>
         <script src="../../../prettify.js"></script>

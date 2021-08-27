@@ -6,41 +6,28 @@ describe('loadContract', () => {
 
   it('Wallet installed loadContract', async ()=>{
 
-   
+    let Action = await new Actions()
+    let loadContract= await Action.actions.loadContract(2,'5FHzNsnjj7bbTsPXUB3D3pkZZNpJBn6fyvMBMuq1CfDXd5fo')
+    let results = new Result(PredefinedStatus.NOT_SUPPORT(null))
+    expect(loadContract).to.deep.equal(results)
   
   }).timeout(100000)
   
- 
-
-  it('Wallet not installed loadContract',async ()=>{
-   
-  }).timeout(100000)
   
   it('Wallet installed contract-call', async ()=>{
  
+    let Action = await new Actions()
+    let offChainCall= await Action.contract.offChainCall(1,'name',[],'','')
+    let results = new Result(PredefinedStatus.NOT_SUPPORT(null))
+    expect(offChainCall).to.deep.equal(results)
 
-  }).timeout(100000)
-
-  it('Wrong parameter contract-call',async()=>{
-    
-  }).timeout(100000)
-
-  it('Wallet not installed contract-call',async ()=>{
-  
   }).timeout(100000)
     
   it('Wallet installed contract-send', async ()=>{
-  
-  }).timeout(100000)
-
-  it('Wallet not installed contract-send',async ()=>{
- 
-  
-  }).timeout(100000)
-
-  it('Wrong parameter contract-send',async ()=>{
-  
-
+    let Action = await new Actions()
+    let onChainCall= await Action.contract.onChainCall(1,'appover',[],'',)
+    let results = new Result(PredefinedStatus.NOT_SUPPORT(null))
+    expect(onChainCall).to.deep.equal(results)
   }).timeout(100000)
 
 }).timeout(100000)
