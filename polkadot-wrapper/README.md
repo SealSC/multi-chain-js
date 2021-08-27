@@ -1,4 +1,4 @@
-# protocol
+# web3-wrapper
 
 ## Project setup
 ```
