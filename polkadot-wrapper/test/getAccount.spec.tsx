@@ -9,7 +9,6 @@ describe('getAccount', () => {
     let Action  = await new Actions()
     const extensions = await web3Enable('my cool dapp');
     let shouldAccount = await Action.actions.getAccount()
-   
     const allAccounts = await web3Accounts();
     let results = new Result(PredefinedStatus.SUCCESS(allAccounts))
     expect(shouldAccount).to.deep.equal(results)
