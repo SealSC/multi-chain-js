@@ -10,16 +10,10 @@ import {
 
 class Connector {
   public async link(){
-    try{
-      const extensions = await web3Enable('my cool dapp');
-      if (extensions.length === 0) {
-        return new Result(PredefinedStatus.ERROR_STATE(null))
-      }
-      const allAccounts = await web3Accounts();
-      return new Result(PredefinedStatus.SUCCESS(allAccounts))
-    }catch(error){
-      return new Result(PredefinedStatus.ERROR_STATE(null))
-    }
+    const extensions = await web3Enable('my cool dapp');
+      
+    const allAccounts = await web3Accounts();
+    return new Result(PredefinedStatus.SUCCESS(allAccounts))
   }
 }
 export { Connector }

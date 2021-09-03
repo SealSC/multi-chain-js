@@ -7,17 +7,13 @@ import { stringToHex } from '@polkadot/util'
 
 describe('SignWithWallet', () => {
   
-  it('Wallet installed SignWithWallet', async ()=>{
+  it('SignWithWallet', async ()=>{
 
     const extensions = await web3Enable('my cool dapp')
     let Action = await new Actions()
-    let shouldBlockHash = await Action.actions.signWithWallet('1','ddddd')
+    let shouldBlockHash = await Action.actions.signWithWallet('1')
    
     expect(shouldBlockHash.code).to.equal(0)
-
-  }).timeout(100000)
-
-  it('Wallet not installed SignWithWallet',async ()=>{
 
   }).timeout(100000)
  

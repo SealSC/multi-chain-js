@@ -5,8 +5,8 @@ import PredefinedStatus  from '../src/wrapper/consts/consts'
 
 describe('sendTransaction', () => {
 
-  it('Wallet installed sendTransaction', async ()=>{
-    
+  it('sendTransaction', async ()=>{
+
     let Action = await new Actions()
     let sendTransaction= await Action.actions.sendTransaction('2')
     let results = new Result(PredefinedStatus.NOT_SUPPORT(null))

@@ -4,7 +4,7 @@ import PredefinedStatus  from '../src/wrapper/consts/consts'
 import {ApiPromise, WsProvider} from '@polkadot/api'
 
 describe('getBlockNumber', () => {
-  it('Wallet installed getBlockNumberFunction', async ()=>{
+  it('getBlockNumberFunction', async ()=>{
 
     const wsProvider = new WsProvider('wss://rpc.polkadot.io');
     const api = await ApiPromise.create({ provider: wsProvider });
@@ -18,9 +18,5 @@ describe('getBlockNumber', () => {
     expect(shouldBlockHash).to.deep.equal(results)
 
   }).timeout(100000)
-
-  it('Wallet not installed getBlockNumberFunction',async ()=>{
-    
-  }).timeout(100000) 
 
 })

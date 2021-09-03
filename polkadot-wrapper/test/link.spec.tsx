@@ -11,7 +11,7 @@ import {
 } from '@polkadot/extension-dapp';
 
 describe('link', () => {
-  it('Wallet installed linkFunction', async ()=>{
+  it('linkFunction', async ()=>{
     const wsProvider = new WsProvider('wss://rpc.polkadot.io');
     const api = await ApiPromise.create({ provider: wsProvider });
     const extensions = await web3Enable('my cool dapp');
@@ -23,9 +23,4 @@ describe('link', () => {
 
     expect(linkResult).to.deep.equal(results)
   }).timeout(100000)
-
-  it('Wallet not installed linkFunction',async ()=>{
-
-  }).timeout(100000)
-   
 })

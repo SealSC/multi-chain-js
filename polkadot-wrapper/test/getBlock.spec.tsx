@@ -6,7 +6,7 @@ import {ApiPromise, WsProvider} from '@polkadot/api'
 
 describe('getBlock', () => {
   
-  it('Wallet installed getBlockFunction', async ()=>{
+  it('getBlockFunction', async ()=>{
     const wsProvider = new WsProvider('wss://rpc.polkadot.io');
     const api = await ApiPromise.create({ provider: wsProvider });
     const blockHash = await api.rpc.chain.getBlockHash(6521853);
@@ -16,11 +16,6 @@ describe('getBlock', () => {
     let shouldBlockHash= await Action.actions.getBlock(6521853)
     let results = new Result(PredefinedStatus.SUCCESS(Block))
     expect(shouldBlockHash).to.deep.equal(results)
-  }).timeout(100000)
-
-  it('Wallet not installed getBlockFunction',async ()=>{
-
-
   }).timeout(100000)
 
 })

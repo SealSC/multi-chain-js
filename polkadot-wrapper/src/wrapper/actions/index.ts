@@ -14,8 +14,8 @@ class Actions {
     this.connector = new Connector()
     this.contract = new ContractCall()
   }
-  public async init(){
-    const wsProvider = new WsProvider('wss://rpc.polkadot.io');
+  public async init(rpc:string){
+    const wsProvider = new WsProvider(rpc);
     const api = await ApiPromise.create({ provider: wsProvider });
     return new Result(PredefinedStatus.SUCCESS(api))
   }

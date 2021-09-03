@@ -4,8 +4,8 @@ import { web3Accounts, web3Enable ,web3FromSource } from '@polkadot/extension-da
 import {stringToHex } from '@polkadot/util'
 
 class SignWithWallet{
-  public async signWithWallet(dataToSign:any|string,address:string){
-    try{
+  public async signWithWallet(dataToSign:any|string){
+    
       const allAccounts = await web3Accounts();
       const account = allAccounts[0];
       const injector = await web3FromSource(account.meta.source);
@@ -21,9 +21,6 @@ class SignWithWallet{
       }else{
         return new Result(PredefinedStatus.ERROR_STATE(null))
       }
-    }catch(error){
-      return new Result(PredefinedStatus.ERROR_STATE(null))
-    }
   }
 }
 export { SignWithWallet }

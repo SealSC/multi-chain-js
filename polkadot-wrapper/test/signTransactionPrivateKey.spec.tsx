@@ -5,13 +5,13 @@ import {signTransactionField } from '../src/wrapper/fieldDefinition/signTransact
 
 describe('signTransactionPrivateKey', () => {
 
-  it('Wallet installed signTransactionPrivateKey', async ()=>{
+  it('signTransactionPrivateKey', async ()=>{
 
     let Action = await new Actions()
     let signTransactionPrivateKey= await Action.actions.signTransactionPrivateKey('2','5DFojLCUUsfZV26fg4YUj5bbocMMdCdydEBD2KeFWrVBPw1h')
     let results = new Result(PredefinedStatus.NOT_SUPPORT(null))
     expect(signTransactionPrivateKey).to.deep.equal(results)
-    
+
   }).timeout(100000)
 
 })

@@ -4,7 +4,7 @@ import PredefinedStatus  from '../src/wrapper/consts/consts'
 
 describe('loadContract', () => {
 
-  it('Wallet installed loadContract', async ()=>{
+  it('loadContract', async ()=>{
 
     let Action = await new Actions()
     let loadContract= await Action.actions.loadContract(2,'5FHzNsnjj7bbTsPXUB3D3pkZZNpJBn6fyvMBMuq1CfDXd5fo')
@@ -14,7 +14,7 @@ describe('loadContract', () => {
   }).timeout(100000)
   
   
-  it('Wallet installed contract-call', async ()=>{
+  it('contract-call', async ()=>{
  
     let Action = await new Actions()
     let offChainCall= await Action.contract.offChainCall(1,'name',[],'','')
@@ -23,7 +23,7 @@ describe('loadContract', () => {
 
   }).timeout(100000)
     
-  it('Wallet installed contract-send', async ()=>{
+  it('contract-send', async ()=>{
     let Action = await new Actions()
     let onChainCall= await Action.contract.onChainCall(1,'appover',[],'',)
     let results = new Result(PredefinedStatus.NOT_SUPPORT(null))

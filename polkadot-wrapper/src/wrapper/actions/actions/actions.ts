@@ -34,11 +34,11 @@ class ActionsIn{
   public async getTransactionCount(txHash:string){
     return await new GetTransactionCount().getTransactionCount(txHash)
   }
-  public async sendSignedTransaction(dataToSign:string){
-    return await new SendSignedTransaction().sendSignedTransaction(dataToSign)
+  public async sendSignedTransaction(address:string,count:string|number){
+    return await new SendSignedTransaction().sendSignedTransaction(address,count)
   }
-  public async signWithWallet(dataToSign:any|string,address:string){
-    return await new SignWithWallet().signWithWallet(dataToSign,address)
+  public async signWithWallet(dataToSign:any|string){
+    return await new SignWithWallet().signWithWallet(dataToSign)
   }
   public async signWithPrivateKey(data:string|string,privateKey:string){
     return await new SignWithPrivateKey().signWithPrivateKey(data,privateKey)
