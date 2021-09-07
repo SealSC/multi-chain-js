@@ -11,9 +11,9 @@ describe('SignWithWallet', () => {
 
     const extensions = await web3Enable('my cool dapp')
     let Action = await new Actions()
-    let shouldBlockHash = await Action.actions.signWithWallet('1')
-   
-    expect(shouldBlockHash.code).to.equal(0)
+    let shouldSignWithWallet = await Action.actions.signWithWallet('1')
+    console.log(shouldSignWithWallet)
+    expect(shouldSignWithWallet.code).to.equal(0)
 
   }).timeout(100000)
  

@@ -9,7 +9,7 @@ class SignWithWallet{
       const allAccounts = await web3Accounts();
       const account = allAccounts[0];
       const injector = await web3FromSource(account.meta.source);
-      const signRaw = injector?.signer?.signRaw;
+      const signRaw = injector.signer.signRaw;
       const address = account.address
       if (!!signRaw) {
         const { signature } = await signRaw({
