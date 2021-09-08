@@ -9,13 +9,13 @@
 export default {
   name: 'app',
   components: {},
+  created(){
+    window.document.documentElement.setAttribute( "data-theme", 'yellowTheme' );
+  }
 }
 </script>
 
 <style lang="scss">
- #app{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
+
+
 </style>

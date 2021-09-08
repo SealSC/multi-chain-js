@@ -10,6 +10,11 @@ const routes = [
     name: "main",
     component: _import("main/index")
   },
+  {
+    path: "/web3-SDK-Dome",
+    name: "web3-SDK-Dome",
+    component: _import("web3/index")
+  },
 ];
 
 const router = new Router({

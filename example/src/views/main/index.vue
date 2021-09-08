@@ -1,11 +1,11 @@
 <template>
     <div> 
-      home
+      <select-chain></select-chain>
     </div>
 </template>
 
 <script>
-
+import SelectChain from './selectChain.vue'
 
 export default {
   data(){
@@ -14,7 +14,7 @@ export default {
     }
   },
   components: {
-    
+    SelectChain
   },
   mounted(){
    
@@ -34,14 +34,14 @@ export default {
 @import "../../styles/fonts.scss";
  
 body * {
-    box-sizing: border-box;
-  }
-  body {
-    font-family: PingFangSC-Regular, Roboto, Helvetica Neue, Helvetica, Tahoma,
-      Arial, PingFang SC-Light, Microsoft YaHei;
-  }
+  box-sizing: border-box;
+}
+body {
+  font-family: PingFangSC-Regular, Roboto, Helvetica Neue, Helvetica, Tahoma,
+    Arial, PingFang SC-Light, Microsoft YaHei;
+}
   
-  @media screen and (max-width: 900px){
+@media screen and (max-width: 900px){
     
-  }
+}
 </style>
