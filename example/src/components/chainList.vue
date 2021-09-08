@@ -9,19 +9,19 @@
         </div>
         <div class='popText'></div>
         <div class="popBox">
-          <div class="MetaMaskBtn" @click="toPage()">
+          <div class="MetaMaskBtn" @click="toPage('web3-SDK-Dome')">
             web3
             <div class='imgBox'>
               <!-- <img :src="'/static/login/metamask.png'" alt=""> -->
             </div>
           </div>
-          <div class="WalletConnectBtn" @click="toPage()">
+          <div class="WalletConnectBtn" @click="toPage('tronweb-SDK-Dome')">
             tronweb
             <div class='imgBox'>
               <!-- <img :src="'/static/login/WalletConnect.png'" alt=""> -->
             </div>
           </div>
-          <div class="WalletConnectBtn" @click="toPage()">
+          <div class="WalletConnectBtn" @click="toPage('polkadot-SDK-Dome')">
             polkadot
             <div class='imgBox'>
               <!-- <img :src="'/static/login/WalletConnect.png'" alt=""> -->
@@ -57,9 +57,9 @@ export default {
     hideModal(){
       this.$store.commit('updateShowModal',false)
     },
-    toPage(){
+    toPage(name){
       this.$store.commit('updateShowModal',false)
-      this.$router.push({name:"web3-SDK-Dome"})
+      this.$router.push({name:name})
     }
   }
 };

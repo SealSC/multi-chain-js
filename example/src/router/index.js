@@ -15,6 +15,16 @@ const routes = [
     name: "web3-SDK-Dome",
     component: _import("web3/index")
   },
+  {
+    path: "/tronweb-SDK-Dome",
+    name: "tronweb-SDK-Dome",
+    component: _import("tronweb/index")
+  },
+  {
+    path: "/polkadot-SDK-Dome",
+    name: "polkadot-SDK-Dome",
+    component: _import("polkadot/index")
+  },
 ];
 
 const router = new Router({

@@ -9,32 +9,32 @@
       <div class="container-web3-module">
         <span>actions</span>
         <div class="container-web3-module-right">
-          <div>getAccount</div>
-          <div>getBalance</div>
-          <div>getBlock</div>
-          <div>getBlockNumber</div>
-          <div>getTransaction</div>
-          <div>getTransactionCount</div>
-          <div>sendSignedTransaction</div>
-          <div>signWithWallet</div>
-          <div>signWithPrivateKey</div>
-          <div>signTransaction</div>
-          <div>signTransactionPrivateKey</div>
-          <div>sendTransaction</div>
-          <div>loadContract</div>
+          <div @click="getAccount()">getAccount</div>
+          <div @click="getBalance()">getBalance</div>
+          <div @click="getBlock()">getBlock</div>
+          <div @click="getBlockNumber()">getBlockNumber</div>
+          <div @click="getTransaction()">getTransaction</div>
+          <div @click="getTransactionCount()">getTransactionCount</div>
+          <div @click="sendSignedTransaction()">sendSignedTransaction</div>
+          <div @click="signWithWallet()">signWithWallet</div>
+          <div @click="signWithPrivateKey()">signWithPrivateKey</div>
+          <div @click="signTransaction()">signTransaction</div>
+          <div @click="signTransactionPrivateKey()">signTransactionPrivateKey</div>
+          <div @click="sendTransaction()">sendTransaction</div>
+          <div @click="loadContract()">loadContract</div>
         </div>
       </div>
       <div class="container-web3-module">
         <span>connector</span>
         <div class="container-web3-module-right">
-          <div>link</div>
+          <div @click="link()">link</div>
         </div>
       </div>
       <div class="container-web3-module">
         <span>contract</span>
         <div class="container-web3-module-right">
-          <div>offChainCall</div>
-          <div>onChainCall</div>
+          <div @click="offChainCall()">offChainCall</div>
+          <div @click="onChainCall()">onChainCall</div>
         </div>
       </div>
     </div>
@@ -62,6 +62,51 @@ export default {
   methods:{
     init(){
 
+    },
+    getAccount(){
+
+    },
+    getBlock(){
+
+    },
+    getBlockNumber(){
+
+    },
+    getTransaction(){
+
+    },
+    getTransactionCount(){
+
+    },
+    sendSignedTransaction(){
+
+    },
+    signWithWallet(){
+
+    },
+    signWithPrivateKey(){
+
+    },
+    signTransaction(){
+
+    },
+    signTransactionPrivateKey(){
+
+    },
+    sendTransaction(){
+
+    },
+    loadContract(){
+
+    },
+    link(){
+
+    },
+    offChainCall(){
+
+    },
+    onChainCall(){
+      
     }
   }
 };
