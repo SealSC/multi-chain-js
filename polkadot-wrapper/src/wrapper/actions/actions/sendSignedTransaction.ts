@@ -6,12 +6,11 @@ import Decimal from 'decimal.js'
 
 class SendSignedTransaction{
   public async sendSignedTransaction(address:string,count:string|number){
-    let ActionsIn = new Actions()
-    let api = await ActionsIn.init('wss://rpc.polkadot.io');
+    
     const allAccounts = await web3Accounts();
     const account = allAccounts[0];
     let counts = await new Decimal(count).mul(new Decimal(Math.pow(10,10))).toString()
-    const transferExtrinsic = api.data.tx.balances.transfer(address, counts)
+    const transferExtrinsic = (window as any).api.tx.balances.transfer(address, counts)
     const injector = await web3FromSource(account.meta.source);
     const signer = await injector.signer
     return new Promise((resolve,reject)=>{

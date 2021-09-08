@@ -5,7 +5,9 @@ import { web3Accounts, web3Enable ,web3FromSource } from '@polkadot/extension-da
  
 describe('getAccount', () => {
   it('getAccountFunction', async ()=>{
+   
     let Action  = await new Actions()
+    await Action.init('wss://rpc.polkadot.io')
     const extensions = await web3Enable('my cool dapp');
   
     let shouldAccount = await Action.actions.getAccount()
