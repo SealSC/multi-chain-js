@@ -5,12 +5,10 @@ const { terser } = require('rollup-plugin-terser')
 
 const pkg = require('./package.json')
 
-const entryName = 'get-selection-more'
-
 function baseConfig() {
   return {
-    input: `/${entryName}.ts`,
-    output: [],
+    input: `src/wrapper/wrapper.ts`,
+    output:[],
     // Indicate here external modules you don't wanna include in your bundle (i.e.: 'lodash')
     external: [],
     watch: {
@@ -19,7 +17,7 @@ function baseConfig() {
     plugins: [
       // Resolve source maps to the original source
       sourceMaps(),
-      // Minify
+      // Minify 
       terser()
     ]
   }
@@ -34,7 +32,7 @@ function esConfig() {
 
 function umdConfig() {
   const config = baseConfig()
-  config.output = [{ file: pkg.main, name: camelCase(entryName), format: 'umd', sourcemap: true }]
+  config.output = [{ file: pkg.module, name: camelCase('wrapper'), format: 'umd', sourcemap: true }]
   config.plugins.unshift(
     typescript({
       tsconfigOverride: {
@@ -48,4 +46,4 @@ function umdConfig() {
   return config
 }
 
-module.exports = [esConfig(), umdConfig()]
+module.exports = [esConfig()]

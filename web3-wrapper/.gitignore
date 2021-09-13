@@ -33,7 +33,11 @@ Temporary Items
 # Dependency directories
 node_modules/
 jspm_packages/
+dist/
+.rpt2_cache/
 
 # End of https://www.toptal.com/developers/gitignore/api/macos
 node_modules
 coverage
+dist
+.rpt2_cache

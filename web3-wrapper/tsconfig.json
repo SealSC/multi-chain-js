@@ -15,5 +15,5 @@
     "typeRoots": ["node_modules/@types"],
     "noImplicitAny": false,
   },
-  "include": ["src", "get-selection-more.ts"],
+  "include": ["src"],
 }

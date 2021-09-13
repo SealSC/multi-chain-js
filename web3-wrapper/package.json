@@ -12,23 +12,23 @@
     "web3"
   ],
   "scripts": {
-    "build": "vue-cli-service build",
+    "build": "rollup -c rollup.config.js",
     "serve": "vue-cli-service serve",
     "test": "karma start"
   },
   "main": "src/wrapper/wrapper.ts",
-  "module": "dist/get-selection-more.es.js",
-  "typings": "dist/types/get-selection-more.d.ts",
+  "module":"dist/build.es.js",
   "files": [
     "dist"
   ],
-  "repository": "https://github.com/crimx/get-selection-more",
+  
   "license": "MIT",
   "engines": {
     "node": ">=10.0.0"
   },
   "dependencies": {
     "@metamask/detect-provider": "^1.2.0",
+    "@vue/cli-service": "^4.5.13",
     "core-js": "^3.6.5",
     "decimal.js": "^10.3.0",
     "web3": "^1.3.6"
