@@ -43,6 +43,7 @@
 <script>
 import * as Actions from  './dist/build.es'
 import { Loading } from 'element-ui'
+import ERC20 from '../../utils/abis/ERC20-ABI.json'
 export default {
   name:"web3Index",
   data(){
@@ -205,17 +206,28 @@ export default {
         this.loadingIn.close()
       });
     },
-    loadContract(){
-
+    async loadContract(){
+      let abis =  await this.actionsIn.actions.loadContract(ERC20,'0x98445c06f7D3D9a6EEA7C6e8E96d4a7aEF7E9513')
+      console.log(abis)
     },
     async link(){
       await this.actionsIn.connector.link();
     },
-    offChainCall(){
+    async offChainCall(){
+      let Contract =  await this.actionsIn.actions.loadContract(ERC20,'0x98445c06f7D3D9a6EEA7C6e8E96d4a7aEF7E9513')
+      let offChainCall =  await this.actionsIn.contract.offChainCall(Contract.data,'name',[],'','')
+      console.log(offChainCall)
+      this.$alert(offChainCall, 'Result', {
+        confirmButtonText: '确定',
+        callback: action => {
 
+        }
+      });
     },
-    onChainCall(){
-      
+    async onChainCall(){
+      let Contract =  await this.actionsIn.actions.loadContract(ERC20,'0x98445c06f7D3D9a6EEA7C6e8E96d4a7aEF7E9513')
+      let onChainCall = await this.actionsIn.contract.onChainCall(Contract.data,'approve',['0x5B6C6709d1000db91252c8c6E84B8987D1D10829','0'],{gasPrice:'4000000000',gasLimit:'150000'})
+      console.log(onChainCall)
     }
   }
 };
