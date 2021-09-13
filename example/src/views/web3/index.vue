@@ -41,19 +41,22 @@
 </template>
 
 <script>
-
+import * as Actions from  './dist/build.es'
+import { Loading } from 'element-ui'
 export default {
   name:"web3Index",
   data(){
     return{
-       
+      actionsIn:null,
+      LoadingIn:null
     }
   },
   components: {
      
   },
   mounted(){
-   
+    let actionIn = Actions.Actions 
+    this.actionsIn= new actionIn()
   },
   computed: {
     
@@ -61,46 +64,152 @@ export default {
 
   methods:{
     init(){
-
+      this.actionsIn.init()
     },
-    getAccount(){
+    async getAccount(){
+      let Accounts = await this.actionsIn.actions.getAccount()
+      console.log(Accounts)
+      this.$alert(Accounts, 'Result', {
+        confirmButtonText: '确定',
+        callback: action => {
 
+        }
+      });
     },
-    getBlock(){
+    async getBalance(){
+      let Balance = await this.actionsIn.actions.getBalance('0x5B6C6709d1000db91252c8c6E84B8987D1D10829')
+      console.log(Balance)
+      this.$alert(Balance, 'Result', {
+        confirmButtonText: '确定',
+        callback: action => {
 
+        }
+      });
     },
-    getBlockNumber(){
+    async getBlock(){
+      let Block = await this.actionsIn.actions.getBlock(9603492)
+      this.$alert(Block, 'Result', {
+        confirmButtonText: '确定',
+        callback: action => {
 
+        }
+      });
     },
-    getTransaction(){
+    async getBlockNumber(){
+      let BlockNumber = await this.actionsIn.actions.getBlockNumber()
+      console.log(BlockNumber)
+      this.$alert(BlockNumber, 'Result', {
+        confirmButtonText: '确定',
+        callback: action => {
 
+        }
+      });
     },
-    getTransactionCount(){
+    async getTransaction(){
+      let Transaction = await this.actionsIn.actions.getTransaction('0x65d3cada398bfcd70098ed955ff645b072c6df0d001f61f4b1c181cfdf7d1309')
+      console.log(Transaction)
+      this.$alert(Transaction, 'Result', {
+        confirmButtonText: '确定',
+        callback: action => {
 
+        }
+      });
+    },
+    async getTransactionCount(){
+      let TransactionCount = await this.actionsIn.actions.getTransactionCount('0x5B6C6709d1000db91252c8c6E84B8987D1D10829')
+      console.log(TransactionCount)
+      this.$alert(TransactionCount, 'Result', {
+        confirmButtonText: '确定',
+        callback: action => {
+
+        }
+      });
     },
     sendSignedTransaction(){
+      this.loadingIn = Loading.service({ fullscreen: true })
+      this.actionsIn.actions.sendSignedTransaction("0xf8527b8502340be400830186a080808081e6a09b111a9f5f50d207dfe9cd8beb619e6531f7dc84faea934e58426c7126fae3d2a01b484f72e5644327d244856ceb592b57b47b3438af35b12a30904b7b61975237").then((res)=>{
+        console.log(res)
+        this.loadingIn.close()
+        this.$alert(res, 'Result', {
+          confirmButtonText: '确定',
+          callback: action => {
 
+          }
+        });
+      }).catch(()=>{
+        this.loadingIn.close()
+      });
     },
-    signWithWallet(){
+    async signWithWallet(){
+      let sign = await this.actionsIn.actions.signWithWallet('2','0x5B6C6709d1000db91252c8c6E84B8987D1D10829')
+      console.log(sign)
+      this.$alert(sign, 'Result', {
+        confirmButtonText: '确定',
+        callback: action => {
 
+        }
+      });
     },
-    signWithPrivateKey(){
+    async signWithPrivateKey(){
+      let sign = await this.actionsIn.actions.signWithPrivateKey('3','4349054ad0a292657a316300d5112b48f0633c2cb3d8ece672077aa852635890');
+      console.log(sign)
+      this.$alert(sign, 'Result', {
+        confirmButtonText: '确定',
+        callback: action => {
 
+        }
+      });
     },
-    signTransaction(){
+    async signTransaction(){
+      let Signtranction = await this.actionsIn.actions.signTransaction({
+        from:"0x5B6C6709d1000db91252c8c6E84B8987D1D10829"
+      },'0x5B6C6709d1000db91252c8c6E84B8987D1D10829');
+      console.log(Signtranction)
+      this.$alert(Signtranction, 'Result', {
+        confirmButtonText: '确定',
+        callback: action => {
 
+        }
+      });
     },
-    signTransactionPrivateKey(){
+    async signTransactionPrivateKey(){
+      let Signtranction = await this.actionsIn.actions.signTransactionPrivateKey({
+        from:"0x5B6C6709d1000db91252c8c6E84B8987D1D10829",
+        gas:"100000",
+        value:"1"
+      },'4349054ad0a292657a316300d5112b48f0633c2cb3d8ece672077aa852635890');
+      console.log(Signtranction)
+      this.$alert(Signtranction, 'Result', {
+        confirmButtonText: '确定',
+        callback: action => {
 
-    },
+        }
+      });
+    }, 
     sendTransaction(){
+      this.loadingIn = Loading.service({ fullscreen: true })
+      this.actionsIn.actions.sendTransaction({
+        from:"0x5B6C6709d1000db91252c8c6E84B8987D1D10829",
+        to: '0xd49c38C6CBaCc98444930C4524Dff73e67cA2e39',
+        value: '10'
+      }).then((res)=>{
+        console.log(res)
+        this.loadingIn.close()
+        this.$alert(res, 'Result', {
+          confirmButtonText: '确定',
+          callback: action => {
 
+          }
+        });
+      }).catch((error)=>{
+        this.loadingIn.close()
+      });
     },
     loadContract(){
 
     },
-    link(){
-
+    async link(){
+      await this.actionsIn.connector.link();
     },
     offChainCall(){
 
