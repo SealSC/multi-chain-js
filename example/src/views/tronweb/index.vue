@@ -43,7 +43,7 @@
 </template>
 
 <script>
-import * as tronWebSdk from "../../utils/dist/tronweb-build.es";
+import * as tronWebSdk from "./dist/tronweb-build.es";
 import ERC20 from "../../utils/abis/ERC20-ABI.json"
 // const tronWebSdk = require("../../utils/dist/tronweb-build.es")
 export default {
