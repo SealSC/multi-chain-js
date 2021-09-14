@@ -1,6 +1,6 @@
 import { Result } from '../result'
 import PredefinedStatus  from '../../consts/consts'
-import TronWeb from 'tronweb'
+let TronWeb = require("tronweb")
 class SendSignedTransaction{
   public async sendSignedTransaction(to,amount,from,options,privateKey:string){
     try{

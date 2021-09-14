@@ -6,7 +6,7 @@ import PredefinedStatus from '../../consts/consts'
 
 class GetBlock {
   public async getBlock(block: number | string) {
-    // try {
+    try {
       let blockData = await (window as any).tronWeb.trx.getBlock(block)
       let data = {
         "number": blockData.block_header.raw_data.number,
@@ -30,9 +30,9 @@ class GetBlock {
 
       }
       return new Result(PredefinedStatus.SUCCESS(data))
-    // } catch (err) {
-    //   return new Result(PredefinedStatus.ERROR_STATE(null))
-    // }
+    } catch (err) {
+      return new Result(PredefinedStatus.ERROR_STATE(null))
+    }
   }
 }
 export { GetBlock }

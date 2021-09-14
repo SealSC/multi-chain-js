@@ -67,7 +67,7 @@ describe('getTransaction', () => {
 
   }).timeout(100000)
   it('Wallet wrong installed getTransactionFunction', async ()=>{
-    (window as any).tronWeb = await tronWebInstall()
+    // (window as any).tronWeb = await tronWebInstall()
     let Action =  new Actions();
     let shouldGetTransaction = await Action.actions.getTransaction('a36cd70bff2992836ce0d2c8de086b4794b410a7cdae4eb814bbc280a2c53a60');
     let Transaction = await (window as any).tronWeb.trx.getTransactionInfo('a36cd70bff2992836ce0d2c8de086b4794b410a7cdae4eb814bbc280a2c53a60')
@@ -128,7 +128,7 @@ describe('getTransaction', () => {
 
   it('Wallet wrongs installed getTransactionFunction', async ()=>{
 
-    (window as any).tronWeb = await tronWebInstall()
+    // (window as any).tronWeb = await tronWebInstall()
     let Action =  new Actions();
     let shouldGetTransaction = await Action.actions.getTransaction('ae4eb814bbc280a2c53a60');
     

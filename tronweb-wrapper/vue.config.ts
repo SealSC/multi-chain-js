@@ -17,8 +17,13 @@ module.exports = {
         //生成文件的最大体积
         maxAssetSize: 3000000000,
         //只给出 js 文件的性能提示
-        assetFilter: function(assetFilename) {
+        assetFilter: function(assetFilename :any) {
           return assetFilename.endsWith('.ts');
+        },
+        entry: './src/wrapper/wrapper.ts',
+        output: {
+          // 1.指定输出的文件的名称为 bundle.js ( 默认为main.js )
+          filename: 'bundle.js'
         }
       }
     }

@@ -22,9 +22,9 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">100% </span>
+                <span class="strong">53.85% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>13/13</span>
+                <span class='fraction'>7/13</span>
             </div>
         
             
@@ -36,16 +36,16 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">100% </span>
+                <span class="strong">57.14% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>14/14</span>
+                <span class='fraction'>8/14</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">100% </span>
+                <span class="strong">53.85% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>13/13</span>
+                <span class='fraction'>7/13</span>
             </div>
         
             
@@ -54,7 +54,7 @@
             Press <em>n</em> or <em>j</em> to go to the next uncovered block, <em>b</em>, <em>p</em> or <em>k</em> for the previous block.
         </p>
     </div>
-    <div class='status-line high'></div>
+    <div class='status-line medium'></div>
     <pre><table class="coverage">
 <tr><td class="line-count quiet"><a name='L1'></a><a href='#L1'>1</a>
 <a name='L2'></a><a href='#L2'>2</a>
@@ -140,38 +140,38 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
@@ -180,7 +180,7 @@
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">10x</span>
+<span class="cline-any cline-yes">9x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -204,23 +204,23 @@ class ActionsIn{
   constructor(){
      
   }
-  public async getAccount(address:string){
-    return await new GetAccount().getAccount(address)
+  public async <span class="fstat-no" title="function not covered" >getAccount(</span>address:string){
+<span class="cstat-no" title="statement not covered" >    return await new GetAccount().getAccount(address)</span>
   }
-  public async getBalance(address:string){
-    return await new GetBalance().getBalance(address)
+  public async <span class="fstat-no" title="function not covered" >getBalance(</span>address:string){
+<span class="cstat-no" title="statement not covered" >    return await new GetBalance().getBalance(address)</span>
   }
-  public async getBlock(block:string|number){
-    return await new GetBlock().getBlock(block)
+  public async <span class="fstat-no" title="function not covered" >getBlock(</span>block:string|number){
+<span class="cstat-no" title="statement not covered" >    return await new GetBlock().getBlock(block)</span>
   }
-  public async getBlockNumber(block:string|number){
-    return await new GetBlockNumber().getBlockNumber(block)
+  public async <span class="fstat-no" title="function not covered" >getBlockNumber(</span>block:string|number){
+<span class="cstat-no" title="statement not covered" >    return await new GetBlockNumber().getBlockNumber(block)</span>
   }
-  public async getTransaction(txHash:string){
-    return await new GetTransaction().getTransaction(txHash)
+  public async <span class="fstat-no" title="function not covered" >getTransaction(</span>txHash:string){
+<span class="cstat-no" title="statement not covered" >    return await new GetTransaction().getTransaction(txHash)</span>
   }
-  public async getTransactionCount(){
-    return await new GetTransactionCount().getTransactionCount()
+  public async <span class="fstat-no" title="function not covered" >getTransactionCount(</span>){
+<span class="cstat-no" title="statement not covered" >    return await new GetTransactionCount().getTransactionCount()</span>
   }
   public async sendSignedTransaction(to,amount,from,options,privateKey:string){
     return await new SendSignedTransaction().sendSignedTransaction(to,amount,from,options,privateKey)
@@ -258,7 +258,7 @@ export { ActionsIn }
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank">istanbul</a>
-                at Thu Aug 26 2021 15:59:05 GMT+0800 (CST)
+                at Fri Sep 03 2021 10:40:25 GMT+0800 (中国标准时间)
             </div>
         </div>
         <script src="../../../prettify.js"></script>

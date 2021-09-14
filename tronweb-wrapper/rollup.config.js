@@ -1,15 +1,16 @@
 const sourceMaps = require('rollup-plugin-sourcemaps')
 const typescript = require('rollup-plugin-typescript2')
-const camelCase = require('lodash.camelcase')
 const { terser } = require('rollup-plugin-terser')
-
+import resolve from '@rollup/plugin-node-resolve';
+import nodePolyfills from 'rollup-plugin-node-polyfills'
+import commonjs from '@rollup/plugin-commonjs';
 const pkg = require('./package.json')
 
 const entryName = 'get-selection-more'
 
 function baseConfig() {
   return {
-    input: `/${entryName}.ts`,
+    input: "./src/wrapper/wrapper.ts",
     output: [],
     // Indicate here external modules you don't wanna include in your bundle (i.e.: 'lodash')
     external: [],
@@ -20,7 +21,10 @@ function baseConfig() {
       // Resolve source maps to the original source
       sourceMaps(),
       // Minify
-      terser()
+      terser(),
+      resolve(),
+      commonjs(),
+      nodePolyfills()
     ]
   }
 }
@@ -32,20 +36,6 @@ function esConfig() {
   return config
 }
 
-function umdConfig() {
-  const config = baseConfig()
-  config.output = [{ file: pkg.main, name: camelCase(entryName), format: 'umd', sourcemap: true }]
-  config.plugins.unshift(
-    typescript({
-      tsconfigOverride: {
-        compilerOptions: {
-          target: 'es5'
-        }
-      },
-      useTsconfigDeclarationDir: true
-    })
-  )
-  return config
-}
 
-module.exports = [esConfig(), umdConfig()]
+
+module.exports = [esConfig()]

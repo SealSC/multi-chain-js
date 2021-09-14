@@ -8,8 +8,9 @@ let detectEthereumProvider = require('@metamask/detect-provider')
 describe('sendTransaction', () => {
 
   it('Wallet installed sendTransaction', async ()=>{
-    (window as any).tronWeb = await tronWebInstall()
-   
+    // (window as any).tronWeb = await tronWebInstall()
+    
+    // console.log(await tronWeb.trx.sendTransaction("TLguFcSkjNgTnf8zWQJhNMofKHASRjmtqb",10),"====")
     let Action = await new Actions();
     let shouldsendTranction = await Action.actions.sendTransaction({
         address:"TLguFcSkjNgTnf8zWQJhNMofKHASRjmtqb",
@@ -19,15 +20,15 @@ describe('sendTransaction', () => {
 
   }).timeout(100000)
 
-  // it('Wallet not installed sendTransaction',async ()=>{
-  //   // (window as any).tronWeb = {}
-  //   let Action = await new Actions();
-  //   let shouldsendTranction = await Action.actions.sendTransaction({
-  //       address:"TLguFcSkjNgTnf8zWQJhNMofKHASRjmtqb",
-  //       amount: 1
-  //   });
-  //   if(shouldsendTranction.data.status) expect(shouldsendTranction.data.status).to.not.true
+  it('Wallet not installed sendTransaction',async ()=>{
+    // (window as any).tronWeb = {}
+    let Action = await new Actions();
+    let shouldsendTranction = await Action.actions.sendTransaction({
+        address:"TLguFcSkjNgTnf8zWQJhNMofKHASRjmtqb",
+        amount: 1
+    });
+    if(shouldsendTranction.data.status) expect(shouldsendTranction.data.status).to.not.true
 
-  // }).timeout(100000)
+  }).timeout(100000)
 
 })

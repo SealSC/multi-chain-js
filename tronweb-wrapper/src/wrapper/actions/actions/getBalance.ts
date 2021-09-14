@@ -3,12 +3,12 @@ import PredefinedStatus  from '../../consts/consts'
 
 class GetBalance{
   public async getBalance(address:string){
-    // try{
+    try{
       let Balance = await (window as any).tronWeb.trx.getBalance(address)
       return new Result(PredefinedStatus.SUCCESS(Balance))
-    // }catch(err){
-    //   return new Result(PredefinedStatus.ERROR_STATE(null))
-    // }
+    }catch(err){
+      return new Result(PredefinedStatus.ERROR_STATE(null))
+    }
   }
 }
 export { GetBalance }

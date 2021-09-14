@@ -1,7 +1,7 @@
 
 import { Result } from '../result'
 import PredefinedStatus  from '../../consts/consts'
-import TronWeb from 'tronweb'
+let TronWeb = require("tronweb")
 import { tronWebInstall } from '../../tronweb'
 class SignTransactionPrivateKey{
   public async signTransactionPrivateKey(dataToSign:any,privateKey:string){
