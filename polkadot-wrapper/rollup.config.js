@@ -5,11 +5,9 @@ const { terser } = require('rollup-plugin-terser')
 
 const pkg = require('./package.json')
 
-const entryName = 'get-selection-more'
-
 function baseConfig() {
   return {
-    input: `/${entryName}.ts`,
+    input:  `src/wrapper/wrapper.ts`,
     output: [],
     // Indicate here external modules you don't wanna include in your bundle (i.e.: 'lodash')
     external: [],
@@ -48,4 +46,4 @@ function umdConfig() {
   return config
 }
 
-module.exports = [esConfig(), umdConfig()]
+module.exports = [esConfig()]
