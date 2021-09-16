@@ -1,5 +1,5 @@
-// import TronWeb from 'tronweb'
-let TronWeb = require("tronweb")
+import TronWeb from 'tronweb'
+// let TronWeb = require("tronweb")
 let HttpProvider=null
 async function tronWebInstall(){
   HttpProvider = TronWeb.providers.HttpProvider

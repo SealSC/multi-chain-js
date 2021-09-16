@@ -16,8 +16,8 @@ class ActionsIn{
   constructor(){
      
   }
-  public async getAccount(address:string){
-    return await new GetAccount().getAccount(address)
+  public async getAccount(){
+    return await new GetAccount().getAccount()
   }
   public async getBalance(address:string){
     return await new GetBalance().getBalance(address)

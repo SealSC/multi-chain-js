@@ -17,7 +17,7 @@ describe('signTransactionPrivateKey', () => {
   }).timeout(100000)
 
   it('Wallet not installed signTransactionPrivateKey',async ()=>{
-    // (window as any).tronWeb = {}
+    // //(window as any).tronWeb = {}
      let  HttpProvider = TronWeb.providers.HttpProvider;
      let tronwebww=null as any
     if(HttpProvider){

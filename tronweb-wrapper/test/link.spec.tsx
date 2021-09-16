@@ -1,12 +1,13 @@
 import { Actions } from '../src/wrapper/wrapper'
 import { Result } from '../src/wrapper/actions/result'
 import PredefinedStatus  from '../src/wrapper/consts/consts'
-// import { web3Install } from '../src/wrapper/web3'
+import { tronWebInstall } from '../src/wrapper/tronweb'
 // let detectEthereumProvider = require('@metamask/detect-provider')
 
 describe('link', () => {
   it('Wallet installed linkFunction', async ()=>{
     // (window as any).web3 = await web3Install()
+    (window as any).tronWeb = await tronWebInstall()
     let Action = await new Actions()
     let shouldAccount: any = await Action.connector.link();
     
@@ -16,7 +17,7 @@ describe('link', () => {
   }).timeout(100000)
 
   it('Wallet not installed linkFunction',async ()=>{
-    // (window as any).tronWeb.trx = {}
+    //(window as any).tronWeb = {}
     // (window as any).web3 = {};
     // (window as any).ethereum.enable = null;
     // let Action = await new Actions();

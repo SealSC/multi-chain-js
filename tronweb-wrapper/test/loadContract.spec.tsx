@@ -16,7 +16,7 @@ describe('loadContract', () => {
 
 
   it('Wallet not installed loadContract', async () => {
-    // (window as any).tronWeb = {}
+    //(window as any).tronWeb = {}
     let Action = await new Actions();
     let Contract = await Action.actions.loadContract(ERC20, 'TQaYBj9drxmoW7LfLnDDrvPnuj4zoZbaSS');
     expect(Contract.data).to.not.empty
@@ -52,7 +52,7 @@ describe('loadContract', () => {
   }).timeout(100000)
 
   it('Wallet not installed contract-call', async () => {
-    // (window as any).tronWeb = {}
+    //(window as any).tronWeb = {}
     let Action = await new Actions();
     let Contract = await Action.actions.loadContract(ERC20, 'TQaYBj9drxmoW7LfLnDDrvPnuj4zoZbaSS');
     let contractCall = await Action.contract.offChainCall(Contract.data, 'decimalss', [], '', "")
@@ -102,7 +102,7 @@ describe('loadContract', () => {
 
 
   it('Wallet not installed contract-send', async () => {
-    // (window as any).tronWeb = {}
+    //(window as any).tronWeb = {}
     let Action = await new Actions();
     let Contract = await Action.actions.loadContract(ERC20, 'TQaYBj9drxmoW7LfLnDDrvPnuj4zoZbaSS');
     let contractSend: any = await Action.contract.onChainCall(Contract.data, 'approves', ['TQaYBj9drxmoW7LfLnDDrvPnuj4zoZbaSS', '0'], "")

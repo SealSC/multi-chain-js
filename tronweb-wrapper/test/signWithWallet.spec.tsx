@@ -21,7 +21,7 @@ describe('SignWithWallet', () => {
   }).timeout(100000)
 
 //   it('Wallet not installed SignWithWallet',async ()=>{
-//     // (window as any).tronWeb = {}
+//     // //(window as any).tronWeb = {}
 //     let Action = await new Actions();
 //     let shouldGetTransactionCount = await Action.actions.signWithWallet("2");
     

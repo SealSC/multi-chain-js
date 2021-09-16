@@ -24,7 +24,7 @@ describe('sendSignedTransaction', () => {
 
   it('Wallet not installed sendSignedTransaction',async ()=>{
 
-    // (window as any).tronWeb = {}
+    // //(window as any).tronWeb = {}
     
     let Action = await new Actions();
     

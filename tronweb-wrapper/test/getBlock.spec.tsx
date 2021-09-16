@@ -41,7 +41,7 @@ describe('getBlock', () => {
 
 
   it('Wallet not installed getBlockFunction',async ()=>{
-    // (window as any).tronWeb = {}
+    //(window as any).tronWeb = {}
     let Action = await new Actions();
     let shouldGetBlock = await Action.actions.getBlock(-7);
     let results = new Result(PredefinedStatus.ERROR_STATE(null));
