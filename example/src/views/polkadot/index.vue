@@ -41,7 +41,7 @@
 </template>
 
 <script>
-import * as Actions from './dist/build.es'
+import * as Actions from './bundle'
 import { Loading } from 'element-ui'
 import ERC20 from '../../utils/abis/ERC20-ABI.json'
 

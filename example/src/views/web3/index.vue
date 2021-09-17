@@ -41,9 +41,11 @@
 </template>
 
 <script>
-import * as Actions from  './dist/build.es'
+ 
+import * as a from  './bundle.js'
 import { Loading } from 'element-ui'
 import ERC20 from '../../utils/abis/ERC20-ABI.json'
+
 export default {
   name:"web3Index",
   data(){
@@ -56,7 +58,7 @@ export default {
      
   },
   mounted(){
-    let actionIn = Actions.Actions 
+    let actionIn = a.Actions 
     this.actionsIn= new actionIn()
   },
   computed: {
@@ -64,8 +66,8 @@ export default {
   },
 
   methods:{
-    init(){
-      this.actionsIn.init()
+    async init(){
+      console.log(await this.actionsIn.init())
     },
     async getAccount(){
       let Accounts = await this.actionsIn.actions.getAccount()
