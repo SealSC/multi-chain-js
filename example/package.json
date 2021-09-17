@@ -11,7 +11,7 @@
   "dependencies": {
     "core-js": "^3.17.3",
     "decimal.js": "^10.2.0",
-    "element-ui": "^2.14.1",
+    "element-ui": "^2.15.6",
     "vue": "^2.6.10",
     "vue-axios": "^2.1.5",
     "vue-html-loader": "^1.2.4",
