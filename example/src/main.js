@@ -2,7 +2,6 @@ import Vue from 'vue'
 import router from "./router";
 import store from "./store/index";
 import App from './App.vue'
-import VueCookies from "vue-cookies";
 import ElementUI from 'element-ui';
 import 'element-ui/lib/theme-chalk/index.css';
 import 'vue-loading-overlay/dist/vue-loading.css';

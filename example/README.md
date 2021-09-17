@@ -1,8 +1,8 @@
-## init - Explorer
+## init - Example
 
 #### Introduction 
 ```
-init-website
+init-example
 ```
 
 #### Project setup

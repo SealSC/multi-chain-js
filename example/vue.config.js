@@ -22,7 +22,7 @@ module.exports = {
     extract: true,
     sourceMap: false,
     loaderOptions: {},
-    modules: false
+    requireModuleExtension: false
   },
 
   // use thread-loader for babel & TS in production build
