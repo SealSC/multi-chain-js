@@ -1,6 +1,6 @@
-import Decimals from "decimal.js";
-import router from '../../router'
-import axios  from "../../utils/http"
+// import Decimals from "decimal.js";
+// import router from '../../router'
+// import axios  from "../../utils/http"
 
 export default {
   state: {

@@ -1,5 +1,5 @@
 import { Result } from '../result';
 declare class GetAccount {
-    getAccount(address: string): Promise<Result>;
+    getAccount(): Promise<Result>;
 }
 export { GetAccount };
