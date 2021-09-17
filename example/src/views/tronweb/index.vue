@@ -43,8 +43,10 @@
 </template>
 
 <script>
+
 import { Loading ,Message} from 'element-ui'
 import * as tronWebSdk from "./dist/bundle.js";
+
 import ERC20 from "../../utils/abis/ERC20-ABI.json"
 // const tronWebSdk = require("../../utils/dist/tronweb-build.es")
 export default {

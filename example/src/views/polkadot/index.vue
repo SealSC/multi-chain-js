@@ -41,19 +41,24 @@
 </template>
 
 <script>
+import * as Actions from './dist/build.es'
+import { Loading } from 'element-ui'
+import ERC20 from '../../utils/abis/ERC20-ABI.json'
 
 export default {
   name:"polkadotIndex",
   data(){
     return{
-       
+      actionsIn:null,
+      LoadingIn:null
     }
   },
   components: {
      
   },
   mounted(){
-   
+    let actionIn = Actions.Actions 
+    this.actionsIn= new actionIn()
   },
   computed: {
     
@@ -61,52 +66,167 @@ export default {
 
   methods:{
     init(){
-
+      this.actionsIn.init('wss://rpc.polkadot.io')
     },
-    getAccount(){
+    async getAccount(){
+      let Accounts = await this.actionsIn.actions.getAccount()
+      console.log(Accounts)
+      this.$alert(Accounts, 'Result', {
+        confirmButtonText: '确定',
+        callback: action => {
 
+        }
+      });
     },
-    getBlock(){
+    async getBalance(){
+      let Balance = await this.actionsIn.actions.getBalance('5DFojLCUUsfZV26fg4YUj5bbocMMdCdydEBD2KeFWrVBPw1h')
+      console.log(Balance)
+      this.$alert(Balance, 'Result', {
+        confirmButtonText: '确定',
+        callback: action => {
 
+        }
+      });
     },
-    getBlockNumber(){
+    async getBlock(){
+      let Block = await this.actionsIn.actions.getBlock(6521853)
+      this.$alert(Block, 'Result', {
+        confirmButtonText: '确定',
+        callback: action => {
 
+        }
+      });
     },
-    getTransaction(){
+    async getBlockNumber(){
+      let BlockNumber = await this.actionsIn.actions.getBlockNumber()
+      console.log(BlockNumber)
+      this.$alert(BlockNumber, 'Result', {
+        confirmButtonText: '确定',
+        callback: action => {
 
+        }
+      });
     },
-    getTransactionCount(){
+    async getTransaction(){
+      let Transaction = await this.actionsIn.actions.getTransaction('0x65d3cada398bfcd70098ed955ff645b072c6df0d001f61f4b1c181cfdf7d1309')
+      console.log(Transaction)
+      this.$alert(Transaction, 'Result', {
+        confirmButtonText: '确定',
+        callback: action => {
 
+        }
+      });
     },
-    sendSignedTransaction(){
+    async getTransactionCount(){
+      let TransactionCount = await this.actionsIn.actions.getTransactionCount('0x5B6C6709d1000db91252c8c6E84B8987D1D10829')
+      console.log(TransactionCount)
+      this.$alert(TransactionCount, 'Result', {
+        confirmButtonText: '确定',
+        callback: action => {
 
+        }
+      });
     },
-    signWithWallet(){
+    async sendSignedTransaction(){
+      let sendSignedTransaction = await this.actionsIn.actions.sendSignedTransaction('14EHXD3oats4uQQ3Rp6DByaiQzowt5ep4R5fXCpMkkF3oDps',0.1)
+      this.$alert(sendSignedTransaction, 'Result', {
+        confirmButtonText: '确定',
+        callback: action => {
 
+        }
+      });
     },
-    signWithPrivateKey(){
+    async signWithWallet(){
+      let sign = await this.actionsIn.actions.signWithWallet('2')
+      console.log(sign)
+      this.$alert(sign, 'Result', {
+        confirmButtonText: '确定',
+        callback: action => {
 
+        }
+      });
     },
-    signTransaction(){
+    async signWithPrivateKey(){
+      let sign = await this.actionsIn.actions.signWithPrivateKey('3','4349054ad0a292657a316300d5112b48f0633c2cb3d8ece672077aa852635890');
+      console.log(sign)
+      this.$alert(sign, 'Result', {
+        confirmButtonText: '确定',
+        callback: action => {
 
+        }
+      });
     },
-    signTransactionPrivateKey(){
+    async signTransaction(){
+      let Signtranction = await this.actionsIn.actions.signTransaction({
+        from:"0x5B6C6709d1000db91252c8c6E84B8987D1D10829"
+      },'0x5B6C6709d1000db91252c8c6E84B8987D1D10829');
+      console.log(Signtranction)
+      this.$alert(Signtranction, 'Result', {
+        confirmButtonText: '确定',
+        callback: action => {
 
+        }
+      });
     },
-    sendTransaction(){
+    async signTransactionPrivateKey(){
+      let Signtranction = await this.actionsIn.actions.signTransactionPrivateKey({
+        from:"0x5B6C6709d1000db91252c8c6E84B8987D1D10829",
+        gas:"100000",
+        value:"1"
+      },'4349054ad0a292657a316300d5112b48f0633c2cb3d8ece672077aa852635890');
+      console.log(Signtranction)
+      this.$alert(Signtranction, 'Result', {
+        confirmButtonText: '确定',
+        callback: action => {
 
+        }
+      });
     },
-    loadContract(){
+    async sendTransaction(){
+      let sendTransaction = await this.actionsIn.actions.sendTransaction({
+        from:"0x5B6C6709d1000db91252c8c6E84B8987D1D10829",
+        to: '0xd49c38C6CBaCc98444930C4524Dff73e67cA2e39',
+        value: '10'
+      })
+      this.$alert(sendTransaction, 'Result', {
+        confirmButtonText: '确定',
+        callback: action => {
 
+        }
+      });
     },
-    link(){
+    async loadContract(){
+      let abis =  await this.actionsIn.actions.loadContract(ERC20,'0x98445c06f7D3D9a6EEA7C6e8E96d4a7aEF7E9513')
+      this.$alert(abis, 'Result', {
+        confirmButtonText: '确定',
+        callback: action => {
 
+        }
+      });
     },
-    offChainCall(){
+    async link(){
+      await this.actionsIn.connector.link();
+    },
+    async offChainCall(){
+      let Contract =  await this.actionsIn.actions.loadContract(ERC20,'0x98445c06f7D3D9a6EEA7C6e8E96d4a7aEF7E9513')
+      let offChainCall =  await this.actionsIn.contract.offChainCall(Contract.data,'name',[],'','')
+      console.log(offChainCall)
+      this.$alert(offChainCall, 'Result', {
+        confirmButtonText: '确定',
+        callback: action => {
 
+        }
+      });
     },
-    onChainCall(){
-      
+    async onChainCall(){
+      let Contract =  await this.actionsIn.actions.loadContract(ERC20,'0x98445c06f7D3D9a6EEA7C6e8E96d4a7aEF7E9513')
+      let onChainCall = await this.actionsIn.contract.onChainCall(Contract.data,'approve',['0x5B6C6709d1000db91252c8c6E84B8987D1D10829','0'],{gasPrice:'4000000000',gasLimit:'150000'})
+      this.$alert(onChainCall, 'Result', {
+        confirmButtonText: '确定',
+        callback: action => {
+
+        }
+      });
     }
   }
 };
