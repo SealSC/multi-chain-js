@@ -41,7 +41,7 @@
 </template>
 
 <script>
-import * as Actions from  './dist/build.es'
+// import * as Actions from  './dist/build.es'
 import { Loading } from 'element-ui'
 import ERC20 from '../../utils/abis/ERC20-ABI.json'
 export default {
@@ -76,6 +76,7 @@ export default {
 
         }
       });
+     
     },
     async getBalance(){
       let Balance = await this.actionsIn.actions.getBalance('0x5B6C6709d1000db91252c8c6E84B8987D1D10829')

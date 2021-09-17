@@ -1,6 +1,6 @@
 declare class ActionsIn {
     constructor();
-    getAccount(address: string): Promise<import("../result").Result>;
+    getAccount(): Promise<import("../result").Result>;
     getBalance(address: string): Promise<import("../result").Result>;
     getBlock(block: string | number): Promise<import("../result").Result>;
     getBlockNumber(block: string | number): Promise<import("../result").Result>;

@@ -43,7 +43,8 @@
 </template>
 
 <script>
-import * as tronWebSdk from "../../utils/dist/tronweb-build.es";
+import { Loading ,Message} from 'element-ui'
+import * as tronWebSdk from "./dist/bundle.js";
 import ERC20 from "../../utils/abis/ERC20-ABI.json"
 // const tronWebSdk = require("../../utils/dist/tronweb-build.es")
 export default {
@@ -53,7 +54,8 @@ export default {
   },
   components: {},
   async mounted() {
-    //  console.log(new tronWebSdk.Actions().actions(),"tronWebSdk")
+    let Action = await new tronWebSdk.Actions();
+     console.log(Action,"tronWebSdk")
     //  let aa = new tronWebSdk.Actions.actions
   },
   computed: {},
@@ -62,60 +64,61 @@ export default {
     async init() {
       let Action = await new tronWebSdk.Actions();
       let init = await Action.init();
+      Message.success({ duration: 3000, message: init });
     },
     async getAccount() {
       let Action = await new tronWebSdk.Actions();
-      let shouldAccount = await Action.actions.getAccount(
-        "TR4tZXQSn1L5DijAK2rDV2LCnXSgdwVJVF"
-      );
+      let shouldAccount = await Action.actions.getAccount();
+      Message.success({ duration: 3000, message: shouldAccount });
     },
     async getBlock() {
       let Action = await new tronWebSdk.Actions();
       let Block = await Action.actions.getBlock(17584567);
+      Message.success({ duration: 3000, message: Block });
     },
     async getBlockNumber() {
       let Action = await new tronWebSdk.Actions();
       let BlockNumber = await Action.actions.getBlockNumber(123);
-      console.log(BlockNumber,"BlockNumber")
+      Message.success({ duration: 3000, message: BlockNumber });
     },
     async getTransaction() {
       let Action = await new tronWebSdk.Actions();
       let transaction = await Action.actions.getTransaction('950ab60dc678315dfccb3dfa81603133ef790d907395adf5d29e9531bf49a3fa');
-      console.log(transaction,"transaction")
+      Message.success({ duration: 3000, message: transaction });
     },
     async getTransactionCount() {
       let Action = await new tronWebSdk.Actions();
       let getTransactionCount = await Action.actions.getTransactionCount();
-      console.log(getTransactionCount,"getTransactionCounts")
+     Message.success({ duration: 3000, message: getTransactionCount });
     },
     async sendSignedTransaction() {
       let Action = await new tronWebSdk.Actions();
       let sendSignedTransaction = await Action.actions.sendSignedTransaction();
-      console.log(sendSignedTransaction,"sendSignedTransaction")
+      Message.success({ duration: 3000, message: sendSignedTransaction });
     },
     async signWithWallet() {
       let Action = await new tronWebSdk.Actions();
       let signWithWallet = await Action.actions.signWithWallet();
-      console.log(signWithWallet,"signWithWallet")
+      Message.success({ duration: 3000, message: signWithWallet });
     },
     async signWithPrivateKey() {
       let Action = await new tronWebSdk.Actions();
       let signWithPrivateKey = await Action.actions.signWithPrivateKey();
-      console.log(signWithPrivateKey,"signWithPrivateKey")
+     Message.success({ duration: 3000, message: signWithPrivateKey });
     },
     async signTransaction() {
        let Action = await new tronWebSdk.Actions();
       let shouldSigntranction = await Action.actions.signTransaction({
         from:"0x5B6C6709d1000db91252c8c6E84B8987D1D10829"
       },'0x5B6C6709d1000db91252c8c6E84B8987D1D10829');
-      console.log(shouldSigntranction,"shouldSigntranction")
+      Message.success({ duration: 3000, message: shouldSigntranction });
     },
     async signTransactionPrivateKey() {
       let Action =  new tronWebSdk.Actions();
     let shouldSigntranction = await Action.actions.signTransaction({
       from:"0x5B6C6709d1000db91252c8c6E84B8987D1D10829"
     },'0x5B6C6709d1000db91252c8c6E84B8987D1D10829');
-    console.log(shouldSigntranction,"shouldSigntranction")
+     Message.success({ duration: 3000, message: shouldSigntranction });
 
     },
     async sendTransaction() {
@@ -124,22 +127,24 @@ export default {
         address:"TLguFcSkjNgTnf8zWQJhNMofKHASRjmtqb",
         amount: 10
     });
-    console.log(shouldsendTranction,"shouldsendTranction")
+     Message.success({ duration: 3000, message: shouldsendTranction });
     },
     async loadContract() {
       let Action = new tronWebSdk.Actions();
     let ContractIn = await Action.actions.loadContract(ERC20, 'TQaYBj9drxmoW7LfLnDDrvPnuj4zoZbaSS')
-    console.log(ContractIn,"ContractIn")
+    Message.success({ duration: 3000, message: ContractIn });
     },
-    link() {
-
+    async link() {
+      let Action = new tronWebSdk.Actions();
+      let link =  await Action.connector.link()
+       Message.success({ duration: 3000, message: link });
     },
     async offChainCall() {
       let Action = await new tronWebSdk.Actions()
     let Contract = await Action.actions.loadContract(ERC20, 'TQaYBj9drxmoW7LfLnDDrvPnuj4zoZbaSS');
 
     let contractCall = await Action.contract.offChainCall(Contract.data, 'totalSupply', [], '', "")
-    console.log(contractCall,"contractCall")
+    Message.success({ duration: 3000, message: contractCall });
     },
     async onChainCall() {
       let Action = await new tronWebSdk.Actions()
@@ -149,7 +154,7 @@ export default {
       callValue: "1000000000",
       feeLimit: "140000",
   })
-    console.log(onChainCall,"onChainCall")
+    Message.success({ duration: 3000, message: onChainCall });
     },
   },
 };
