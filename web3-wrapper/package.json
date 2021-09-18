@@ -16,8 +16,8 @@
     "serve": "vue-cli-service serve",
     "test": "karma start"
   },
-  "main": "dist/build.umd.js",
-  "module": "dist/build.es.js",
+  "main": "src/wrapper/wrapper.js",
+  "module": "dist/bundle.es.js",
   "files": [
     "dist"
   ],
