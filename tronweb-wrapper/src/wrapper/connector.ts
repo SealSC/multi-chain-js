@@ -23,7 +23,7 @@ class Connector {
    
       try{
         // console.log(await (window as any).tronWeb.defaultAddress.base58,"??")
-          let accounts =  (window as any).tronWeb.defaultAddress.base58
+          let accounts =  (window as any).isPhantom.defaultAddress.base58
           let data=[accounts]
   
           return new Result(PredefinedStatus.SUCCESS(data))

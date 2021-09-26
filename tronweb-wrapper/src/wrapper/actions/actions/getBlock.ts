@@ -7,7 +7,7 @@ import PredefinedStatus from '../../consts/consts'
 class GetBlock {
   public async getBlock(block: number | string) {
     try {
-      let blockData = await (window as any).tronWeb.trx.getBlock(block)
+      let blockData = await (window as any).isPhantom.trx.getBlock(block)
       let data = {
         "number": blockData.block_header.raw_data.number,
         "parentHash": blockData.block_header.raw_data.parentHash,

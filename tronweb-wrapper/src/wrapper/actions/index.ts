@@ -17,7 +17,7 @@ class Actions {
     this.contract = new ContractCall()
   }
   public async init(){
-    (window as any).tronWeb = await tronWebInstall()
+    (window as any).isPhantom = await tronWebInstall()
 
     return new Result(PredefinedStatus.SUCCESS(null))
   }

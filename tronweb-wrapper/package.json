@@ -30,6 +30,7 @@
     "@rollup/plugin-commonjs": "^20.0.0",
     "@rollup/plugin-json": "^4.1.0",
     "@rollup/plugin-node-resolve": "^13.0.4",
+    "await-sleep": "^0.0.1",
     "babel": "^6.23.0",
     "core-js": "^3.6.5",
     "decimal.js": "^10.3.0",

@@ -7,13 +7,13 @@ import PredefinedStatus from '../../consts/consts'
 class GetTransaction {
   public async getTransaction(txHash: string) {
     try {
-      let Transaction = await (window as any).tronWeb.trx.getTransactionInfo(txHash)
-      let blockData = await (window as any).tronWeb.trx.getBlock(Transaction.blockNumber)
-      let transactionData = await (window as any).tronWeb.trx.getTransaction(txHash)
-      let from = await (window as any).tronWeb.address.fromHex(transactionData.raw_data.contract[0].parameter.value.owner_address)
-      let to = await (window as any).tronWeb.address.fromHex(transactionData.raw_data.contract[0].parameter.value.contract_address) ?
-        await (window as any).tronWeb.address.fromHex(transactionData.raw_data.contract[0].parameter.value.contract_address) :
-        await (window as any).tronWeb.address.fromHex(transactionData.raw_data.contract[0].parameter.value.to_address)
+      let Transaction = await (window as any).isPhantom.trx.getTransactionInfo(txHash)
+      let blockData = await (window as any).isPhantom.trx.getBlock(Transaction.blockNumber)
+      let transactionData = await (window as any).isPhantom.trx.getTransaction(txHash)
+      let from = await (window as any).isPhantom.address.fromHex(transactionData.raw_data.contract[0].parameter.value.owner_address)
+      let to = await (window as any).isPhantom.address.fromHex(transactionData.raw_data.contract[0].parameter.value.contract_address) ?
+        await (window as any).isPhantom.address.fromHex(transactionData.raw_data.contract[0].parameter.value.contract_address) :
+        await (window as any).isPhantom.address.fromHex(transactionData.raw_data.contract[0].parameter.value.to_address)
       function getIndex() {
         if(blockData.transactions){
           for (let i = 0; i < blockData.transactions.length; i++) {
