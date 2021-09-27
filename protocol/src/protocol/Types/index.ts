@@ -3,11 +3,11 @@ import { Connector } from './extend/connector'
 import { ContractCall } from './extend/contractCall'
 
 class Types {
-  public operational: any
-  public Connector: any
-  public contract:any
+  public actions: Operational
+  public Connector: Connector
+  public contract:ContractCall
   constructor() {
-    this.operational = new Operational()
+    this.actions = new Operational()
     this.Connector = new Connector()
     this.contract = new ContractCall()
   }
