@@ -14,7 +14,7 @@ describe('getBlockNumber', () => {
 
     const lastHdr = await api.rpc.chain.getHeader();
     const BlockNumber = lastHdr.number;
-    let results = new Result(PredefinedStatus.SUCCESS(`${BlockNumber}`))
+    let results = new Result(PredefinedStatus.SUCCESS( Number(`${BlockNumber}`)))
     expect(shouldBlockHash).to.deep.equal(results)
 
   }).timeout(100000)

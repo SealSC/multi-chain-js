@@ -16,7 +16,7 @@ describe('getBalance', () => {
     console.log(free)
     let Action  = await new Actions()
     let shouldBalance = await Action.actions.getBalance('5DFojLCUUsfZV26fg4YUj5bbocMMdCdydEBD2KeFWrVBPw1h')
- 
+  
     let results = new Result(PredefinedStatus.SUCCESS(free))
     expect(shouldBalance).to.deep.equal(results)
   }).timeout(100000)
