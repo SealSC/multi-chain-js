@@ -7,7 +7,7 @@ describe('loadContract', () => {
   it('loadContract', async ()=>{
 
     let Action = await new Actions()
-    let loadContract= await Action.actions.loadContract(2,'5FHzNsnjj7bbTsPXUB3D3pkZZNpJBn6fyvMBMuq1CfDXd5fo')
+    let loadContract= await Action.contract.loadContract(2,'5FHzNsnjj7bbTsPXUB3D3pkZZNpJBn6fyvMBMuq1CfDXd5fo')
     let results = new Result(PredefinedStatus.NOT_SUPPORT(null))
     expect(loadContract).to.deep.equal(results)
   

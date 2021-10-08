@@ -10,7 +10,6 @@ import { SignWithWallet } from './signWithWallet'
 import { SignTransaction } from './signTransaction'
 import { SignTransactionPrivateKey } from "./signTransactionPrivateKey"
 import { SendTransaction } from './sendTransaction'
-import { LoadContract } from './loadContract'
 
 class ActionsIn{
   constructor(){
