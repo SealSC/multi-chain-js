@@ -7,7 +7,13 @@ web3-wrapper库是一系列模块的集合，服务于以太坊生态系统的�
 * web3-connector 用来与MetaMask钱包进行交互
 * web3-contract 用来与以太坊区块链合约的交互
 
-
+#### 获取最新区块高度的示例代码
+```js
+  // 初始化Actions
+  let Action = await new Actions()
+  // 调用getBlockNumber方法，获取最新区块高度
+  let shouldGetBlockNumber = await Action.actions.getBlockNumber()
+```
  
 ### 如何开始？
 
@@ -15,29 +21,12 @@ web3-wrapper库是一系列模块的集合，服务于以太坊生态系统的�
 ```js
 $ yarn add @sealsc/web3-wrapper 
 ```
-
+然后你需要创建一个 web3 的实例，内置浏览器注入的provider
+```js
+let Action = await new Actions()
+```
 运行ts文件和示例
 ```js
 $ yarn test
 ```
 
-<!-- 
-## Project setup
-```
-yarn install
-```
-
-### Compiles and hot-reloads for development
-```
-yarn serve
-```
-
-### Compiles and minifies for production
-```
-yarn build
-```
-
-### Lints and fixes files
-```
-yarn lint
-``` -->
