@@ -5,7 +5,7 @@ web3-wrapper库是一系列模块的集合，服务于以太坊生态系统的�
 
 * web3-actions 用来与以太坊区块链交互
 * web3-connector 用来与MetaMask钱包进行交互
-* web3-contract 用来与以太坊区块链合约的交互
+* web3-contract 用来与以太坊区块链合约交互
 
 #### actions模块的示例代码
 获取最新区块高度
