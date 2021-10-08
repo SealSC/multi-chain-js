@@ -31,7 +31,7 @@ web3-wrapper库是一系列模块的集合，服务于以太坊生态系统的�
   // 初始化Actions
   let Action = await new Actions()
   // 调用loadContract方法,创建新的合约实例
-  let Contract = await Action.actions.loadContract(ERC20,'0xxxxxxxxxx')
+  let Contract = await Action.contract.loadContract(ERC20,'0xxxxxxxxxx')
   let name =  await Action.contract.offChainCall(Contract.data,'name',[],'','')
 ```
  
@@ -41,7 +41,7 @@ web3-wrapper库是一系列模块的集合，服务于以太坊生态系统的�
 ```js
 $ yarn add @sealsc/web3-wrapper 
 ```
-然后你需要创建一个 web3 的实例，内置浏览器注入的provider
+然后你需要创建一个 web3 的实例,无需设置provider(内置@metamask/detect-provider检测provider后注入)
 ```js
 let Action = await new Actions()
 ```
