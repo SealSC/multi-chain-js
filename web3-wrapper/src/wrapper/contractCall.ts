@@ -19,6 +19,14 @@ function getContractMethod(contract:any,methodName:string,param:any){
 }
 
 class ContractCall {
+  public async loadContract(abi:any,address:string){
+    try{
+      let Contract: any = await new (window as any).web3.eth.Contract(abi,address)
+      return new Result(PredefinedStatus.SUCCESS(Contract))
+    }catch(err){
+      return new Result(PredefinedStatus.ERROR_STATE(null))
+    }
+  }
   public async offChainCall(contract:any,methodName:string,param:[],amount,extra){
     let account = Object.keys((window as any).web3).length !== 0 ? await (window as any).web3.eth.getAccounts():[''];
     let method = getContractMethod(contract,methodName,param)
