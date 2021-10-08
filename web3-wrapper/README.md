@@ -7,15 +7,17 @@ web3-wrapper库是一系列模块的集合，服务于以太坊生态系统的�
 * web3-connector 用来与MetaMask钱包进行交互
 * web3-contract 用来与以太坊区块链合约的交互
 
-#### 获取最新区块高度的示例代码
+#### actions模块的示例代码
+获取最新区块高度
 ```js
   // 初始化Actions
   let Action = await new Actions()
   // 调用getBlockNumber方法,获取最新区块高度
-  let shouldGetBlockNumber = await Action.actions.getBlockNumber()
+  let BlockNumber = await Action.actions.getBlockNumber()
 ```
 
-#### 连接钱包的示例代码
+#### connector模块的示例代码
+连接钱包
 ```js
   // 初始化Actions
   let Action = await new Actions()
@@ -23,12 +25,14 @@ web3-wrapper库是一系列模块的集合，服务于以太坊生态系统的�
   await Action.connector.link()
 ```
 
-#### 创建合约实例的示例代码
-```js
+#### contract模块的示例代码
+创建新的合约实例,调用合约name方法
+```js 
   // 初始化Actions
   let Action = await new Actions()
   // 调用loadContract方法,创建新的合约实例
-  let ContractIn = await Action.actions.loadContract(ERC20,'0xxxxxxxxxx')
+  let Contract = await Action.actions.loadContract(ERC20,'0xxxxxxxxxx')
+  let name =  await Action.contract.offChainCall(Contract.data,'name',[],'','')
 ```
  
 ### 如何开始？
