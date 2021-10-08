@@ -51,11 +51,7 @@ class ActionsIn{
   }
   public async sendTransaction(transactionObject:any){
     return await new SendTransaction().sendTransaction(transactionObject)
-  }
-  public async loadContract(contract:any,address:string){
-    return await new LoadContract().loadContract(contract,address)
-  }
- 
+  } 
 }
 
 export { ActionsIn } 

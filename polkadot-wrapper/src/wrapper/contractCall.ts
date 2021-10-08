@@ -4,6 +4,9 @@ import PredefinedStatus  from '../wrapper/consts/consts'
  
 
 class ContractCall {
+  public async loadContract(abi:any,address:string){
+    return new Result(PredefinedStatus.NOT_SUPPORT(null))
+  }
   public async offChainCall(contract:any,methodName:string,param:[],amount,extra){
     return new Result(PredefinedStatus.NOT_SUPPORT(null))
   }
