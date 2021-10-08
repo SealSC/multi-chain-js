@@ -11,8 +11,24 @@ web3-wrapper库是一系列模块的集合，服务于以太坊生态系统的�
 ```js
   // 初始化Actions
   let Action = await new Actions()
-  // 调用getBlockNumber方法，获取最新区块高度
+  // 调用getBlockNumber方法,获取最新区块高度
   let shouldGetBlockNumber = await Action.actions.getBlockNumber()
+```
+
+#### 连接钱包的示例代码
+```js
+  // 初始化Actions
+  let Action = await new Actions()
+  // 调用link方法,连接钱包
+  await Action.connector.link()
+```
+
+#### 创建合约实例的示例代码
+```js
+  // 初始化Actions
+  let Action = await new Actions()
+  // 调用loadContract方法,创建新的合约实例
+  let ContractIn = await Action.actions.loadContract(ERC20,'0xxxxxxxxxx')
 ```
  
 ### 如何开始？
