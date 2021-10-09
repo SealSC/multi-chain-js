@@ -1,5 +1,4 @@
 {
-<<<<<<< HEAD
   "name": "@sealsc/protocol",
   "version": "0.1.0",
   "private": true,
@@ -12,20 +11,12 @@
     "protocol",
     "wrapper"
   ],
-=======
-  "name": "protocol",
-  "version": "0.1.0",
-  "private": true,
->>>>>>> main
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
     "lint": "vue-cli-service lint"
   },
-<<<<<<< HEAD
   "main": "src/protocol/protocol.ts",
-=======
->>>>>>> main
   "dependencies": {
     "@metamask/detect-provider": "^1.2.0",
     "core-js": "^3.6.5",
@@ -46,8 +37,4 @@
     "typescript": "~4.1.5",
     "vue-template-compiler": "^2.6.11"
   }
-<<<<<<< HEAD
 }
-=======
-}
->>>>>>> main
