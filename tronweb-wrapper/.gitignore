@@ -33,6 +33,7 @@ Temporary Items
 # Dependency directories
 node_modules/
 jspm_packages/
+coverage/
 # End of https://www.toptal.com/developers/gitignore/api/macos
 node_modules
 coverage
