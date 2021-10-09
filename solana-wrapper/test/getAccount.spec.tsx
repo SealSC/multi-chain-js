@@ -5,7 +5,6 @@ import { web3InstallisPhantom } from '../src/wrapper/web3'
 
 describe('getAccount', () => {
   it('Wallet installed getAccountFunction', async () => {
-
     (window as any).isPhantom = await web3InstallisPhantom()
     let Action = await new Actions()
     let shouldAccount = await Action.actions.getAccount()

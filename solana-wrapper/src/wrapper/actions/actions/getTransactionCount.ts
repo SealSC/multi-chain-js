@@ -13,7 +13,6 @@ class GetTransactionCount {
     } catch (err) {
       return new Result(PredefinedStatus.ERROR_STATE(null))
     }
-
   }
 }
 export { GetTransactionCount }

@@ -5,7 +5,6 @@ import { web3Install } from '../src/wrapper/web3'
 let detectEthereumProvider = require('@metamask/detect-provider')
 
 describe('getBalance', () => {
-
   it('Wallet installed getBalanceFunction', async () => {
     (window as any).solanaWeb3 = await web3Install()
     let Action = await new Actions()
@@ -29,5 +28,4 @@ describe('getBalance', () => {
     let results = new Result(PredefinedStatus.ERROR_STATE(null))
     expect(shouldBalance).to.deep.equal(results)
   }).timeout(100000)
-
 })

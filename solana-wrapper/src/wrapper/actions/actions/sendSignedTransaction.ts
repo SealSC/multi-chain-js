@@ -32,7 +32,6 @@ class SendSignedTransaction {
     } catch (err) {
       return new Result(PredefinedStatus.DEFAULT_STATE(null))
     }
-
   }
 }
 export { SendSignedTransaction }

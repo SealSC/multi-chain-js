@@ -16,6 +16,4 @@ describe('SignWithPrivateKey', () => {
 
   }).timeout(100000)
 
-
-
 }).timeout(1000000)

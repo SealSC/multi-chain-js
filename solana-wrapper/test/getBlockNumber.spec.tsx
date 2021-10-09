@@ -10,6 +10,7 @@ describe('getBlockNumber', () => {
     let Action = await new Actions()
     let shouldGetBlockNumber = await Action.actions.getBlockNumber(9603492)
     const connection = new (window as any).solanaWeb3.Connection(
+
       (window as any).solanaWeb3.clusterApiUrl("devnet"),
       "confirmed"
     );

@@ -1,0 +1,36 @@
+@import "./../colors.scss";
+@import "./../fonts.scss";
+
+.DeFi-card {
+  border-width: 1px;
+  border-style: solid;
+  border-color: $divBorderColor;
+  border-image: initial;
+  border-radius: 10px;
+  padding: 25px 0 15px;
+  margin-top: 15px !important;
+  background-color: $divBg;
+  box-shadow: $divBoxShadow;
+}
+.DeFi-card:hover {
+  cursor: pointer;
+  box-shadow: $divBoxShadowFocus;
+}
+
+.DeFi-logo-card {
+  background-color: $bg2;
+  font-size: 36px;
+  height: 120px;
+  width: 120px;
+  border-radius: 60px;
+  -webkit-box-align: center;
+  align-items: center;
+  display: flex;
+  -webkit-box-pack: center;
+  justify-content: center;
+  box-shadow: $btnBoxShadow1 2px 2px 9px inset, $btnBoxShadow2 -6px -6px 12px inset;
+  margin: 0 auto 16px;
+}
+.DeFi-logo-card:hover {
+  cursor: pointer;
+}

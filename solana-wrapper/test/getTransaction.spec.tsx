@@ -8,6 +8,7 @@ let detectEthereumProvider = require('@metamask/detect-provider')
 describe('getTransaction', () => {
 
   it('Wallet installed getTransactionFunction', async () => {
+
     (window as any).solanaWeb3 = await web3Install()
     let Action = await new Actions();
     let shouldGetTransaction = await Action.actions.getTransaction('5CgLYCuDbLZQnraR8jrSYQGetwyYLNGcnckgw3ukbuSeujCwDp1wW7XULMqoQEd5eYNyeoGMV56WvjrZVmKVQbT');

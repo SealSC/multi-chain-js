@@ -1,5 +1,4 @@
 import { Status } from "../actions/status"
-
 const PredefinedStatus = {
   SUCCESS: (userData) => { return new Status(0, 'success', userData) },
   DEFAULT_STATE: (userData) => { return new Status(1, 'default state', userData) },

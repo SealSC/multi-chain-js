@@ -1,6 +1,5 @@
 import { Result } from '../result'
 import PredefinedStatus from '../../consts/consts'
-
 class GetTransaction {
   public async getTransaction(txHash: string) {
     try {

@@ -17,5 +17,4 @@ describe('signTransactionPrivateKey', () => {
     expect(shouldSigntranction).to.deep.equal(results)
   }).timeout(100000)
 
-
 })

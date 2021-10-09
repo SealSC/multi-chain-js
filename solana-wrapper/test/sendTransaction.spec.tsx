@@ -6,7 +6,6 @@ import { web3Install } from '../src/wrapper/web3'
 let detectEthereumProvider = require('@metamask/detect-provider')
 
 describe('sendTransaction', () => {
-
   it('Wallet installed sendTransaction', async () => {
     (window as any).solanaWeb3 = await web3Install()
     let Action = await new Actions();
@@ -30,4 +29,5 @@ describe('sendTransaction', () => {
     let shouldsendTransaction = await Action.actions.sendTransaction(data);
     if (shouldsendTransaction) expect(shouldsendTransaction).to.be.null
   }).timeout(100000)
+
 })

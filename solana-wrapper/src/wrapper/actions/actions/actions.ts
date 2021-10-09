@@ -10,8 +10,6 @@ import { SignWithWallet } from './signWithWallet'
 import { SignTransaction } from './signTransaction'
 import { SignTransactionPrivateKey } from "./signtransactionPrivateKey"
 import { SendTransaction } from './sendTransaction'
-// import { LoadContract } from './loadContract'
-
 class ActionsIn {
   constructor() {
 
@@ -52,8 +50,7 @@ class ActionsIn {
   public async sendTransaction(data) {
     return await new SendTransaction().sendTransaction(data)
   }
-
-
 }
 
 export { ActionsIn }
+
