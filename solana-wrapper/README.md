@@ -3,9 +3,9 @@
 ### 概述
 solana-wrapper库是一系列模块的集合，服务于solana生态系统的各个功能, 使用插件模型和统一接口来完成区块​​链交易的构建、签名、发送等常见的区块链功能
 
-* solana-actions 用来与以太坊区块链交互
-* solana-connector 用来与TronLink钱包进行交互
-* solana-contract 用来与波场区块链合约交互
+* solana-actions 用来与solana区块链交互
+* solana-connector 用来与Phantom钱包进行交互
+* solana-contract 用来与solana区块链合约交互
 
 #### actions模块的示例代码
 获取最新区块高度
