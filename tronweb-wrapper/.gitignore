@@ -34,6 +34,8 @@ Temporary Items
 node_modules/
 jspm_packages/
 coverage/
+dist/
 # End of https://www.toptal.com/developers/gitignore/api/macos
 node_modules
 coverage
+dist
