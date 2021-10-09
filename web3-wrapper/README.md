@@ -1,7 +1,7 @@
 # web3-wrapper
 
 ### 概述
-web3-wrapper库是一系列模块的集合，服务于以太坊生态系统的各个功能,可帮助您编写可与多个区块链一起使用的代码, 使用插件模型和统一接口来完成区块​​链交易的构建、签名、发送等常见的区块链功能
+web3-wrapper库是一系列模块的集合，服务于以太坊生态系统的各个功能, 使用插件模型和统一接口来完成区块​​链交易的构建、签名、发送等常见的区块链功能
 
 * web3-actions 用来与以太坊区块链交互
 * web3-connector 用来与MetaMask钱包进行交互
@@ -32,7 +32,7 @@ web3-wrapper库是一系列模块的集合，服务于以太坊生态系统的�
   let Action = await new Actions()
   // 调用loadContract方法,创建新的合约实例
   let Contract = await Action.contract.loadContract(ERC20,'0xxxxxxxxxx')
-  let name =  await Action.contract.offChainCall(Contract.data,'name',[],'','')
+  let name = await Action.contract.offChainCall(Contract.data,'name',[],'','')
 ```
 
 ### SDK文档
@@ -47,7 +47,7 @@ example：<https://github.com>
 ```js
 $ yarn add @sealsc/web3-wrapper 
 ```
-然后你需要创建一个 web3 的实例,无需设置provider(内置@metamask/detect-provider检测provider后注入)
+然后你需要创建一个 Actions 的实例,无需设置provider(内置@metamask/detect-provider检测provider后注入)
 ```js
 let Action = await new Actions()
 ```
