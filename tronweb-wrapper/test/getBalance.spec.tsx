@@ -21,4 +21,5 @@ describe('getBalance', () => {
     let results = new Result(PredefinedStatus.ERROR_STATE(null))
     expect(shouldBalance).to.deep.equal(results)
   }).timeout(100000)
+
 })

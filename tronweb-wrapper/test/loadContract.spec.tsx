@@ -83,6 +83,7 @@ describe('loadContract', () => {
       callValue: "11000000000",
       feeLimit: "",
       shouldPollResponse: true
+
     })
     if (contractSend.data) expect(contractSend.data.status).to.be.true
   }).timeout(100000)

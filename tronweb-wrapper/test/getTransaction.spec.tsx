@@ -119,7 +119,6 @@ describe('getTransaction', () => {
       return new Result(PredefinedStatus.ERROR_STATE(null))
     }
 
-
   }).timeout(100000)
 
 

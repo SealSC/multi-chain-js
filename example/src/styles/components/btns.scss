@@ -1,0 +1,49 @@
+@import "./../colors.scss";
+@import "./../fonts.scss";
+
+.DeFi-btn {
+  height: 72px;
+  max-width: 640px;
+  //min-width: 160px;
+  display: flex;
+  justify-content: center;
+  -webkit-box-align: center;
+  align-items: center;
+  opacity: 1;
+  cursor: pointer;
+  border-radius: 36px;
+  border-width: 1px;
+  border-style: solid;
+  border-color: $btnBgColor;
+  border-image: initial;
+  color: $btnFontColor;
+  background-color: $btnBgColor;
+  //box-shadow: $btnBoxShadow1 2px 2px 4px, $btnBoxShadow2 -2px -2px 4px -1px;
+  outline: $btnOutlineColor;
+  transition: all 0.1s ease 0s;
+  padding: 5px 15px;
+  letter-spacing: 2px;
+  text-transform: capitalize;
+  font-family: $fontTit;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.DeFi-btn:hover,
+.DeFi-btn:focus,
+.DeFi-btn:active {
+  border-radius: 40px;
+  border-width: 1px;
+  border-style: solid;
+  border-color: $btnBgColor;
+  border-image: initial;
+  outline: $btnOutlineColor;
+  color: $btnBgColor;
+  background-color: $divBg;
+}
+
+.DeFi-btn:disabled:hover {
+  border: 0;
+  color: $btnFontColor;
+  background-color: $btnBgColor;
+}

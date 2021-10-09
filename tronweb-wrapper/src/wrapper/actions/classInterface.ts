@@ -6,6 +6,7 @@ interface dataInterface {
 interface getAccountInterface extends dataInterface {
   data: null | Array<string>
 }
+
 interface getBlockInterface extends dataInterface {
   data: null | Object
 }

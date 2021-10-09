@@ -1,7 +1,5 @@
 import { Result } from '../result'
 import PredefinedStatus from '../../consts/consts'
-
-
 class GetTransaction {
   public async getTransaction(txHash: string) {
     try {
@@ -10,8 +8,9 @@ class GetTransaction {
       let transactionData = await (window as any).isPhantom.trx.getTransaction(txHash)
       let from = await (window as any).isPhantom.address.fromHex(transactionData.raw_data.contract[0].parameter.value.owner_address)
       let to = await (window as any).isPhantom.address.fromHex(transactionData.raw_data.contract[0].parameter.value.contract_address) ?
-      await (window as any).isPhantom.address.fromHex(transactionData.raw_data.contract[0].parameter.value.contract_address) :
-      await (window as any).isPhantom.address.fromHex(transactionData.raw_data.contract[0].parameter.value.to_address)
+
+        await (window as any).isPhantom.address.fromHex(transactionData.raw_data.contract[0].parameter.value.contract_address) :
+        await (window as any).isPhantom.address.fromHex(transactionData.raw_data.contract[0].parameter.value.to_address)
       function getIndex() {
         if (blockData.transactions) {
           for (let i = 0; i < blockData.transactions.length; i++) {
@@ -26,6 +25,7 @@ class GetTransaction {
         }
       }
       function getAmount() {
+
         let amount = 0
         if (transactionData.raw_data.contract[0].parameter.type == 'TransferAssetContract' ||
           !transactionData.raw_data.contract[0].parameter.value.amount) {
@@ -37,6 +37,7 @@ class GetTransaction {
       }
       let input = transactionData.raw_data.contract[0].parameter.value.data
       if (Transaction) {
+
         let data = {
           "hash": Transaction.id,
           "nonce": null,

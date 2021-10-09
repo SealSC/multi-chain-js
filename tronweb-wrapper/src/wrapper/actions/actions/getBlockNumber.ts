@@ -1,6 +1,5 @@
 import { Result } from '../result'
 import PredefinedStatus from '../../consts/consts'
-
 class GetBlockNumber {
   public async getBlockNumber(block: string | number) {
     try {
