@@ -1,8 +1,8 @@
-interface TransactionField{
-  hash:string 
+interface TransactionField {
+  hash: string
   nonce: number
   blockHash: string
-  blockNumber:Number
+  blockNumber: Number
   transactionIndex: number
   from: string
   to: string
@@ -12,7 +12,7 @@ interface TransactionField{
   input: string
 }
 
-class getTransactionField implements TransactionField{
+class getTransactionField implements TransactionField {
   public hash
   public nonce
   public blockHash
