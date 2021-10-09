@@ -1,8 +1,8 @@
-interface signTransactionDataField{
-  raw:string 
+interface signTransactionDataField {
+  raw: string
   tx: txDataField
 }
-interface txDataField{
+interface txDataField {
   nonce: string
   gasPrice: string
   gas: string
@@ -12,10 +12,10 @@ interface txDataField{
   v: string
   r: string
   s: string
-  hash:string
+  hash: string
 }
 
-class signTransactionField implements signTransactionDataField{
+class signTransactionField implements signTransactionDataField {
   public raw
   public tx
 }

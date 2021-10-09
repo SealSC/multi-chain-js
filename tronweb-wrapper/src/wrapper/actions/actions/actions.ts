@@ -10,7 +10,6 @@ import { SignWithWallet } from './signWithWallet'
 import { SignTransaction } from './signTransaction'
 import { SignTransactionPrivateKey } from "./signTransactionPrivateKey"
 import { SendTransaction } from './sendTransaction'
-import { LoadContract } from './loadContract'
 
 class ActionsIn{
   constructor(){
@@ -31,7 +30,7 @@ class ActionsIn{
   public async getTransaction(txHash:string){
     return await new GetTransaction().getTransaction(txHash)
   }
-  public async getTransactionCount(){
+  public async getTransactionCount(address?:string){
     return await new GetTransactionCount().getTransactionCount()
   }
   public async sendSignedTransaction(to,amount,from,options,privateKey:string){
@@ -56,9 +55,7 @@ class ActionsIn{
   public async sendTransaction(transactionObject:any){
     return await new SendTransaction().sendTransaction(transactionObject)
   }
-  public async loadContract(abiJson:any,contractAddress:string){
-    return await new LoadContract().loadContract(abiJson,contractAddress)
-  }
+ 
  
 }
 
