@@ -43,7 +43,7 @@ example：<https://github.com>
 
 ### 如何开始？
 
-只需安装tronWeb-wrapper库即可开始
+只需安装solana-wrapper库即可开始
 ```js
 $ yarn add @sealsc/solana-wrapper 
 ```
