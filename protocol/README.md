@@ -1,5 +1,6 @@
 # protocol
 
+<<<<<<< HEAD
 ### 概述
 protocol库是mulit-chain-js制定的统一协议，服务于各个生态系统的各个功能,制定可与多个区块链统一使用的接口以及数据类型数据结构等
 
@@ -49,3 +50,27 @@ let Action = await new Actions()
 ```
 
 
+=======
+## Project setup
+```
+yarn install
+```
+
+### Compiles and hot-reloads for development
+```
+yarn serve
+```
+
+### Compiles and minifies for production
+```
+yarn build
+```
+
+### Lints and fixes files
+```
+yarn lint
+```
+
+### Customize configuration
+See [Configuration Reference](https://cli.vuejs.org/config/).
+>>>>>>> main

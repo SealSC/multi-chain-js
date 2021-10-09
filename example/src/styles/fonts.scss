@@ -1,0 +1,112 @@
+@import "./colors.scss";
+
+$fontFamily: Avenir, Arial, sans-serif;
+
+$fontTit: SFProDisplay-Bold, SFProDisplay, sans-serif;
+$fontTxt: SFProDisplay-Semibold, SFProDisplay, sans-serif;
+$fontDetail: SFProDisplay-Regular, SFProDisplay, sans-serif;
+$fontLink: SFProDisplay-Semibold, SFProDisplay, sans-serif;
+
+.SealSC-H1 {
+  letter-spacing: 2px;
+  color: $titL2Color;
+  font-size: 36px;
+  font-family: $fontTit;
+  font-weight: 700;
+}
+
+.SealSC-H2 {
+  color: $titColor;
+  font-family: $fontTit;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.SealSC-H3 {
+  color: $titL2Color;
+  font-size: 16px;
+  font-family: $fontTxt;
+  font-weight: 500;
+}
+
+.SealSC-H4 {
+  color: $titL2Color;
+  font-size: 14px;
+  font-family: $fontTxt;
+  font-weight: 400;
+}
+
+.SealSC-tit {
+  color: $titL2Color;
+  font-size: 18px;
+  font-family: $fontTxt;
+  font-weight: 600;
+  line-height: 24px;
+}
+
+.SealSC-txt {
+  color: $txtColor;
+  font-size: 16px;
+  font-family: $fontTxt;
+  font-weight: 500;
+  text-align: justify;
+  text-justify: inter-ideograph;
+}
+
+.SealSC-data {
+  color: $dataColor;
+  font-size: 36px;
+  font-family: $fontTit;
+  font-weight: bold;
+  line-height: 56px;
+}
+
+.SealSC-detail {
+  color: $txtColor;
+  font-size: 16px;
+  font-family: $fontDetail;
+  font-weight: 400;
+  line-height: 24px;
+  text-align: justify;
+  text-justify: inter-ideograph;
+}
+
+.SealSC-detail-txt {
+  color: $txtColor;
+  font-size: 14px;
+  font-family: $fontDetail;
+  font-weight: 400;
+  line-height: 24px;
+  text-align: justify;
+  text-justify: inter-ideograph;
+}
+
+.SealSC-notes {
+  color: $notesColor;
+  font-size: 12px;
+  font-family: $fontTxt;
+  font-weight: 500;
+  text-align: justify;
+  text-justify: inter-ideograph;
+}
+
+.SealSC-link {
+  color: $linkColor !important;
+  font-size: 18px;
+  font-weight: 600;
+  font-family: $fontLink;
+}
+.SealSC-link:hover {
+  color: $titColor !important;
+  font-weight: 500;
+}
+
+.SealSC-link-2 {
+  color: $linkColor !important;
+  font-size: 16px;
+  font-weight: 400;
+  font-family: $fontDetail;
+}
+.SealSC-link-2:hover {
+  font-weight: 500;
+}
