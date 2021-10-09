@@ -9,6 +9,7 @@ describe('getAccount', () => {
     let Action  = await new Actions()
     await Action.init('wss://rpc.polkadot.io')
     const extensions = await web3Enable('my cool dapp');
+<<<<<<< HEAD
     
     let shouldAccount = await Action.actions.getAccount()
     const allAccounts = await web3Accounts();
@@ -17,6 +18,12 @@ describe('getAccount', () => {
       Account.push(allAccounts[i].address)
     }
     let results = new Result(PredefinedStatus.SUCCESS(Account))
+=======
+  
+    let shouldAccount = await Action.actions.getAccount()
+    const allAccounts = await web3Accounts();
+    let results = new Result(PredefinedStatus.SUCCESS(allAccounts))
+>>>>>>> main
     expect(shouldAccount).to.deep.equal(results)
 
   }).timeout(100000)

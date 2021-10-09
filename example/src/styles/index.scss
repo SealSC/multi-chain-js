@@ -1,0 +1,40 @@
+@import "./colors.scss";
+@import "./fonts.scss";
+@import "./components/btns.scss";
+@import "./components/cards.scss";
+@import "./components/lines.scss";
+
+html {
+  height: 100%;
+}
+body {
+  height: 100%;
+  background-color: $bg !important;
+}
+#app {
+  font-family: $fontFamily;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  color: $txtColor;
+}
+
+/* container width set 1280px */
+.container-fluid {
+  padding-right: 0;
+  padding-left: 0;
+}
+.row {
+  max-width: 1280px;
+  margin: 0 auto !important;
+}
+
+/* element ui 自定义 */
+.el-table__row>td{
+  border: none;
+}
+.el-table::before { // 去除最下面的那一条线
+  height: 0;
+}
+.el-table th.is-leaf {  // 去除上边框
+  border: none;
+}

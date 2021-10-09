@@ -11,6 +11,7 @@ describe('getBlock', () => {
     const api = await ApiPromise.create({ provider: wsProvider });
     const blockHash = await api.rpc.chain.getBlockHash(6521853);
     const signedBlock = await api.rpc.chain.getBlock(blockHash);
+<<<<<<< HEAD
     let BlockInfo = JSON.parse(`${signedBlock.block.header}`)
     let blockDataField = new getBlockField()
     blockDataField.number = BlockInfo.number
@@ -34,6 +35,12 @@ describe('getBlock', () => {
     let Action = await new Actions()
     let shouldBlockHash= await Action.actions.getBlock(6521853)
     let results = new Result(PredefinedStatus.SUCCESS(blockDataField))
+=======
+    let Block = JSON.parse(`${signedBlock.block.header}`)
+    let Action = await new Actions()
+    let shouldBlockHash= await Action.actions.getBlock(6521853)
+    let results = new Result(PredefinedStatus.SUCCESS(Block))
+>>>>>>> main
     expect(shouldBlockHash).to.deep.equal(results)
   }).timeout(100000)
 

@@ -6,11 +6,15 @@ import { web3Accounts, web3Enable ,web3FromSource } from '@polkadot/extension-da
 class GetAccount{
   public async getAccount(){
     const allAccounts = await web3Accounts();
+<<<<<<< HEAD
     let Account :any[] = []
     for(let i=0;i<allAccounts.length;i++){
       Account.push(allAccounts[i].address)
     }
     return new Result(PredefinedStatus.SUCCESS(Account))
+=======
+    return new Result(PredefinedStatus.SUCCESS(allAccounts))
+>>>>>>> main
   }
 }
 export { GetAccount }
