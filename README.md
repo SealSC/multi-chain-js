@@ -1,7 +1,7 @@
 ### multi-chain-js
 
 #### 概述
-multi-chain-js多链支持js sdk，为多链交互提供统一接口
+multi-chain-js多链支持js sdk，为多链交互提供统一接口,可帮助您编写可与多个区块链一起使用的代码
 
 选择您支持链的SDK插件,multi-chain-js目前提供：
 * @sealsc/web3-wrapper   (ETH链)
