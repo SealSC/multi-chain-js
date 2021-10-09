@@ -3,7 +3,7 @@
 ### 概述
 tronWeb-wrapper库是一系列模块的集合，服务于波场生态系统的各个功能, 使用插件模型和统一接口来完成区块​​链交易的构建、签名、发送等常见的区块链功能
 
-* tronWeb-actions 用来与以太坊区块链交互
+* tronWeb-actions 用来与波场区块链交互
 * tronWeb-connector 用来与TronLink钱包进行交互
 * tronWeb-contract 用来与波场区块链合约交互
 
