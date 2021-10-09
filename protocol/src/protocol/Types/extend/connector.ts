@@ -1,16 +1,16 @@
 import { Result } from '../result'
-import finedStatus  from '../../Consts/consts'
+import finedStatus from '../../Consts/consts'
 
-interface ConnectorInterface{
-  link(param:any):object
-  unlink(): object 
+interface ConnectorInterface {
+  link(param: any): object
+  unlink(): object
 }
 
-class Connector implements ConnectorInterface{
-  public link(param:any){
+class Connector implements ConnectorInterface {
+  public link(param: any) {
     return new Result(finedStatus.NOT_SUPPORT(null))
   }
-  public unlink(){
+  public unlink() {
     return new Result(finedStatus.NOT_SUPPORT(null))
   }
 }
