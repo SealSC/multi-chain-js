@@ -1,7 +1,7 @@
 import { GetAccount } from "./getAccount"
 import { GetBalance } from "./getBalance"
 import { GetBlock } from './getBlock'
-import { GetBlockNumber }  from './getBlockNumber' 
+import { GetBlockNumber } from './getBlockNumber'
 import { GetTransaction } from './getTransaction'
 import { GetTransactionCount } from './getTransactionCount'
 import { SendSignedTransaction } from './sendSignedTransaction'
@@ -10,53 +10,48 @@ import { SignWithWallet } from './signWithWallet'
 import { SignTransaction } from './signTransaction'
 import { SignTransactionPrivateKey } from "./signtransactionPrivateKey"
 import { SendTransaction } from './sendTransaction'
-import { LoadContract } from './loadContract'
 
-class ActionsIn{
-  constructor(){
-     
+class ActionsIn {
+  constructor() {
+
   }
-  public async getAccount(){
+  public async getAccount() {
     return await new GetAccount().getAccount()
   }
-  public async getBalance(address:string){
+  public async getBalance(address: string) {
     return await new GetBalance().getBalance(address)
   }
-  public async getBlock(block:string|number){
+  public async getBlock(block: string | number) {
     return await new GetBlock().getBlock(block)
   }
-  public async getBlockNumber(){
+  public async getBlockNumber() {
     return await new GetBlockNumber().getBlockNumber()
   }
-  public async getTransaction(txHash:string){
+  public async getTransaction(txHash: string) {
     return await new GetTransaction().getTransaction(txHash)
   }
-  public async getTransactionCount(txHash:string){
+  public async getTransactionCount(txHash: string) {
     return await new GetTransactionCount().getTransactionCount(txHash)
   }
-  public async sendSignedTransaction(dataToSign:string){
+  public async sendSignedTransaction(dataToSign: string) {
     return await new SendSignedTransaction().sendSignedTransaction(dataToSign)
   }
-  public async signWithWallet(dataToSign:any|string,address:string){
-    return await new SignWithWallet().signWithWallet(dataToSign,address)
+  public async signWithWallet(dataToSign: any | string, address: string) {
+    return await new SignWithWallet().signWithWallet(dataToSign, address)
   }
-  public async signWithPrivateKey(data:string|string,privateKey:string){
-    return await new SignWithPrivateKey().signWithPrivateKey(data,privateKey)
+  public async signWithPrivateKey(data: string | string, privateKey: string) {
+    return await new SignWithPrivateKey().signWithPrivateKey(data, privateKey)
   }
-  public async signTransaction(dataToSign:object|string,address:string){
-    return await new SignTransaction().signTransaction(dataToSign,address)
+  public async signTransaction(dataToSign: object | string, address: string) {
+    return await new SignTransaction().signTransaction(dataToSign, address)
   }
-  public async signTransactionPrivateKey(dataToSign:object|string,privateKey:string){
-    return await new SignTransactionPrivateKey().signTransactionPrivateKey(dataToSign,privateKey)
+  public async signTransactionPrivateKey(dataToSign: object | string, privateKey: string) {
+    return await new SignTransactionPrivateKey().signTransactionPrivateKey(dataToSign, privateKey)
   }
-  public async sendTransaction(transactionObject:any){
+  public async sendTransaction(transactionObject: any) {
     return await new SendTransaction().sendTransaction(transactionObject)
   }
-  public async loadContract(contract:any,address:string){
-    return await new LoadContract().loadContract(contract,address)
-  }
- 
+
 }
 
-export { ActionsIn } 
- 
+export { ActionsIn }
