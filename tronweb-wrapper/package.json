@@ -2,8 +2,10 @@
   "name": "@sealsc/tronweb-wrapper",
   "version": "0.1.0",
   "keywords": [
-    "web3-wrapper",
-    "web3"
+    "tronweb",
+    "@sealsc/tronweb-wrapper",
+    "wrapper",
+    "sealsc"
   ],
   "scripts": {
     "build": "webpack ",
@@ -12,11 +14,9 @@
   },
   "main": "src/wrapper/wrapper.ts",
   "module": "dist/tronweb-build.es.js",
-  "typings": "dist/types/get-selection-more.d.ts",
   "files": [
     "dist"
   ],
-  "repository": "https://github.com/crimx/get-selection-more",
   "license": "MIT",
   "engines": {
     "node": ">=10.0.0"
