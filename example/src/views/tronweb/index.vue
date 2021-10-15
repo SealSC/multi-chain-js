@@ -45,7 +45,7 @@
 <script>
 import { Loading, Message } from "element-ui";
 import ERC20 from "../../utils/abis/ERC20-ABI.json";
-import * as a from "./bundle.js";
+import * as a from "@sealsc/tronweb-wrapper";
 export default {
   name: "tronwebIndex",
   data() {
@@ -164,17 +164,11 @@ export default {
       });
     },
     async loadContract() {
-      // let Action = new tronWebSdk.Actions();
       let ContractIn = await this.actionsIn.contract.loadContract(
         ERC20,
         "TQaYBj9drxmoW7LfLnDDrvPnuj4zoZbaSS"
       );
-      // this.$alert(ContractIn, "Result", {
-      //   confirmButtonText: "确定",
-      //   callback: (action) => {},
-      // });
       console.log(ContractIn, "Contract");
-      // Message.success({ duration: 3000, message: ContractIn });
     },
     async link() {
       let link = await this.actionsIn.connector.link();

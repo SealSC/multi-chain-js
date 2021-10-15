@@ -25,6 +25,11 @@ const routes = [
     name: "polkadot-SDK-Dome",
     component: _import("polkadot/index")
   },
+  {
+    path: "/solana-SDK-Dome",
+    name: "solana-SDK-Dome",
+    component: _import("solana/index")
+  },
 ];
 
 const router = new Router({
