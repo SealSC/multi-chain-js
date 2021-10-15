@@ -23,7 +23,6 @@
           signTransactionPrivateKey
         </div>
         <div @click="sendTransaction()">sendTransaction</div>
-        <div @click="loadContract()">loadContract</div>
       </div>
     </div>
     <div class="container-web3-module">
@@ -35,6 +34,7 @@
     <div class="container-web3-module">
       <span>contract</span>
       <div class="container-web3-module-right">
+        <div @click="loadContract()">loadContract</div>
         <div @click="offChainCall()">offChainCall</div>
         <div @click="onChainCall()">onChainCall</div>
       </div>
@@ -43,12 +43,9 @@
 </template>
 
 <script>
-
-import { Loading ,Message} from 'element-ui'
-import * as tronWebSdk from "./dist/bundle.js";
-
-import ERC20 from "../../utils/abis/ERC20-ABI.json"
-// const tronWebSdk = require("../../utils/dist/tronweb-build.es")
+import { Loading, Message } from "element-ui";
+import ERC20 from "../../utils/abis/ERC20-ABI.json";
+import * as a from "./bundle.js";
 export default {
   name: "tronwebIndex",
   data() {
@@ -56,107 +53,167 @@ export default {
   },
   components: {},
   async mounted() {
-    let Action = await new tronWebSdk.Actions();
-     console.log(Action,"tronWebSdk")
-    //  let aa = new tronWebSdk.Actions.actions
+    let actionIn = a.Actions;
+    this.actionsIn = new actionIn();
   },
   computed: {},
 
   methods: {
     async init() {
-      let Action = await new tronWebSdk.Actions();
-      let init = await Action.init();
-      Message.success({ duration: 3000, message: init });
+      let init = await this.actionsIn.init();
+      this.$alert(init, "Result", {
+        confirmButtonText: "确定",
+        callback: (action) => {},
+      });
     },
     async getAccount() {
-      let Action = await new tronWebSdk.Actions();
-      let shouldAccount = await Action.actions.getAccount();
-      Message.success({ duration: 3000, message: shouldAccount });
+      let Accounts = await this.actionsIn.actions.getAccount();
+      console.log(Accounts);
+      this.$alert(Accounts, "Result", {
+        confirmButtonText: "确定",
+        callback: (action) => {},
+      });
     },
     async getBlock() {
-      let Action = await new tronWebSdk.Actions();
-      let Block = await Action.actions.getBlock(17584567);
-      Message.success({ duration: 3000, message: Block });
+      let Block = await this.actionsIn.actions.getBlock(17584567);
+      this.$alert(Block, "Result", {
+        confirmButtonText: "确定",
+        callback: (action) => {},
+      });
     },
     async getBlockNumber() {
-      let Action = await new tronWebSdk.Actions();
-      let BlockNumber = await Action.actions.getBlockNumber(123);
-      Message.success({ duration: 3000, message: BlockNumber });
+      let BlockNumber = await this.actionsIn.actions.getBlockNumber(123);
+      this.$alert(BlockNumber, "Result", {
+        confirmButtonText: "确定",
+        callback: (action) => {},
+      });
     },
     async getTransaction() {
-      let Action = await new tronWebSdk.Actions();
-      let transaction = await Action.actions.getTransaction('950ab60dc678315dfccb3dfa81603133ef790d907395adf5d29e9531bf49a3fa');
-      Message.success({ duration: 3000, message: transaction });
+      let transaction = await this.actionsIn.actions.getTransaction(
+        "950ab60dc678315dfccb3dfa81603133ef790d907395adf5d29e9531bf49a3fa"
+      );
+      this.$alert(transaction, "Result", {
+        confirmButtonText: "确定",
+        callback: (action) => {},
+      });
     },
     async getTransactionCount() {
-      let Action = await new tronWebSdk.Actions();
-      let getTransactionCount = await Action.actions.getTransactionCount();
-     Message.success({ duration: 3000, message: getTransactionCount });
+      let getTransactionCount =
+        await this.actionsIn.actions.getTransactionCount();
+      this.$alert(getTransactionCount, "Result", {
+        confirmButtonText: "确定",
+        callback: (action) => {},
+      });
     },
     async sendSignedTransaction() {
-      let Action = await new tronWebSdk.Actions();
-      let sendSignedTransaction = await Action.actions.sendSignedTransaction();
-      Message.success({ duration: 3000, message: sendSignedTransaction });
+      let sendSignedTransaction =
+        await this.actionsIn.actions.sendSignedTransaction();
+      this.$alert(sendSignedTransaction, "Result", {
+        confirmButtonText: "确定",
+        callback: (action) => {},
+      });
     },
     async signWithWallet() {
-      let Action = await new tronWebSdk.Actions();
-      let signWithWallet = await Action.actions.signWithWallet();
-      Message.success({ duration: 3000, message: signWithWallet });
+      let signWithWallet = await this.actionsIn.actions.signWithWallet();
+      this.$alert(signWithWallet, "Result", {
+        confirmButtonText: "确定",
+        callback: (action) => {},
+      });
     },
     async signWithPrivateKey() {
-      let Action = await new tronWebSdk.Actions();
-      let signWithPrivateKey = await Action.actions.signWithPrivateKey();
-     Message.success({ duration: 3000, message: signWithPrivateKey });
+      let signWithPrivateKey =
+        await this.actionsIn.actions.signWithPrivateKey();
+      this.$alert(signWithPrivateKey, "Result", {
+        confirmButtonText: "确定",
+        callback: (action) => {},
+      });
     },
     async signTransaction() {
-       let Action = await new tronWebSdk.Actions();
-      let shouldSigntranction = await Action.actions.signTransaction({
-        from:"0x5B6C6709d1000db91252c8c6E84B8987D1D10829"
-      },'0x5B6C6709d1000db91252c8c6E84B8987D1D10829');
-      Message.success({ duration: 3000, message: shouldSigntranction });
+      let shouldSigntranction = await this.actionsIn.actions.signTransaction(
+        {
+          from: "0x5B6C6709d1000db91252c8c6E84B8987D1D10829",
+        },
+        "0x5B6C6709d1000db91252c8c6E84B8987D1D10829"
+      );
+      this.$alert(shouldSigntranction, "Result", {
+        confirmButtonText: "确定",
+        callback: (action) => {},
+      });
     },
     async signTransactionPrivateKey() {
-      let Action =  new tronWebSdk.Actions();
-    let shouldSigntranction = await Action.actions.signTransaction({
-      from:"0x5B6C6709d1000db91252c8c6E84B8987D1D10829"
-    },'0x5B6C6709d1000db91252c8c6E84B8987D1D10829');
-     Message.success({ duration: 3000, message: shouldSigntranction });
-
+      let shouldSigntranctionPrivateKey =
+        await this.actionsIn.actions.signTransaction(
+          {
+            from: "0x5B6C6709d1000db91252c8c6E84B8987D1D10829",
+          },
+          "0x5B6C6709d1000db91252c8c6E84B8987D1D10829"
+        );
+      this.$alert(shouldSigntranctionPrivateKey, "Result", {
+        confirmButtonText: "确定",
+        callback: (action) => {},
+      });
     },
     async sendTransaction() {
-      let Action =  new tronWebSdk.Actions();
-    let shouldsendTranction = await Action.actions.sendTransaction({
-        address:"TLguFcSkjNgTnf8zWQJhNMofKHASRjmtqb",
-        amount: 10
-    });
-     Message.success({ duration: 3000, message: shouldsendTranction });
+      let shouldsendTranction = await this.actionsIn.actions.sendTransaction({
+        address: "TLguFcSkjNgTnf8zWQJhNMofKHASRjmtqb",
+        amount: 10,
+      });
+      this.$alert(shouldsendTranction, "Result", {
+        confirmButtonText: "确定",
+        callback: (action) => {},
+      });
     },
     async loadContract() {
-      let Action = new tronWebSdk.Actions();
-    let ContractIn = await Action.actions.loadContract(ERC20, 'TQaYBj9drxmoW7LfLnDDrvPnuj4zoZbaSS')
-    Message.success({ duration: 3000, message: ContractIn });
+      // let Action = new tronWebSdk.Actions();
+      let ContractIn = await this.actionsIn.contract.loadContract(
+        ERC20,
+        "TQaYBj9drxmoW7LfLnDDrvPnuj4zoZbaSS"
+      );
+      // this.$alert(ContractIn, "Result", {
+      //   confirmButtonText: "确定",
+      //   callback: (action) => {},
+      // });
+      console.log(ContractIn, "Contract");
+      // Message.success({ duration: 3000, message: ContractIn });
     },
     async link() {
-      let Action = new tronWebSdk.Actions();
-      let link =  await Action.connector.link()
-       Message.success({ duration: 3000, message: link });
+      let link = await this.actionsIn.connector.link();
+      this.$alert(link, "Result", {
+        confirmButtonText: "确定",
+        callback: (action) => {},
+      });
     },
     async offChainCall() {
-      let Action = await new tronWebSdk.Actions()
-    let Contract = await Action.actions.loadContract(ERC20, 'TQaYBj9drxmoW7LfLnDDrvPnuj4zoZbaSS');
+      let Contract = await this.actionsIn.contract.loadContract(
+        ERC20,
+        "TQaYBj9drxmoW7LfLnDDrvPnuj4zoZbaSS"
+      );
 
-    let contractCall = await Action.contract.offChainCall(Contract.data, 'totalSupply', [], '', "")
-    Message.success({ duration: 3000, message: contractCall });
+      let contractCall = await this.actionsIn.contract.offChainCall(
+        Contract.data,
+        "totalSupply",
+        [],
+        "",
+        ""
+      );
+      Message.success({ duration: 3000, message: contractCall });
     },
     async onChainCall() {
-      let Action = await new tronWebSdk.Actions()
-    let Contract = await Action.actions.loadContract(ERC20, 'TQaYBj9drxmoW7LfLnDDrvPnuj4zoZbaSS');
+      let Contract = await this.actionsIn.contract.loadContract(
+        ERC20,
+        "TQaYBj9drxmoW7LfLnDDrvPnuj4zoZbaSS"
+      );
 
-    let onChainCall = await Action.contract.onChainCall(Contract.data, 'approve', ['TQaYBj9drxmoW7LfLnDDrvPnuj4zoZbaSS', '0'], {
-      callValue: "1000000000",
-      feeLimit: "140000",
-  })
-    Message.success({ duration: 3000, message: onChainCall });
+      let onChainCall = await this.actionsIn.contract.onChainCall(
+        Contract.data,
+        "approve",
+        ["TQaYBj9drxmoW7LfLnDDrvPnuj4zoZbaSS", "0"],
+        {
+          callValue: "1000000000",
+          feeLimit: "140000",
+        }
+      );
+      Message.success({ duration: 3000, message: onChainCall });
     },
   },
 };
