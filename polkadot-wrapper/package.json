@@ -1,6 +1,6 @@
 {
   "name": "@sealsc/polkadot-wrapper",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "keywords": [
     "sealsc",
     "wallet",
@@ -23,7 +23,7 @@
     "node": ">=10.0.0"
   },
   "dependencies": {
-    "@polkadot/api": "^5.6.1",
+    "@polkadot/api": "^6.3.1",
     "@polkadot/extension-dapp": "^0.39.3",
     "@polkadot/util": "^7.2.1",
     "@polkadot/util-crypto": "^7.2.1",
