@@ -1,6 +1,6 @@
 import { Result } from '../result'
 import PredefinedStatus from '../../consts/consts'
-import json from '@rollup/plugin-json';
+
 
 class SignTransaction {
   public async signTransaction(address: string) {
