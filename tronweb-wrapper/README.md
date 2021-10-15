@@ -1,7 +1,11 @@
-# protocol
+# tronWeb-wrapper
 
 ### 概述
-protocol库是mulit-chain-js制定的统一协议，服务于各个生态系统的各个功能,制定可与多个区块链统一使用的接口以及数据类型数据结构等
+tronWeb-wrapper库是一系列模块的集合，服务于波场生态系统的各个功能, 使用插件模型和统一接口来完成区块​​链交易的构建、签名、发送等常见的区块链功能
+
+* tronWeb-actions 用来与波场区块链交互
+* tronWeb-connector 用来与TronLink钱包进行交互
+* tronWeb-contract 用来与波场区块链合约交互
 
 #### actions模块的示例代码
 获取最新区块高度
@@ -39,11 +43,15 @@ example：<https://github.com>
 
 ### 如何开始？
 
-只需安装protocol库即可开始
+只需安装tronWeb-wrapper库即可开始
 ```js
-$ yarn add @sealsc/protocol
+$ yarn add @sealsc/tronWeb-wrapper 
 ```
-然后你需要创建一个 Action 的实例,按需设置provider(web3-wrapper SDK内置@metamask/detect-provider检测provider后注入)
+然后你需要创建一个 Action 的实例
 ```js
 let Action = await new Actions()
+```
+运行ts文件和示例
+```js
+$ yarn test
 ```
