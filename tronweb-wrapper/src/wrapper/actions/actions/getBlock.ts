@@ -1,9 +1,6 @@
 import { Result } from '../result'
 import PredefinedStatus from '../../consts/consts'
 
-// import { getBlockField } from '../../fieldDefinition/getBlockField'
-
-
 class GetBlock {
   public async getBlock(block: number | string) {
     try {
@@ -27,7 +24,6 @@ class GetBlock {
         'gasUsed': null,
         'transactions': blockData.transactions ? blockData.transactions.length : 0,
         'uncles': null
-
       }
       return new Result(PredefinedStatus.SUCCESS(data))
     } catch (err) {
