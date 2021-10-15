@@ -1,6 +1,6 @@
 {
   "name": "@sealsc/web3-wrapper",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "keywords": [
     "sealsc",
     "wallet",
@@ -16,7 +16,7 @@
     "serve": "vue-cli-service serve",
     "test": "karma start"
   },
-  "main": "src/wrapper/wrapper.ts",
+  "main": "dist/bundle.js",
   "module": "dist/bundle.es.js",
   "files": [
     "dist"
