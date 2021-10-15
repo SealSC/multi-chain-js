@@ -1,4 +1,4 @@
-import { tronWebInstall } from '../tronweb'
+import { web3InstallisPhantom } from '../tronweb'
 import { ActionsIn } from '../actions/actions/actions'
 import { Connector } from '../connector'
 import PredefinedStatus from '../consts/consts'
@@ -14,7 +14,7 @@ class Actions {
     this.contract = new ContractCall()
   }
   public async init() {
-    (window as any).isPhantom = await tronWebInstall()
+    (window as any).isPhantom = await web3InstallisPhantom()
     return new Result(PredefinedStatus.SUCCESS(null))
   }
 }
