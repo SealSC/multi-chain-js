@@ -23,6 +23,7 @@
           signTransactionPrivateKey
         </div>
         <div @click="sendTransaction()">sendTransaction</div>
+        <div @click="loadContract()">loadContract</div>
       </div>
     </div>
     <div class="container-web3-module">
@@ -34,7 +35,6 @@
     <div class="container-web3-module">
       <span>contract</span>
       <div class="container-web3-module-right">
-        <div @click="loadContract()">loadContract</div>
         <div @click="offChainCall()">offChainCall</div>
         <div @click="onChainCall()">onChainCall</div>
       </div>
@@ -43,16 +43,21 @@
 </template>
 
 <script>
-import { Loading, Message } from "element-ui";
-import ERC20 from "../../utils/abis/ERC20-ABI.json";
 import * as a from "./bundle.js";
+
+import { Loading } from "element-ui";
+import ERC20 from "../../utils/abis/ERC20-ABI.json";
+
 export default {
-  name: "tronwebIndex",
+  name: "web3Index",
   data() {
-    return {};
+    return {
+      actionsIn: null,
+      LoadingIn: null,
+    };
   },
   components: {},
-  async mounted() {
+  mounted() {
     let actionIn = a.Actions;
     this.actionsIn = new actionIn();
   },
@@ -60,8 +65,9 @@ export default {
 
   methods: {
     async init() {
-      let init = await this.actionsIn.init();
-      this.$alert(init, "Result", {
+      console.log(await this.actionsIn.init());
+      let link = await this.actionsIn.init();
+      this.$alert(link, "Result", {
         confirmButtonText: "确定",
         callback: (action) => {},
       });
@@ -74,146 +80,184 @@ export default {
         callback: (action) => {},
       });
     },
+    async getBalance() {
+      let Balance = await this.actionsIn.actions.getBalance(
+        "BTYUoerzScoXFymLWTowgEVF9Yr2ifpf3z3VRgJUMpNU"
+      );
+      console.log(Balance);
+      this.$alert(Balance, "Result", {
+        confirmButtonText: "确定",
+        callback: (action) => {},
+      });
+    },
     async getBlock() {
-      let Block = await this.actionsIn.actions.getBlock(17584567);
+      let Block = await this.actionsIn.actions.getBlock(9603492);
       this.$alert(Block, "Result", {
         confirmButtonText: "确定",
         callback: (action) => {},
       });
     },
     async getBlockNumber() {
-      let BlockNumber = await this.actionsIn.actions.getBlockNumber(123);
+      let BlockNumber = await this.actionsIn.actions.getBlockNumber();
+      console.log(BlockNumber);
       this.$alert(BlockNumber, "Result", {
         confirmButtonText: "确定",
         callback: (action) => {},
       });
     },
     async getTransaction() {
-      let transaction = await this.actionsIn.actions.getTransaction(
-        "950ab60dc678315dfccb3dfa81603133ef790d907395adf5d29e9531bf49a3fa"
+      let Transaction = await this.actionsIn.actions.getTransaction(
+        "5CgLYCuDbLZQnraR8jrSYQGetwyYLNGcnckgw3ukbuSeujCwDp1wW7XULMqoQEd5eYNyeoGMV56WvjrZVmKVQbT"
       );
-      this.$alert(transaction, "Result", {
+      console.log(Transaction);
+      this.$alert(Transaction, "Result", {
         confirmButtonText: "确定",
         callback: (action) => {},
       });
     },
     async getTransactionCount() {
-      let getTransactionCount =
-        await this.actionsIn.actions.getTransactionCount();
-      this.$alert(getTransactionCount, "Result", {
+      let TransactionCount = await this.actionsIn.actions.getTransactionCount();
+      console.log(TransactionCount);
+      this.$alert(TransactionCount, "Result", {
         confirmButtonText: "确定",
         callback: (action) => {},
       });
     },
-    async sendSignedTransaction() {
-      let sendSignedTransaction =
-        await this.actionsIn.actions.sendSignedTransaction();
-      this.$alert(sendSignedTransaction, "Result", {
-        confirmButtonText: "确定",
-        callback: (action) => {},
-      });
+    sendSignedTransaction() {
+      this.loadingIn = Loading.service({ fullscreen: true });
+      this.actionsIn.actions
+        .sendSignedTransaction({
+          from: "BTYUoerzScoXFymLWTowgEVF9Yr2ifpf3z3VRgJUMpNU",
+          to: "9e1iJpWBYmMJ8GzYBFnNtSoTQ7EHUGWFapnixvAKHKPF",
+          amount: 10,
+        })
+        .then((res) => {
+          console.log(res);
+          this.loadingIn.close();
+          this.$alert(res, "Result", {
+            confirmButtonText: "确定",
+            callback: (action) => {},
+          });
+        })
+        .catch(() => {
+          this.loadingIn.close();
+        });
     },
     async signWithWallet() {
-      let signWithWallet = await this.actionsIn.actions.signWithWallet();
-      this.$alert(signWithWallet, "Result", {
+      let sign = await this.actionsIn.actions.signWithWallet(
+        "utf8",
+        "BTYUoerzScoXFymLWTowgEVF9Yr2ifpf3z3VRgJUMpNU"
+      );
+      console.log(sign);
+      this.$alert(sign, "Result", {
         confirmButtonText: "确定",
         callback: (action) => {},
       });
     },
     async signWithPrivateKey() {
-      let signWithPrivateKey =
-        await this.actionsIn.actions.signWithPrivateKey();
-      this.$alert(signWithPrivateKey, "Result", {
+      let sign = await this.actionsIn.actions.signWithPrivateKey(
+        "3",
+        "4349054ad0a292657a316300d5112b48f0633c2cb3d8ece672077aa852635890"
+      );
+      console.log(sign);
+      this.$alert(sign, "Result", {
         confirmButtonText: "确定",
         callback: (action) => {},
       });
     },
     async signTransaction() {
-      let shouldSigntranction = await this.actionsIn.actions.signTransaction(
-        {
-          from: "0x5B6C6709d1000db91252c8c6E84B8987D1D10829",
-        },
-        "0x5B6C6709d1000db91252c8c6E84B8987D1D10829"
+      let Signtranction = await this.actionsIn.actions.signTransaction(
+        "BTYUoerzScoXFymLWTowgEVF9Yr2ifpf3z3VRgJUMpNU"
       );
-      this.$alert(shouldSigntranction, "Result", {
+      console.log(Signtranction);
+      this.$alert(Signtranction, "Result", {
         confirmButtonText: "确定",
         callback: (action) => {},
       });
     },
     async signTransactionPrivateKey() {
-      let shouldSigntranctionPrivateKey =
-        await this.actionsIn.actions.signTransaction(
+      let Signtranction =
+        await this.actionsIn.actions.signTransactionPrivateKey(
           {
             from: "0x5B6C6709d1000db91252c8c6E84B8987D1D10829",
+            gas: "100000",
+            value: "1",
           },
-          "0x5B6C6709d1000db91252c8c6E84B8987D1D10829"
+          "4349054ad0a292657a316300d5112b48f0633c2cb3d8ece672077aa852635890"
         );
-      this.$alert(shouldSigntranctionPrivateKey, "Result", {
+      console.log(Signtranction);
+      this.$alert(Signtranction, "Result", {
         confirmButtonText: "确定",
         callback: (action) => {},
       });
     },
-    async sendTransaction() {
-      let shouldsendTranction = await this.actionsIn.actions.sendTransaction({
-        address: "TLguFcSkjNgTnf8zWQJhNMofKHASRjmtqb",
-        amount: 10,
-      });
-      this.$alert(shouldsendTranction, "Result", {
-        confirmButtonText: "确定",
-        callback: (action) => {},
-      });
+    sendTransaction() {
+      this.loadingIn = Loading.service({ fullscreen: true });
+      this.actionsIn.actions
+        .sendTransaction({
+          from: "BTYUoerzScoXFymLWTowgEVF9Yr2ifpf3z3VRgJUMpNU",
+          to: "9e1iJpWBYmMJ8GzYBFnNtSoTQ7EHUGWFapnixvAKHKPF",
+          amount: 10,
+        })
+        .then((res) => {
+          console.log(res);
+          this.loadingIn.close();
+          this.$alert(res, "Result", {
+            confirmButtonText: "确定",
+            callback: (action) => {},
+          });
+        })
+        .catch((error) => {
+          this.loadingIn.close();
+        });
     },
     async loadContract() {
-      // let Action = new tronWebSdk.Actions();
-      let ContractIn = await this.actionsIn.contract.loadContract(
+      let abis = await this.actionsIn.contract.loadContract(
         ERC20,
-        "TQaYBj9drxmoW7LfLnDDrvPnuj4zoZbaSS"
+        "0x98445c06f7D3D9a6EEA7C6e8E96d4a7aEF7E9513"
       );
-      // this.$alert(ContractIn, "Result", {
-      //   confirmButtonText: "确定",
-      //   callback: (action) => {},
-      // });
-      console.log(ContractIn, "Contract");
-      // Message.success({ duration: 3000, message: ContractIn });
-    },
-    async link() {
-      let link = await this.actionsIn.connector.link();
-      this.$alert(link, "Result", {
+      this.$alert(abis, "Result", {
         confirmButtonText: "确定",
         callback: (action) => {},
       });
+    },
+    async link() {
+      await this.actionsIn.connector.link();
     },
     async offChainCall() {
       let Contract = await this.actionsIn.contract.loadContract(
         ERC20,
-        "TQaYBj9drxmoW7LfLnDDrvPnuj4zoZbaSS"
+        "0x98445c06f7D3D9a6EEA7C6e8E96d4a7aEF7E9513"
       );
-
-      let contractCall = await this.actionsIn.contract.offChainCall(
+      let offChainCall = await this.actionsIn.contract.offChainCall(
         Contract.data,
-        "totalSupply",
+        "name",
         [],
         "",
         ""
       );
-      Message.success({ duration: 3000, message: contractCall });
+      console.log(offChainCall);
+      this.$alert(offChainCall, "Result", {
+        confirmButtonText: "确定",
+        callback: (action) => {},
+      });
     },
     async onChainCall() {
       let Contract = await this.actionsIn.contract.loadContract(
         ERC20,
-        "TQaYBj9drxmoW7LfLnDDrvPnuj4zoZbaSS"
+        "0x98445c06f7D3D9a6EEA7C6e8E96d4a7aEF7E9513"
       );
-
       let onChainCall = await this.actionsIn.contract.onChainCall(
         Contract.data,
         "approve",
-        ["TQaYBj9drxmoW7LfLnDDrvPnuj4zoZbaSS", "0"],
-        {
-          callValue: "1000000000",
-          feeLimit: "140000",
-        }
+        ["0x5B6C6709d1000db91252c8c6E84B8987D1D10829", "0"],
+        { gasPrice: "4000000000", gasLimit: "150000" }
       );
-      Message.success({ duration: 3000, message: onChainCall });
+      console.log(onChainCall);
+      this.$alert(onChainCall, "Result", {
+        confirmButtonText: "确定",
+        callback: (action) => {},
+      });
     },
   },
 };
