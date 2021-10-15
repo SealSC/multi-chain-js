@@ -1,5 +1,5 @@
 {
-  "name": "web3-wrapper",
+  "name": "@sealsc/solana-wrapper",
   "version": "0.1.0",
   "keywords": [
     "web3-wrapper",

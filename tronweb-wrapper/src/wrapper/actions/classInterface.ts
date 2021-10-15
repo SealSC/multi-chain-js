@@ -1,37 +1,38 @@
-interface dataInterface{
-  code:number
-  message:string
+interface dataInterface {
+  code: number
+  message: string
 }
 
 interface getAccountInterface extends dataInterface {
   data: null | Array<string>
 }
-interface getBlockInterface extends dataInterface{
+
+interface getBlockInterface extends dataInterface {
   data: null | Object
 }
-interface getBlockNumbeInterface extends dataInterface{
+interface getBlockNumbeInterface extends dataInterface {
   data: null | Number
 }
-interface getBalanceInterface extends dataInterface{
+interface getBalanceInterface extends dataInterface {
   data: null | string
 }
-interface getTransactionInterface extends dataInterface{
+interface getTransactionInterface extends dataInterface {
   data: null | Object
 }
-interface getTransactionCountInterface extends dataInterface{
+interface getTransactionCountInterface extends dataInterface {
   data: null | Number
 }
-interface signInterface extends dataInterface{
+interface signInterface extends dataInterface {
   data: null | string
 }
-interface signTransactionInterface extends dataInterface{
+interface signTransactionInterface extends dataInterface {
   data: null | Object
 }
-interface sendSignedTransactionInterface extends dataInterface{
+interface sendSignedTransactionInterface extends dataInterface {
   data: null | string
 }
 
-export{ 
+export {
   getAccountInterface,
   getBlockInterface,
   getBlockNumbeInterface,
