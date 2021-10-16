@@ -27,6 +27,12 @@
               <!-- <img :src="'/static/login/WalletConnect.png'" alt=""> -->
             </div>
           </div>
+          <div class="WalletConnectBtn" @click="toPage('solana-SDK-Dome')">
+            solana
+            <div class='imgBox'>
+              <!-- <img :src="'/static/login/WalletConnect.png'" alt=""> -->
+            </div>
+          </div>
         </div>
     </div> 
   </div>
@@ -89,7 +95,7 @@ export default {
     bottom: 0;
     margin: auto;
     width: 570px;
-    height:350px;
+    height:450px;
     z-index: 99999;
     @include background_color("navBackground");
     border-radius: 8px;

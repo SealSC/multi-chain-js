@@ -21,7 +21,6 @@
           <div @click="signTransaction()">signTransaction</div>
           <div @click="signTransactionPrivateKey()">signTransactionPrivateKey</div>
           <div @click="sendTransaction()">sendTransaction</div>
-          <div @click="loadContract()">loadContract</div>
         </div>
       </div>
       <div class="container-web3-module">
@@ -33,6 +32,7 @@
       <div class="container-web3-module">
         <span>contract</span>
         <div class="container-web3-module-right">
+          <div @click="loadContract()">loadContract</div>
           <div @click="offChainCall()">offChainCall</div>
           <div @click="onChainCall()">onChainCall</div>
         </div>
@@ -41,7 +41,7 @@
 </template>
 
 <script>
-import * as Actions from './bundle'
+import * as Actions from '@sealsc/polkadot-wrapper'
 import { Loading } from 'element-ui'
 import ERC20 from '../../utils/abis/ERC20-ABI.json'
 
@@ -196,7 +196,7 @@ export default {
       });
     },
     async loadContract(){
-      let abis =  await this.actionsIn.actions.loadContract(ERC20,'0x98445c06f7D3D9a6EEA7C6e8E96d4a7aEF7E9513')
+      let abis =  await this.actionsIn.contract.loadContract(ERC20,'0x98445c06f7D3D9a6EEA7C6e8E96d4a7aEF7E9513')
       this.$alert(abis, 'Result', {
         confirmButtonText: '确定',
         callback: action => {
@@ -208,7 +208,7 @@ export default {
       await this.actionsIn.connector.link();
     },
     async offChainCall(){
-      let Contract =  await this.actionsIn.actions.loadContract(ERC20,'0x98445c06f7D3D9a6EEA7C6e8E96d4a7aEF7E9513')
+      let Contract =  await this.actionsIn.contract.loadContract(ERC20,'0x98445c06f7D3D9a6EEA7C6e8E96d4a7aEF7E9513')
       let offChainCall =  await this.actionsIn.contract.offChainCall(Contract.data,'name',[],'','')
       console.log(offChainCall)
       this.$alert(offChainCall, 'Result', {
@@ -219,7 +219,7 @@ export default {
       });
     },
     async onChainCall(){
-      let Contract =  await this.actionsIn.actions.loadContract(ERC20,'0x98445c06f7D3D9a6EEA7C6e8E96d4a7aEF7E9513')
+      let Contract =  await this.actionsIn.contract.loadContract(ERC20,'0x98445c06f7D3D9a6EEA7C6e8E96d4a7aEF7E9513')
       let onChainCall = await this.actionsIn.contract.onChainCall(Contract.data,'approve',['0x5B6C6709d1000db91252c8c6E84B8987D1D10829','0'],{gasPrice:'4000000000',gasLimit:'150000'})
       this.$alert(onChainCall, 'Result', {
         confirmButtonText: '确定',

@@ -23,7 +23,6 @@
           signTransactionPrivateKey
         </div>
         <div @click="sendTransaction()">sendTransaction</div>
-        <div @click="loadContract()">loadContract</div>
       </div>
     </div>
     <div class="container-web3-module">
@@ -35,6 +34,7 @@
     <div class="container-web3-module">
       <span>contract</span>
       <div class="container-web3-module-right">
+        <div @click="loadContract()">loadContract</div>
         <div @click="offChainCall()">offChainCall</div>
         <div @click="onChainCall()">onChainCall</div>
       </div>
@@ -43,7 +43,7 @@
 </template>
 
 <script>
-import * as a from "./bundle.js";
+import * as a from "@sealsc/solana-wrapper";
 
 import { Loading } from "element-ui";
 import ERC20 from "../../utils/abis/ERC20-ABI.json";
