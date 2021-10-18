@@ -17,7 +17,7 @@ class Actions {
   public async init(rpc:string){
     const wsProvider = new WsProvider(rpc);
     (window as any).api = await ApiPromise.create({ provider: wsProvider });
-    return new Result(PredefinedStatus.SUCCESS((window as any).api))
+    return new Result(PredefinedStatus.SUCCESS('init success'))
   }
 }
 

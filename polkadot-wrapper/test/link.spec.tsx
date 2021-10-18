@@ -16,8 +16,11 @@ describe('link', () => {
     const api = await ApiPromise.create({ provider: wsProvider });
     const extensions = await web3Enable('my cool dapp');
     const allAccounts = await web3Accounts();
-    let results = new Result(PredefinedStatus.SUCCESS(allAccounts))
-
+    let Account: any[] = []
+    for (let i = 0; i < allAccounts.length; i++) {
+      Account.push(allAccounts[i].address)
+    }
+    let results = new Result(PredefinedStatus.SUCCESS(Account))
     let Action = await new Actions()
     let linkResult = await Action.connector.link()
 
