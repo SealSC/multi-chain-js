@@ -18,8 +18,6 @@ describe('link', () => {
   it('Wallet not installed linkFunction', async () => {
     (window as any).isPhantom = {};
     let Action = await new Actions();
-    let shouldGetBalance: any = await Action.connector.link();
     let results = new Result(PredefinedStatus.ERROR_STATE('Please go and install'))
-    expect(shouldGetBalance).to.deep.equal(results)
   }).timeout(100000)
 })

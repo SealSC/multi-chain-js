@@ -8,6 +8,7 @@ describe('getAccount', () => {
     (window as any).isPhantom = await web3InstallisPhantom()
     let Action = await new Actions()
     let shouldAccount = await Action.actions.getAccount()
+
     await (window as any).solana.off().connect()
     let Account = (window as any).solana.publicKey.toBase58()
     let results = new Result(PredefinedStatus.SUCCESS([Account]))
