@@ -1,7 +1,7 @@
 <template>
     <div class="container-web3">
       <div class="container-web3-module">
-        <span>初始化</span>
+        <span>init</span>
         <div class="container-web3-module-right">
           <div @click="init()">init</div>
         </div>
@@ -72,7 +72,7 @@ export default {
       let Accounts = await this.actionsIn.actions.getAccount()
       console.log(Accounts)
       this.$alert(Accounts, 'Result', {
-        confirmButtonText: '确定',
+        confirmButtonText: 'Sure',
         callback: action => {
 
         }
@@ -82,7 +82,7 @@ export default {
       let Balance = await this.actionsIn.actions.getBalance('5DFojLCUUsfZV26fg4YUj5bbocMMdCdydEBD2KeFWrVBPw1h')
       console.log(Balance)
       this.$alert(Balance, 'Result', {
-        confirmButtonText: '确定',
+        confirmButtonText: 'Sure',
         callback: action => {
 
         }
@@ -91,7 +91,7 @@ export default {
     async getBlock(){
       let Block = await this.actionsIn.actions.getBlock(6521853)
       this.$alert(Block, 'Result', {
-        confirmButtonText: '确定',
+        confirmButtonText: 'Sure',
         callback: action => {
 
         }
@@ -101,7 +101,7 @@ export default {
       let BlockNumber = await this.actionsIn.actions.getBlockNumber()
       console.log(BlockNumber)
       this.$alert(BlockNumber, 'Result', {
-        confirmButtonText: '确定',
+        confirmButtonText: 'Sure',
         callback: action => {
 
         }
@@ -111,7 +111,7 @@ export default {
       let Transaction = await this.actionsIn.actions.getTransaction('0x65d3cada398bfcd70098ed955ff645b072c6df0d001f61f4b1c181cfdf7d1309')
       console.log(Transaction)
       this.$alert(Transaction, 'Result', {
-        confirmButtonText: '确定',
+        confirmButtonText: 'Sure',
         callback: action => {
 
         }
@@ -121,7 +121,7 @@ export default {
       let TransactionCount = await this.actionsIn.actions.getTransactionCount('0x5B6C6709d1000db91252c8c6E84B8987D1D10829')
       console.log(TransactionCount)
       this.$alert(TransactionCount, 'Result', {
-        confirmButtonText: '确定',
+        confirmButtonText: 'Sure',
         callback: action => {
 
         }
@@ -130,7 +130,7 @@ export default {
     async sendSignedTransaction(){
       let sendSignedTransaction = await this.actionsIn.actions.sendSignedTransaction('14EHXD3oats4uQQ3Rp6DByaiQzowt5ep4R5fXCpMkkF3oDps',0.1)
       this.$alert(sendSignedTransaction, 'Result', {
-        confirmButtonText: '确定',
+        confirmButtonText: 'Sure',
         callback: action => {
 
         }
@@ -140,7 +140,7 @@ export default {
       let sign = await this.actionsIn.actions.signWithWallet('2')
       console.log(sign)
       this.$alert(sign, 'Result', {
-        confirmButtonText: '确定',
+        confirmButtonText: 'Sure',
         callback: action => {
 
         }
@@ -150,7 +150,7 @@ export default {
       let sign = await this.actionsIn.actions.signWithPrivateKey('3','4349054ad0a292657a316300d5112b48f0633c2cb3d8ece672077aa852635890');
       console.log(sign)
       this.$alert(sign, 'Result', {
-        confirmButtonText: '确定',
+        confirmButtonText: 'Sure',
         callback: action => {
 
         }
@@ -162,7 +162,7 @@ export default {
       },'0x5B6C6709d1000db91252c8c6E84B8987D1D10829');
       console.log(Signtranction)
       this.$alert(Signtranction, 'Result', {
-        confirmButtonText: '确定',
+        confirmButtonText: 'Sure',
         callback: action => {
 
         }
@@ -176,7 +176,7 @@ export default {
       },'4349054ad0a292657a316300d5112b48f0633c2cb3d8ece672077aa852635890');
       console.log(Signtranction)
       this.$alert(Signtranction, 'Result', {
-        confirmButtonText: '确定',
+        confirmButtonText: 'Sure',
         callback: action => {
 
         }
@@ -189,7 +189,7 @@ export default {
         value: '10'
       })
       this.$alert(sendTransaction, 'Result', {
-        confirmButtonText: '确定',
+        confirmButtonText: 'Sure',
         callback: action => {
 
         }
@@ -198,7 +198,7 @@ export default {
     async loadContract(){
       let abis =  await this.actionsIn.contract.loadContract(ERC20,'0x98445c06f7D3D9a6EEA7C6e8E96d4a7aEF7E9513')
       this.$alert(abis, 'Result', {
-        confirmButtonText: '确定',
+        confirmButtonText: 'Sure',
         callback: action => {
 
         }
@@ -212,7 +212,7 @@ export default {
       let offChainCall =  await this.actionsIn.contract.offChainCall(Contract.data,'name',[],'','')
       console.log(offChainCall)
       this.$alert(offChainCall, 'Result', {
-        confirmButtonText: '确定',
+        confirmButtonText: 'Sure',
         callback: action => {
 
         }
@@ -222,7 +222,7 @@ export default {
       let Contract =  await this.actionsIn.contract.loadContract(ERC20,'0x98445c06f7D3D9a6EEA7C6e8E96d4a7aEF7E9513')
       let onChainCall = await this.actionsIn.contract.onChainCall(Contract.data,'approve',['0x5B6C6709d1000db91252c8c6E84B8987D1D10829','0'],{gasPrice:'4000000000',gasLimit:'150000'})
       this.$alert(onChainCall, 'Result', {
-        confirmButtonText: '确定',
+        confirmButtonText: 'Sure',
         callback: action => {
 
         }
