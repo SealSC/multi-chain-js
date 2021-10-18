@@ -67,7 +67,13 @@ export default {
 
   methods:{
     async init(){
-      console.log(await this.actionsIn.init())
+      let init = await this.actionsIn.init()
+      this.$alert(init, 'Result', {
+        confirmButtonText: 'Sure',
+        callback: action => {
+
+        }
+      });
     },
     async getAccount(){
       let Accounts = await this.actionsIn.actions.getAccount()
@@ -78,7 +84,6 @@ export default {
 
         }
       });
-     
     },
     async getBalance(){
       let Balance = await this.actionsIn.actions.getBalance('0x5B6C6709d1000db91252c8c6E84B8987D1D10829')
@@ -212,9 +217,21 @@ export default {
     async loadContract(){
       let abis =  await this.actionsIn.contract.loadContract(ERC20,'0x98445c06f7D3D9a6EEA7C6e8E96d4a7aEF7E9513')
       console.log(abis)
+      this.$alert('Print to the console', 'Result', {
+        confirmButtonText: 'Sure',
+        callback: action => {
+
+        }
+      });
     },
     async link(){
-      await this.actionsIn.connector.link();
+      let accounts =  await this.actionsIn.connector.link();
+      this.$alert(accounts, 'Result', {
+        confirmButtonText: 'Sure',
+        callback: action => {
+
+        }
+      });
     },
     async offChainCall(){
       let Contract =  await this.actionsIn.contract.loadContract(ERC20,'0x98445c06f7D3D9a6EEA7C6e8E96d4a7aEF7E9513')
@@ -231,6 +248,12 @@ export default {
       let Contract =  await this.actionsIn.contract.loadContract(ERC20,'0x98445c06f7D3D9a6EEA7C6e8E96d4a7aEF7E9513')
       let onChainCall = await this.actionsIn.contract.onChainCall(Contract.data,'approve',['0x5B6C6709d1000db91252c8c6E84B8987D1D10829','0'],{gasPrice:'4000000000',gasLimit:'150000'})
       console.log(onChainCall)
+      this.$alert(onChainCall, 'Result', {
+        confirmButtonText: 'Sure',
+        callback: action => {
+
+        }
+      });
     }
   }
 };
