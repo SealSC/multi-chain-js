@@ -1,7 +1,7 @@
 <template>
   <div class="container-web3">
     <div class="container-web3-module">
-      <span>初始化</span>
+      <span>init</span>
       <div class="container-web3-module-right">
         <div @click="init()">init</div>
       </div>
@@ -62,7 +62,7 @@ export default {
     async init() {
       let init = await this.actionsIn.init();
       this.$alert(init, "Result", {
-        confirmButtonText: "确定",
+        confirmButtonText: "Sure",
         callback: (action) => {},
       });
     },
@@ -70,21 +70,29 @@ export default {
       let Accounts = await this.actionsIn.actions.getAccount();
       console.log(Accounts);
       this.$alert(Accounts, "Result", {
-        confirmButtonText: "确定",
+        confirmButtonText: "Sure",
+        callback: (action) => {},
+      });
+    },
+    async getBalance(){
+      let Balance = await this.actionsIn.actions.getBalance('TPCgprwAAFBSgryLYUDiY9ifAoUYwqd5SH');
+      console.log(Balance);
+      this.$alert(Balance, "Result", {
+        confirmButtonText: "Sure",
         callback: (action) => {},
       });
     },
     async getBlock() {
       let Block = await this.actionsIn.actions.getBlock(17584567);
       this.$alert(Block, "Result", {
-        confirmButtonText: "确定",
+        confirmButtonText: "Sure",
         callback: (action) => {},
       });
     },
     async getBlockNumber() {
       let BlockNumber = await this.actionsIn.actions.getBlockNumber(123);
       this.$alert(BlockNumber, "Result", {
-        confirmButtonText: "确定",
+        confirmButtonText: "Sure",
         callback: (action) => {},
       });
     },
@@ -93,7 +101,7 @@ export default {
         "950ab60dc678315dfccb3dfa81603133ef790d907395adf5d29e9531bf49a3fa"
       );
       this.$alert(transaction, "Result", {
-        confirmButtonText: "确定",
+        confirmButtonText: "Sure",
         callback: (action) => {},
       });
     },
@@ -101,7 +109,7 @@ export default {
       let getTransactionCount =
         await this.actionsIn.actions.getTransactionCount();
       this.$alert(getTransactionCount, "Result", {
-        confirmButtonText: "确定",
+        confirmButtonText: "Sure",
         callback: (action) => {},
       });
     },
@@ -109,14 +117,14 @@ export default {
       let sendSignedTransaction =
         await this.actionsIn.actions.sendSignedTransaction();
       this.$alert(sendSignedTransaction, "Result", {
-        confirmButtonText: "确定",
+        confirmButtonText: "Sure",
         callback: (action) => {},
       });
     },
     async signWithWallet() {
       let signWithWallet = await this.actionsIn.actions.signWithWallet();
       this.$alert(signWithWallet, "Result", {
-        confirmButtonText: "确定",
+        confirmButtonText: "Sure",
         callback: (action) => {},
       });
     },
@@ -124,7 +132,7 @@ export default {
       let signWithPrivateKey =
         await this.actionsIn.actions.signWithPrivateKey();
       this.$alert(signWithPrivateKey, "Result", {
-        confirmButtonText: "确定",
+        confirmButtonText: "Sure",
         callback: (action) => {},
       });
     },
@@ -136,7 +144,7 @@ export default {
         "0x5B6C6709d1000db91252c8c6E84B8987D1D10829"
       );
       this.$alert(shouldSigntranction, "Result", {
-        confirmButtonText: "确定",
+        confirmButtonText: "Sure",
         callback: (action) => {},
       });
     },
@@ -149,7 +157,7 @@ export default {
           "0x5B6C6709d1000db91252c8c6E84B8987D1D10829"
         );
       this.$alert(shouldSigntranctionPrivateKey, "Result", {
-        confirmButtonText: "确定",
+        confirmButtonText: "Sure",
         callback: (action) => {},
       });
     },
@@ -159,7 +167,7 @@ export default {
         amount: 10,
       });
       this.$alert(shouldsendTranction, "Result", {
-        confirmButtonText: "确定",
+        confirmButtonText: "Sure",
         callback: (action) => {},
       });
     },
@@ -173,7 +181,7 @@ export default {
     async link() {
       let link = await this.actionsIn.connector.link();
       this.$alert(link, "Result", {
-        confirmButtonText: "确定",
+        confirmButtonText: "Sure",
         callback: (action) => {},
       });
     },
@@ -190,7 +198,10 @@ export default {
         "",
         ""
       );
-      Message.success({ duration: 3000, message: contractCall });
+      this.$alert(contractCall, "Result", {
+        confirmButtonText: "Sure",
+        callback: (action) => {},
+      });
     },
     async onChainCall() {
       let Contract = await this.actionsIn.contract.loadContract(
@@ -207,7 +218,10 @@ export default {
           feeLimit: "140000",
         }
       );
-      Message.success({ duration: 3000, message: onChainCall });
+      this.$alert(onChainCall, "Result", {
+        confirmButtonText: "Sure",
+        callback: (action) => {},
+      });
     },
   },
 };

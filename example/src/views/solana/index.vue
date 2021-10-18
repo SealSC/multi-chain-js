@@ -1,7 +1,7 @@
 <template>
   <div class="container-web3">
     <div class="container-web3-module">
-      <span>初始化</span>
+      <span>init</span>
       <div class="container-web3-module-right">
         <div @click="init()">init</div>
       </div>
@@ -68,7 +68,7 @@ export default {
       console.log(await this.actionsIn.init());
       let link = await this.actionsIn.init();
       this.$alert(link, "Result", {
-        confirmButtonText: "确定",
+        confirmButtonText: "Sure",
         callback: (action) => {},
       });
     },
@@ -76,7 +76,7 @@ export default {
       let Accounts = await this.actionsIn.actions.getAccount();
       console.log(Accounts);
       this.$alert(Accounts, "Result", {
-        confirmButtonText: "确定",
+        confirmButtonText: "Sure",
         callback: (action) => {},
       });
     },
@@ -86,14 +86,14 @@ export default {
       );
       console.log(Balance);
       this.$alert(Balance, "Result", {
-        confirmButtonText: "确定",
+        confirmButtonText: "Sure",
         callback: (action) => {},
       });
     },
     async getBlock() {
       let Block = await this.actionsIn.actions.getBlock(9603492);
       this.$alert(Block, "Result", {
-        confirmButtonText: "确定",
+        confirmButtonText: "Sure",
         callback: (action) => {},
       });
     },
@@ -101,7 +101,7 @@ export default {
       let BlockNumber = await this.actionsIn.actions.getBlockNumber();
       console.log(BlockNumber);
       this.$alert(BlockNumber, "Result", {
-        confirmButtonText: "确定",
+        confirmButtonText: "Sure",
         callback: (action) => {},
       });
     },
@@ -111,7 +111,7 @@ export default {
       );
       console.log(Transaction);
       this.$alert(Transaction, "Result", {
-        confirmButtonText: "确定",
+        confirmButtonText: "Sure",
         callback: (action) => {},
       });
     },
@@ -119,7 +119,7 @@ export default {
       let TransactionCount = await this.actionsIn.actions.getTransactionCount();
       console.log(TransactionCount);
       this.$alert(TransactionCount, "Result", {
-        confirmButtonText: "确定",
+        confirmButtonText: "Sure",
         callback: (action) => {},
       });
     },
@@ -135,7 +135,7 @@ export default {
           console.log(res);
           this.loadingIn.close();
           this.$alert(res, "Result", {
-            confirmButtonText: "确定",
+            confirmButtonText: "Sure",
             callback: (action) => {},
           });
         })
@@ -150,7 +150,7 @@ export default {
       );
       console.log(sign);
       this.$alert(sign, "Result", {
-        confirmButtonText: "确定",
+        confirmButtonText: "Sure",
         callback: (action) => {},
       });
     },
@@ -161,7 +161,7 @@ export default {
       );
       console.log(sign);
       this.$alert(sign, "Result", {
-        confirmButtonText: "确定",
+        confirmButtonText: "Sure",
         callback: (action) => {},
       });
     },
@@ -171,7 +171,7 @@ export default {
       );
       console.log(Signtranction);
       this.$alert(Signtranction, "Result", {
-        confirmButtonText: "确定",
+        confirmButtonText: "Sure",
         callback: (action) => {},
       });
     },
@@ -187,7 +187,7 @@ export default {
         );
       console.log(Signtranction);
       this.$alert(Signtranction, "Result", {
-        confirmButtonText: "确定",
+        confirmButtonText: "Sure",
         callback: (action) => {},
       });
     },
@@ -203,7 +203,7 @@ export default {
           console.log(res);
           this.loadingIn.close();
           this.$alert(res, "Result", {
-            confirmButtonText: "确定",
+            confirmButtonText: "Sure",
             callback: (action) => {},
           });
         })
@@ -217,7 +217,7 @@ export default {
         "0x98445c06f7D3D9a6EEA7C6e8E96d4a7aEF7E9513"
       );
       this.$alert(abis, "Result", {
-        confirmButtonText: "确定",
+        confirmButtonText: "Sure",
         callback: (action) => {},
       });
     },
@@ -238,7 +238,7 @@ export default {
       );
       console.log(offChainCall);
       this.$alert(offChainCall, "Result", {
-        confirmButtonText: "确定",
+        confirmButtonText: "Sure",
         callback: (action) => {},
       });
     },
@@ -255,7 +255,7 @@ export default {
       );
       console.log(onChainCall);
       this.$alert(onChainCall, "Result", {
-        confirmButtonText: "确定",
+        confirmButtonText: "Sure",
         callback: (action) => {},
       });
     },
