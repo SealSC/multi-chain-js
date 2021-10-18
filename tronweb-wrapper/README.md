@@ -1,11 +1,11 @@
-# polkadot-wrapper
+# tronWeb-wrapper
 
 ### 概述
-polkadot-wrapper库是一系列模块的集合，服务于波卡生态系统的各个功能,可帮助您编写可与多个区块链一起使用的代码, 使用插件模型和统一接口来完成区块​​链交易的构建、签名、发送等常见的区块链功能
+tronWeb-wrapper库是一系列模块的集合，服务于波场生态系统的各个功能, 使用插件模型和统一接口来完成区块​​链交易的构建、签名、发送等常见的区块链功能
 
-* api-actions 用来与波卡区块链交互
-* api-connector 用来与polkadot钱包进行交互
-* api-contract 用来与波卡区块链合约交互
+* tronWeb-actions 用来与波场区块链交互
+* tronWeb-connector 用来与TronLink钱包进行交互
+* tronWeb-contract 用来与波场区块链合约交互
 
 #### actions模块的示例代码
 获取最新区块高度
@@ -43,17 +43,15 @@ example：<https://github.com>
 
 ### 如何开始？
 
-只需安装polkadot-wrapper库即可开始
+只需安装tronWeb-wrapper库即可开始
 ```js
-$ yarn add @sealsc/polkadot-wrapper 
+$ yarn add @sealsc/tronWeb-wrapper 
 ```
-然后你需要创建一个 Action 的实例,设置provider
+然后你需要创建一个 Action 的实例
 ```js
-let Action = await new Actions()    
-Action.init('wss://rpc.polkadot.io')
+let Action = await new Actions()
 ```
 运行ts文件和示例
 ```js
 $ yarn test
 ```
-
