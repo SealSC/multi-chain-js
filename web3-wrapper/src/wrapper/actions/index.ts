@@ -16,7 +16,7 @@ class Actions {
   }
   public async init(){
     (window as any).web3 = await web3Install()
-    return new Result(PredefinedStatus.SUCCESS(null))
+    return new Result(PredefinedStatus.SUCCESS('init success'))
   }
 }
 
