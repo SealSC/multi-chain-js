@@ -65,8 +65,14 @@ export default {
   },
 
   methods:{
-    init(){
-      this.actionsIn.init('wss://rpc.polkadot.io')
+    async init(){
+      let result = await this.actionsIn.init('wss://rpc.polkadot.io')
+      this.$alert(result, 'Result', {
+        confirmButtonText: 'Sure',
+        callback: action => {
+
+        }
+      });
     },
     async getAccount(){
       let Accounts = await this.actionsIn.actions.getAccount()
@@ -205,7 +211,13 @@ export default {
       });
     },
     async link(){
-      await this.actionsIn.connector.link();
+      let accounts = await this.actionsIn.connector.link();
+      this.$alert(accounts, 'Result', {
+        confirmButtonText: 'Sure',
+        callback: action => {
+
+        }
+      });
     },
     async offChainCall(){
       let Contract =  await this.actionsIn.contract.loadContract(ERC20,'0x98445c06f7D3D9a6EEA7C6e8E96d4a7aEF7E9513')
