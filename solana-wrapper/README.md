@@ -1,4 +1,4 @@
-# polkadot-wrapper
+# solana-wrapper
 
 ### Overview
 
