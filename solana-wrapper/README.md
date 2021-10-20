@@ -17,4 +17,3 @@ npm install @sealsc/solana-wrapper
 ### Document
 
 **[solana-wrapper](https://multi-chain-js-doc.seor.io/en/solana/Actions/)**  
-
