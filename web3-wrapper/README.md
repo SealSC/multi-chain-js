@@ -16,5 +16,5 @@ npm install @sealsc/web3-wrapper
 
 ### Document
 
-**[web3-wrapper](https://multi-chain-js-doc.seor.io/web3/)**  
+**[web3-wrapper](https://multi-chain-js-doc.seor.io/en/web3/)**  
 

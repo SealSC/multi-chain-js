@@ -16,5 +16,5 @@ npm install @sealsc/tronweb-wrapper
 
 ### Document
 
-**[tronweb-wrapper](https://multi-chain-js-doc.seor.io/tronWeb/)**  
+**[tronweb-wrapper](https://multi-chain-js-doc.seor.io/en/tronWeb/)**  
 

@@ -16,5 +16,5 @@ npm install @sealsc/polkadot-wrapper
 
 ### Document
 
-**[polkadot-wrapper](https://multi-chain-js-doc.seor.io/polkadot/)**  
+**[polkadot-wrapper](https://multi-chain-js-doc.seor.io/en/polkadot/)**  
 

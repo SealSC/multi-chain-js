@@ -1,8 +1,5 @@
 # multi-chain-js
 
-**[Eglish](https://github.com/SealSC/multi-chain-js/blob/main/README.md)**  
-**[中文](https://github.com/SealSC/multi-chain-js/blob/main/README_ZH.md)**  
-
 #### Overview
 multi-chain-js provides a unified interface for multi-chain interaction.   
 you only need to implement the business logic once to be able to access different blockchain systems through this SDK without changing code.
@@ -49,7 +46,7 @@ let Action = await new Actions()
 [online-demo](https://example-multi-chain-js.seor.io/#/)  
 
 ### Documents  
-**[polkadot-wrapper](https://multi-chain-js-doc.seor.io/polkadot/)**  
-**[web3-wrapper](https://multi-chain-js-doc.seor.io/web3/)**  
-**[solana-wrapper](https://multi-chain-js-doc.seor.io/solana/Actions/)**  
-**[tronweb-wrapper](https://multi-chain-js-doc.seor.io/tronWeb/)**  
+**[polkadot-wrapper](https://multi-chain-js-doc.seor.io/en/polkadot/)**  
+**[web3-wrapper](https://multi-chain-js-doc.seor.io/en/web3/)**  
+**[solana-wrapper](https://multi-chain-js-doc.seor.io/en/solana/Actions/)**  
+**[tronweb-wrapper](https://multi-chain-js-doc.seor.io/en/tronWeb/)**  
