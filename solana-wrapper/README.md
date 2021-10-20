@@ -1,4 +1,4 @@
-# polkadot-wrapper
+# tronweb-wrapper
 
 ### Overview
 
@@ -13,6 +13,7 @@ yarn add @sealsc/solana-wrapper
 ```
 npm install @sealsc/solana-wrapper
 ```    
+Open http://localhost:9876/ to execute the test process   
 
 ### Document
 
