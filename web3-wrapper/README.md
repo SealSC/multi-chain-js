@@ -17,12 +17,12 @@ npm install @sealsc/web3-wrapper
 ### Testing
 We are using [karma](http://karma-runner.github.io/6.3/intro/configuration.html) & [mocha](https://mochajs.org/) testing @sealsc/web3-wrapper SDK .
 
-### dependencies
-node.js v12+
-karma v4.1.0
-mocha v6.1.4
+#### dependencies
+node.js v12+   
+karma v4.1.0   
+mocha v6.1.4   
 
-### testing
+#### testing
 
 Clone the project and checkout the web3-wrapper branch
 
