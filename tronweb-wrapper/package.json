@@ -1,12 +1,16 @@
 {
   "name": "@sealsc/tronweb-wrapper",
-  "version": "0.1.0",
+  "version": "0.1.2",
   "keywords": [
     "tronweb",
     "@sealsc/tronweb-wrapper",
     "wrapper",
     "sealsc"
   ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/SealSC/multi-chain-js.git"
+  },
   "scripts": {
     "build": "webpack ",
     "serve": "vue-cli-service serve",

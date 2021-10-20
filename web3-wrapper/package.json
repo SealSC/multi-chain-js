@@ -1,6 +1,6 @@
 {
   "name": "@sealsc/web3-wrapper",
-  "version": "0.1.4",
+  "version": "0.1.6",
   "keywords": [
     "sealsc",
     "wallet",
@@ -11,6 +11,10 @@
     "web3-wrapper",
     "web3"
   ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/SealSC/multi-chain-js.git"
+  },
   "scripts": {
     "build": "tsc && webpack -c webpack.config.js",
     "serve": "vue-cli-service serve",

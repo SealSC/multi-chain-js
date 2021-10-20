@@ -67,7 +67,13 @@ export default {
 
   methods:{
     async init(){
-      console.log(await this.actionsIn.init())
+      let init = await this.actionsIn.init()
+      this.$alert(init, 'Result', {
+        confirmButtonText: 'Sure',
+        callback: action => {
+
+        }
+      });
     },
     async getAccount(){
       let Accounts = await this.actionsIn.actions.getAccount()
@@ -78,127 +84,225 @@ export default {
 
         }
       });
-     
     },
-    async getBalance(){
-      let Balance = await this.actionsIn.actions.getBalance('0x5B6C6709d1000db91252c8c6E84B8987D1D10829')
-      console.log(Balance)
-      this.$alert(Balance, 'Result', {
-        confirmButtonText: 'Sure',
-        callback: action => {
+    getBalance(){
+      this.LoadingIn = Loading.service({ fullscreen: true })
+      this.actionsIn.actions.getBalance('0x5B6C6709d1000db91252c8c6E84B8987D1D10829').then((result)=>{
+        this.LoadingIn.close()
+        this.$alert(result, 'Result', {
+          confirmButtonText: 'Sure',
+          callback: action => {
 
-        }
-      });
+          }
+        });
+      }).catch((error)=>{
+        this.LoadingIn.close()
+        this.$alert(error, 'Result', {
+          confirmButtonText: 'Sure',
+          callback: action => {
+
+          }
+        });
+      })
     },
-    async getBlock(){
-      let Block = await this.actionsIn.actions.getBlock(9603492)
-      this.$alert(Block, 'Result', {
-        confirmButtonText: 'Sure',
-        callback: action => {
+    getBlock(){
+      this.LoadingIn = Loading.service({ fullscreen: true })
+      this.actionsIn.actions.getBlock(9603492).then((result)=>{
+        this.LoadingIn.close()
+        this.$alert(result, 'Result', {
+          confirmButtonText: 'Sure',
+          callback: action => {
 
-        }
-      });
+          }
+        });
+      }).catch((error)=>{
+        this.LoadingIn.close()
+        this.$alert(error, 'Result', {
+          confirmButtonText: 'Sure',
+          callback: action => {
+
+          }
+        });
+      })
     },
-    async getBlockNumber(){
-      let BlockNumber = await this.actionsIn.actions.getBlockNumber()
-      console.log(BlockNumber)
-      this.$alert(BlockNumber, 'Result', {
-        confirmButtonText: 'Sure',
-        callback: action => {
+    getBlockNumber(){
+      this.LoadingIn = Loading.service({ fullscreen: true })
+      this.actionsIn.actions.getBlockNumber().then((result)=>{
+        this.LoadingIn.close()
+        this.$alert(result, 'Result', {
+          confirmButtonText: 'Sure',
+          callback: action => {
 
-        }
-      });
+          }
+        });
+      }).catch((error)=>{
+        this.LoadingIn.close()
+        this.$alert(error, 'Result', {
+          confirmButtonText: 'Sure',
+          callback: action => {
+
+          }
+        });
+      })
     },
-    async getTransaction(){
-      let Transaction = await this.actionsIn.actions.getTransaction('0x65d3cada398bfcd70098ed955ff645b072c6df0d001f61f4b1c181cfdf7d1309')
-      console.log(Transaction)
-      this.$alert(Transaction, 'Result', {
-        confirmButtonText: 'Sure',
-        callback: action => {
+    getTransaction(){
+      this.LoadingIn = Loading.service({ fullscreen: true })
+      this.actionsIn.actions.getTransaction('0x65d3cada398bfcd70098ed955ff645b072c6df0d001f61f4b1c181cfdf7d1309').then((result)=>{
+        this.LoadingIn.close()
+        this.$alert(result, 'Result', {
+          confirmButtonText: 'Sure',
+          callback: action => {
 
-        }
-      });
+          }
+        });
+      }).catch((error)=>{
+        this.LoadingIn.close()
+        this.$alert(error, 'Result', {
+          confirmButtonText: 'Sure',
+          callback: action => {
+
+          }
+        });
+      })
     },
-    async getTransactionCount(){
-      let TransactionCount = await this.actionsIn.actions.getTransactionCount('0x5B6C6709d1000db91252c8c6E84B8987D1D10829')
-      console.log(TransactionCount)
-      this.$alert(TransactionCount, 'Result', {
-        confirmButtonText: 'Sure',
-        callback: action => {
+    getTransactionCount(){
+      this.LoadingIn = Loading.service({ fullscreen: true })
+      this.actionsIn.actions.getTransactionCount('0x5B6C6709d1000db91252c8c6E84B8987D1D10829').then((result)=>{
+        this.LoadingIn.close()
+        this.$alert(result, 'Result', {
+          confirmButtonText: 'Sure',
+          callback: action => {
 
-        }
-      });
+          }
+        });
+      }).catch((error)=>{
+        this.LoadingIn.close()
+        this.$alert(error, 'Result', {
+          confirmButtonText: 'Sure',
+          callback: action => {
+
+          }
+        });
+      })
     },
     sendSignedTransaction(){
-      this.loadingIn = Loading.service({ fullscreen: true })
+      this.LoadingIn = Loading.service({ fullscreen: true })
       this.actionsIn.actions.sendSignedTransaction("0xf8527b8502340be400830186a080808081e6a09b111a9f5f50d207dfe9cd8beb619e6531f7dc84faea934e58426c7126fae3d2a01b484f72e5644327d244856ceb592b57b47b3438af35b12a30904b7b61975237").then((res)=>{
         console.log(res)
-        this.loadingIn.close()
+        this.LoadingIn.close()
         this.$alert(res, 'Result', {
           confirmButtonText: 'Sure',
           callback: action => {
 
           }
         });
-      }).catch(()=>{
-        this.loadingIn.close()
-      });
-    },
-    async signWithWallet(){
-      let sign = await this.actionsIn.actions.signWithWallet('2','0x5B6C6709d1000db91252c8c6E84B8987D1D10829')
-      console.log(sign)
-      this.$alert(sign, 'Result', {
-        confirmButtonText: 'Sure',
-        callback: action => {
+      }).catch((error)=>{
+        this.LoadingIn.close()
+        this.$alert(error, 'Result', {
+          confirmButtonText: 'Sure',
+          callback: action => {
 
-        }
+          }
+        });
       });
     },
-    async signWithPrivateKey(){
-      let sign = await this.actionsIn.actions.signWithPrivateKey('3','4349054ad0a292657a316300d5112b48f0633c2cb3d8ece672077aa852635890');
-      console.log(sign)
-      this.$alert(sign, 'Result', {
-        confirmButtonText: 'Sure',
-        callback: action => {
+    signWithWallet(){
+      this.LoadingIn = Loading.service({ fullscreen: true })
+      this.actionsIn.actions.signWithWallet('32','0x5B6C6709d1000db91252c8c6E84B8987D1D10829').then((result)=>{
+        this.LoadingIn.close()
+        this.$alert(result, 'Result', {
+          confirmButtonText: 'Sure',
+          callback: action => {
 
-        }
+          }
+        });
+      }).catch((error)=>{
+        this.LoadingIn.close()
+        this.$alert(error, 'Result', {
+          confirmButtonText: 'Sure',
+          callback: action => {
+
+          }
+        });
+      })
+       
+    },
+    signWithPrivateKey(){
+      this.LoadingIn = Loading.service({ fullscreen: true })
+      this.actionsIn.actions.signWithPrivateKey('3','4349054ad0a292657a316300d5112b48f0633c2cb3d8ece672077aa852635890').then((result)=>{
+        this.LoadingIn.close()
+        this.$alert(result, 'Result', {
+          confirmButtonText: 'Sure',
+          callback: action => {
+
+          }
+        });
+      }).catch((error)=>{
+        this.LoadingIn.close()
+        this.$alert(error, 'Result', {
+          confirmButtonText: 'Sure',
+          callback: action => {
+
+          }
+        });
       });
     },
-    async signTransaction(){
-      let Signtranction = await this.actionsIn.actions.signTransaction({
+    signTransaction(){
+      this.LoadingIn = Loading.service({ fullscreen: true })
+      this.actionsIn.actions.signTransaction({
         from:"0x5B6C6709d1000db91252c8c6E84B8987D1D10829"
-      },'0x5B6C6709d1000db91252c8c6E84B8987D1D10829');
-      console.log(Signtranction)
-      this.$alert(Signtranction, 'Result', {
-        confirmButtonText: 'Sure',
-        callback: action => {
+      },'0x5B6C6709d1000db91252c8c6E84B8987D1D10829').then((result)=>{
+        this.LoadingIn.close()
+        this.$alert(result, 'Result', {
+          confirmButtonText: 'Sure',
+          callback: action => {
 
-        }
-      });
+          }
+        });
+      }).catch((error)=>{
+        this.LoadingIn.close()
+        this.$alert(error, 'Result', {
+          confirmButtonText: 'Sure',
+          callback: action => {
+
+          }
+        });
+      });     
     },
-    async signTransactionPrivateKey(){
-      let Signtranction = await this.actionsIn.actions.signTransactionPrivateKey({
+    signTransactionPrivateKey(){
+      this.LoadingIn = Loading.service({ fullscreen: true })
+      this.actionsIn.actions.signTransactionPrivateKey({
         from:"0x5B6C6709d1000db91252c8c6E84B8987D1D10829",
         gas:"100000",
         value:"1"
-      },'4349054ad0a292657a316300d5112b48f0633c2cb3d8ece672077aa852635890');
-      console.log(Signtranction)
-      this.$alert(Signtranction, 'Result', {
-        confirmButtonText: 'Sure',
-        callback: action => {
+      },'4349054ad0a292657a316300d5112b48f0633c2cb3d8ece672077aa852635890').then((result)=>{
+        this.LoadingIn.close()
+        this.$alert(result, 'Result', {
+          confirmButtonText: 'Sure',
+          callback: action => {
 
-        }
+          }
+        });
+      }).catch((error)=>{
+        this.LoadingIn.close()
+        this.$alert(error, 'Result', {
+          confirmButtonText: 'Sure',
+          callback: action => {
+
+          }
+        });
       });
+    
     }, 
     sendTransaction(){
-      this.loadingIn = Loading.service({ fullscreen: true })
+      this.LoadingIn = Loading.service({ fullscreen: true })
       this.actionsIn.actions.sendTransaction({
         from:"0x5B6C6709d1000db91252c8c6E84B8987D1D10829",
         to: '0xd49c38C6CBaCc98444930C4524Dff73e67cA2e39',
         value: '10'
       }).then((res)=>{
         console.log(res)
-        this.loadingIn.close()
+        this.LoadingIn.close()
         this.$alert(res, 'Result', {
           confirmButtonText: 'Sure',
           callback: action => {
@@ -207,30 +311,82 @@ export default {
         });
       }).catch((error)=>{
         this.loadingIn.close()
+        this.$alert(error, 'Result', {
+          confirmButtonText: 'Sure',
+          callback: action => {
+
+          }
+        });
       });
     },
     async loadContract(){
       let abis =  await this.actionsIn.contract.loadContract(ERC20,'0x98445c06f7D3D9a6EEA7C6e8E96d4a7aEF7E9513')
       console.log(abis)
-    },
-    async link(){
-      await this.actionsIn.connector.link();
-    },
-    async offChainCall(){
-      let Contract =  await this.actionsIn.contract.loadContract(ERC20,'0x98445c06f7D3D9a6EEA7C6e8E96d4a7aEF7E9513')
-      let offChainCall =  await this.actionsIn.contract.offChainCall(Contract.data,'name',[],'','')
-      console.log(offChainCall)
-      this.$alert(offChainCall, 'Result', {
+      this.$alert('Print to the console', 'Result', {
         confirmButtonText: 'Sure',
         callback: action => {
 
         }
       });
     },
-    async onChainCall(){
+    async link(){
+      this.LoadingIn = Loading.service({ fullscreen: true })
+      let accounts =  await this.actionsIn.connector.link();
+      this.LoadingIn.close()
+      this.$alert(accounts, 'Result', {
+        confirmButtonText: 'Sure',
+        callback: action => {
+         
+        }
+      });
+    },
+    async offChainCall(){
+      this.LoadingIn = Loading.service({ fullscreen: true })
       let Contract =  await this.actionsIn.contract.loadContract(ERC20,'0x98445c06f7D3D9a6EEA7C6e8E96d4a7aEF7E9513')
-      let onChainCall = await this.actionsIn.contract.onChainCall(Contract.data,'approve',['0x5B6C6709d1000db91252c8c6E84B8987D1D10829','0'],{gasPrice:'4000000000',gasLimit:'150000'})
-      console.log(onChainCall)
+      this.actionsIn.contract.offChainCall(Contract.data,'name',[],'','').then((result)=>{
+        console.log(result)
+        this.LoadingIn.close()
+        this.$alert(result, 'Result', {
+          confirmButtonText: 'Sure',
+          callback: action => {
+
+          }
+        });
+      }).catch((error)=>{
+        console.log(error)
+        this.LoadingIn.close()
+        this.$alert(error, 'Result', {
+          confirmButtonText: 'Sure',
+          callback: action => {
+
+          }
+        });
+      })
+    },
+    async onChainCall(){
+      this.LoadingIn = Loading.service({ fullscreen: true })
+      let Contract =  await this.actionsIn.contract.loadContract(ERC20,'0x98445c06f7D3D9a6EEA7C6e8E96d4a7aEF7E9513')
+      this.actionsIn.contract.onChainCall(Contract.data,'approve',
+      ['0x5B6C6709d1000db91252c8c6E84B8987D1D10829','0'],
+      {gasPrice:'4000000000',gasLimit:'150000'}).then((result)=>{
+        console.log(result)
+        this.LoadingIn.close()
+        this.$alert(result, 'Result', {
+          confirmButtonText: 'Sure',
+          callback: action => {
+
+          }
+        });
+      }).catch((error)=>{
+        console.log(error)
+        this.LoadingIn.close()
+        this.$alert(error, 'Result', {
+          confirmButtonText: 'Sure',
+          callback: action => {
+
+          }
+        });
+      })
     }
   }
 };
