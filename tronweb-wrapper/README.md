@@ -1,4 +1,4 @@
-# polkadot-wrapper
+# tronweb-wrapper
 
 ### Overview
 
