@@ -15,9 +15,9 @@ module.exports = config => {
     mime: {
       'text/x-typescript': ['ts', 'tsx']
     },
-    colors:true,
-    reporters: ['spec', 'coverage-istanbul','coveralls'],
-    browsers: process.env.CI ? ['Chrome', 'Firefox'] : ['Chrome'],
+    colors: true,
+    reporters: ['spec', 'coverage-istanbul', 'coveralls'],
+    browsers: [],
 
     webpackMiddleware: {
       noInfo: true,
@@ -25,7 +25,7 @@ module.exports = config => {
     },
     webpack: {
       mode: 'development',
-      entry: './get-selection-more.ts',
+      entry: './src/wrapper/wrapper.ts',
       output: {
         filename: '[name].js'
       },
@@ -60,19 +60,19 @@ module.exports = config => {
 
     coverageIstanbulReporter: process.env.CI
       ? {
-          reports: ['lcovonly', 'text-summary'],
-          dir: path.join(__dirname, 'coverage'),
-          combineBrowserReports: true,
-          fixWebpackSourcePaths: true
-        }
+        reports: ['lcovonly', 'text-summary'],
+        dir: path.join(__dirname, 'coverage'),
+        combineBrowserReports: true,
+        fixWebpackSourcePaths: true
+      }
       : {
-          reports: ['html', 'lcovonly', 'text-summary'],
-          dir: path.join(__dirname, 'coverage/%browser%/'),
-          fixWebpackSourcePaths: true,
-          'report-config': {
-            html: { outdir: 'html' }
-          }
-        },
+        reports: ['html', 'lcovonly', 'text-summary'],
+        dir: path.join(__dirname, 'coverage/%browser%/'),
+        fixWebpackSourcePaths: true,
+        'report-config': {
+          html: { outdir: 'html' }
+        }
+      },
 
     coverageReporter: {
       type: 'lcovonly',
