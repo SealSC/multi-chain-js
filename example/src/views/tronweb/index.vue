@@ -59,7 +59,6 @@ export default {
     this.actionsIn = new actionIn();
   },
   computed: {},
-
   methods: {
     async init() {
       this.LoadingIn = Loading.service({ fullscreen: true })
@@ -77,7 +76,6 @@ export default {
         this.$alert(result, 'Result', {
           confirmButtonText: 'Sure',
           callback: action => {
-
           }
         });
       }).catch((error)=>{
@@ -85,7 +83,6 @@ export default {
         this.$alert(error, 'Result', {
           confirmButtonText: 'Sure',
           callback: action => {
-
           }
         });
       })
@@ -97,7 +94,6 @@ export default {
         this.$alert(result, 'Result', {
           confirmButtonText: 'Sure',
           callback: action => {
-
           }
         });
       }).catch((error)=>{
@@ -105,7 +101,6 @@ export default {
         this.$alert(error, 'Result', {
           confirmButtonText: 'Sure',
           callback: action => {
-
           }
         });
       })
@@ -117,7 +112,6 @@ export default {
         this.$alert(result, 'Result', {
           confirmButtonText: 'Sure',
           callback: action => {
-
           }
         });
       }).catch((error)=>{
@@ -125,7 +119,6 @@ export default {
         this.$alert(error, 'Result', {
           confirmButtonText: 'Sure',
           callback: action => {
-
           }
         });
       })
@@ -137,7 +130,6 @@ export default {
         this.$alert(result, 'Result', {
           confirmButtonText: 'Sure',
           callback: action => {
-
           }
         });
       }).catch((error)=>{
@@ -145,7 +137,6 @@ export default {
         this.$alert(error, 'Result', {
           confirmButtonText: 'Sure',
           callback: action => {
-
           }
         });
       })
@@ -159,7 +150,6 @@ export default {
         this.$alert(result, 'Result', {
           confirmButtonText: 'Sure',
           callback: action => {
-
           }
         });
       }).catch((error)=>{
@@ -167,7 +157,6 @@ export default {
         this.$alert(error, 'Result', {
           confirmButtonText: 'Sure',
           callback: action => {
-
           }
         });
       })
@@ -179,7 +168,6 @@ export default {
         this.$alert(result, 'Result', {
           confirmButtonText: 'Sure',
           callback: action => {
-
           }
         });
       }).catch((error)=>{
@@ -187,7 +175,6 @@ export default {
         this.$alert(error, 'Result', {
           confirmButtonText: 'Sure',
           callback: action => {
-
           }
         });
       })
@@ -199,7 +186,6 @@ export default {
         this.$alert(result, 'Result', {
           confirmButtonText: 'Sure',
           callback: action => {
-
           }
         });
       }).catch((error)=>{
@@ -207,7 +193,6 @@ export default {
         this.$alert(error, 'Result', {
           confirmButtonText: 'Sure',
           callback: action => {
-
           }
         });
       })
@@ -219,7 +204,6 @@ export default {
         this.$alert(result, 'Result', {
           confirmButtonText: 'Sure',
           callback: action => {
-
           }
         });
       }).catch((error)=>{
@@ -227,7 +211,6 @@ export default {
         this.$alert(error, 'Result', {
           confirmButtonText: 'Sure',
           callback: action => {
-
           }
         });
       })
@@ -239,7 +222,6 @@ export default {
         this.$alert(result, 'Result', {
           confirmButtonText: 'Sure',
           callback: action => {
-
           }
         });
       }).catch((error)=>{
@@ -247,7 +229,6 @@ export default {
         this.$alert(error, 'Result', {
           confirmButtonText: 'Sure',
           callback: action => {
-
           }
         });
       })
@@ -264,7 +245,6 @@ export default {
         this.$alert(result, 'Result', {
           confirmButtonText: 'Sure',
           callback: action => {
-
           }
         });
       }).catch((error)=>{
@@ -272,7 +252,6 @@ export default {
         this.$alert(error, 'Result', {
           confirmButtonText: 'Sure',
           callback: action => {
-
           }
         });
       })
@@ -289,7 +268,6 @@ export default {
         this.$alert(result, 'Result', {
           confirmButtonText: 'Sure',
           callback: action => {
-
           }
         });
       }).catch((error)=>{
@@ -297,7 +275,6 @@ export default {
         this.$alert(error, 'Result', {
           confirmButtonText: 'Sure',
           callback: action => {
-
           }
         });
       })
@@ -312,7 +289,6 @@ export default {
         this.$alert(result, 'Result', {
           confirmButtonText: 'Sure',
           callback: action => {
-
           }
         });
       }).catch((error)=>{
@@ -320,7 +296,6 @@ export default {
         this.$alert(error, 'Result', {
           confirmButtonText: 'Sure',
           callback: action => {
-
           }
         });
       })
@@ -354,7 +329,6 @@ export default {
         ERC20,
         "TQaYBj9drxmoW7LfLnDDrvPnuj4zoZbaSS"
       );
-
       let contractCall = await this.actionsIn.contract.offChainCall(
         Contract.data,
         "totalSupply",
@@ -366,7 +340,6 @@ export default {
         this.$alert(result, 'Result', {
           confirmButtonText: 'Sure',
           callback: action => {
-
           }
         });
       }).catch((error)=>{
@@ -374,7 +347,6 @@ export default {
         this.$alert(error, 'Result', {
           confirmButtonText: 'Sure',
           callback: action => {
-
           }
         });
       })
@@ -398,7 +370,6 @@ export default {
         this.$alert(result, 'Result', {
           confirmButtonText: 'Sure',
           callback: action => {
-
           }
         });
       }).catch((error)=>{
@@ -406,7 +377,6 @@ export default {
         this.$alert(error, 'Result', {
           confirmButtonText: 'Sure',
           callback: action => {
-
           }
         });
       })
@@ -446,7 +416,6 @@ export default {
     }
   }
 }
-
 @media screen and (max-width: 900px) {
 }
 </style>
