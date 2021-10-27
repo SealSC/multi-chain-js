@@ -17,7 +17,7 @@ module.exports = config => {
     },
     colors: true,
     reporters: ['spec', 'coverage-istanbul', 'coveralls'],
-    browsers: [],
+    browsers: process.env.CI ? ['Chrome', 'Firefox'] : ['Chrome'],
 
     webpackMiddleware: {
       noInfo: true,
