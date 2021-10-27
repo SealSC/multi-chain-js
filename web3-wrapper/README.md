@@ -1,4 +1,4 @@
-# polkadot-wrapper
+# web3-wrapper
 
 ### Overview
 
@@ -13,6 +13,39 @@ yarn add @sealsc/web3-wrapper
 ```
 npm install @sealsc/web3-wrapper
 ```    
+
+### Testing
+We are using [karma](http://karma-runner.github.io/6.3/intro/configuration.html) & [mocha](https://mochajs.org/) testing @sealsc/web3-wrapper SDK .
+
+#### dependencies
+node.js v12+   
+karma v4.1.0   
+mocha v6.1.4   
+
+#### testing
+
+Clone the project and checkout the web3-wrapper branch
+
+```
+git clone https://github.com/SealSC/multi-chain-js.git
+
+cd multi-chain-js
+
+git checkout web3-wrapper
+
+cd ./web3-wrapper
+
+yarn run test
+
+```  
+
+Using yarn run test we provided to run all test
+```
+yarn run test
+```
+Open http://localhost:9876/ to execute the test process   
+
+**Note**: yarn run test will try to open the test report with your chrome browser.
 
 ### Document
 
