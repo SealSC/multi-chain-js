@@ -8,7 +8,7 @@ import { SendSignedTransaction } from './sendSignedTransaction'
 import { SignWithPrivateKey } from './signWithPrivateKey'
 import { SignWithWallet } from './signWithWallet'
 import { SignTransaction } from './signTransaction'
-import { SignTransactionPrivateKey } from "./signTransactionPrivateKey"
+import { SignTransactionPrivateKey } from "./signtransactionPrivateKey"
 import { SendTransaction } from './sendTransaction'
 class ActionsIn {
   constructor() {
