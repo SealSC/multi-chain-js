@@ -44,7 +44,6 @@
 
 <script>
 import * as a from "@sealsc/solana-wrapper";
-
 import { Loading } from "element-ui";
 import ERC20 from "../../utils/abis/ERC20-ABI.json";
 
@@ -199,6 +198,7 @@ export default {
     },
     sendSignedTransaction() {
       this.LoadingIn = Loading.service({ fullscreen: true })
+
       this.actionsIn.actions
         .sendSignedTransaction({
           from: "BTYUoerzScoXFymLWTowgEVF9Yr2ifpf3z3VRgJUMpNU",
@@ -207,6 +207,7 @@ export default {
         })
         .then((res) => {
           console.log(res);
+
           this.LoadingIn.close()
           this.$alert(res, "Result", {
             confirmButtonText: "Sure",
@@ -287,12 +288,14 @@ export default {
     async signTransactionPrivateKey() {
       this.LoadingIn = Loading.service({ fullscreen: true })
       this.actionsIn.actions.signTransactionPrivateKey(
+
           {
             from: "0x5B6C6709d1000db91252c8c6E84B8987D1D10829",
             gas: "100000",
             value: "1",
           },
           "4349054ad0a292657a316300d5112b48f0633c2cb3d8ece672077aa852635890"
+
         ).then((res) => {
           console.log(res);
           this.LoadingIn.close()
@@ -311,6 +314,7 @@ export default {
     },
     sendTransaction() {
       this.LoadingIn = Loading.service({ fullscreen: true });
+
       this.actionsIn.actions
         .sendTransaction({
           from: "BTYUoerzScoXFymLWTowgEVF9Yr2ifpf3z3VRgJUMpNU",
@@ -319,13 +323,16 @@ export default {
         })
         .then((res) => {
           console.log(res);
+
           this.LoadingIn.close();
           this.$alert(res, "Result", {
             confirmButtonText: "Sure",
+
             callback: (action) => {},
           });
         })
         .catch((error) => {
+
           this.LoadingIn.close();
           this.$alert(error, "Result", {
             confirmButtonText: "Sure",
@@ -335,17 +342,21 @@ export default {
     },
     async loadContract() {
       this.LoadingIn = Loading.service({ fullscreen: true });
+
       let abis = await this.actionsIn.contract.loadContract(
         ERC20,
         "0x98445c06f7D3D9a6EEA7C6e8E96d4a7aEF7E9513"
       );
+
       this.LoadingIn.close();
       this.$alert(abis, "Result", {
         confirmButtonText: "Sure",
+
         callback: (action) => {},
       });
     },
     async link() {
+
       this.LoadingIn = Loading.service({ fullscreen: true });
       let links =  await this.actionsIn.connector.link();
       this.LoadingIn.close();
@@ -356,16 +367,20 @@ export default {
     },
     async offChainCall() {
       this.LoadingIn = Loading.service({ fullscreen: true });
+
       let Contract = await this.actionsIn.contract.loadContract(
         ERC20,
         "0x98445c06f7D3D9a6EEA7C6e8E96d4a7aEF7E9513"
       );
+
       this.actionsIn.contract.offChainCall(
+
         Contract.data,
         "name",
         [],
         "",
         ""
+
       ).then((res) => {
           console.log(res);
           this.LoadingIn.close();
@@ -384,6 +399,7 @@ export default {
     },
     async onChainCall() {
       this.LoadingIn = Loading.service({ fullscreen: true });
+
       let Contract = await this.actionsIn.contract.loadContract(
         ERC20,
         "0x98445c06f7D3D9a6EEA7C6e8E96d4a7aEF7E9513"
@@ -393,6 +409,7 @@ export default {
         "approve",
         ["0x5B6C6709d1000db91252c8c6E84B8987D1D10829", "0"],
         { gasPrice: "4000000000", gasLimit: "150000" }
+
       ).then((res) => {
           console.log(res);
           this.LoadingIn.close();
@@ -409,6 +426,7 @@ export default {
           });
         });
      
+
     },
   },
 };
