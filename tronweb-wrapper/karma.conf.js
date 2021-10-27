@@ -17,7 +17,7 @@ module.exports = config => {
     },
     colors: true,
     reporters: ['spec', 'coverage-istanbul', 'coveralls'],
-    browsers: [],
+    browsers: process.env.CI ? ['Chrome', 'Firefox'] : ['Chrome'],
 
     webpackMiddleware: {
       noInfo: true,
@@ -25,7 +25,7 @@ module.exports = config => {
     },
     webpack: {
       mode: 'development',
-      entry: './src/wrapper/wrapper.ts',
+      entry: './get-selection-more.ts',
       output: {
         filename: '[name].js'
       },
