@@ -23,9 +23,9 @@ module.exports = config => {
       runInParent:true
     },
     captureTimeout: 210000,
-    browserDisconnectTolerance: 3, 
-    browserDisconnectTimeout : 210000,
-    browserNoActivityTimeout : 210000,
+    browserDisconnectTolerance: 3,
+    browserDisconnectTimeout: 210000,
+    browserNoActivityTimeout: 210000,
     webpackMiddleware: {
       noInfo: true,
       stats: 'errors-only'
@@ -67,19 +67,19 @@ module.exports = config => {
 
     coverageIstanbulReporter: process.env.CI
       ? {
-          reports: ['lcovonly', 'text-summary'],
-          dir: path.join(__dirname, 'coverage'),
-          combineBrowserReports: true,
-          fixWebpackSourcePaths: true
-        }
+        reports: ['lcovonly', 'text-summary'],
+        dir: path.join(__dirname, 'coverage'),
+        combineBrowserReports: true,
+        fixWebpackSourcePaths: true
+      }
       : {
-          reports: ['html', 'lcovonly', 'text-summary'],
-          dir: path.join(__dirname, 'coverage/%browser%/'),
-          fixWebpackSourcePaths: true,
-          'report-config': {
-            html: { outdir: 'html' }
-          }
-        },
+        reports: ['html', 'lcovonly', 'text-summary'],
+        dir: path.join(__dirname, 'coverage/%browser%/'),
+        fixWebpackSourcePaths: true,
+        'report-config': {
+          html: { outdir: 'html' }
+        }
+      },
 
     coverageReporter: {
       type: 'lcovonly',
