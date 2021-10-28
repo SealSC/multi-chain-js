@@ -18,6 +18,10 @@ module.exports = config => {
     colors:true,
     reporters: ['spec', 'coverage-istanbul','coveralls'],
     browsers: process.env.CI ? ['Chrome'] : ['Chrome'],
+    client:{
+      useIframe:false,
+      runInParent:true
+    },
     captureTimeout: 210000,
     browserDisconnectTolerance: 3, 
     browserDisconnectTimeout : 210000,
