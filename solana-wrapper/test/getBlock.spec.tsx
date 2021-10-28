@@ -8,12 +8,12 @@ describe('getBlock', () => {
   it('Wallet installed getBlockFunction', async () => {
     (window as any).solanaWeb3 = await web3Install()
     let Action = await new Actions()
-    let shouldGetBlock = await Action.actions.getBlock(96092);
+    let shouldGetBlock = await Action.actions.getBlock(90323674);
     const connection = new (window as any).solanaWeb3.Connection(
       (window as any).solanaWeb3.clusterApiUrl("devnet"),
       "confirmed"
     );
-    let blockData = await connection.getBlock(96092)
+    let blockData = await connection.getBlock(90323674)
     let results = new Result(PredefinedStatus.SUCCESS(blockData));
     expect(shouldGetBlock).to.deep.equal(results)
   }).timeout(100000)
@@ -21,7 +21,7 @@ describe('getBlock', () => {
   it('Wallet not installed getBlockFunction', async () => {
     (window as any).solanaWeb3 = {}
     let Action = await new Actions();
-    let shouldGetBlock = await Action.actions.getBlock(9603492);
+    let shouldGetBlock = await Action.actions.getBlock(90323674);
     let results = new Result(PredefinedStatus.ERROR_STATE(null));
     expect(shouldGetBlock).to.deep.equal(results)
   }).timeout(100000)
