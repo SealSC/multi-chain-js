@@ -17,7 +17,7 @@ module.exports = config => {
     },
     colors:true,
     reporters: ['spec', 'coverage-istanbul','coveralls'],
-    browsers: process.env.CI ? ['Chrome'] : ['Chrome'],
+    browsers:[],
     client:{
       useIframe:false,
       runInParent:true
