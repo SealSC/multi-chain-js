@@ -12,9 +12,14 @@ describe('SignWithWallet', () => {
     let Action = await new Actions();
     let accounts = await (window as any).web3.eth.getAccounts()
     let shouldSign = await Action.actions.signWithWallet('2',accounts[0]);
-    let sign = await (window as any).web3.eth.personal.sign((window as any).web3.utils.utf8ToHex("2"),accounts[0]);
-    let results = new Result(PredefinedStatus.SUCCESS(sign));
-    expect(shouldSign).to.deep.equal(results)
+    try{
+      let sign = await (window as any).web3.eth.personal.sign((window as any).web3.utils.utf8ToHex("2"),accounts[0]);
+      let results = new Result(PredefinedStatus.SUCCESS(sign));
+      expect(shouldSign).to.deep.equal(results)
+    }catch(err){
+      let results = new Result(PredefinedStatus.ERROR_STATE(null));
+      expect(shouldSign).to.deep.equal(results)
+    }
 
   }).timeout(100000)
 
