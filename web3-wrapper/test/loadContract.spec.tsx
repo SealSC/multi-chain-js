@@ -32,13 +32,16 @@ describe('loadContract', () => {
 
         let Contract = await Action.contract.loadContract(ERC20, '0xf1a249C0675444A989d281dfE262D370AcCa8774');
         let contractCall = await Action.contract.offChainCall(Contract.data, 'name', [], '', '')
-
-        let resultContract = await new (window as any).web3.eth.Contract(ERC20, '0xf1a249C0675444A989d281dfE262D370AcCa8774')
-
-        let contractCallEql = await resultContract.methods.name().call()
-        let results = new Result(PredefinedStatus.SUCCESS(contractCallEql))
-        expect(contractCall).to.deep.equal(results)
-
+        try{
+            let resultContract = await new (window as any).web3.eth.Contract(ERC20, '0xf1a249C0675444A989d281dfE262D370AcCa8774')
+            let contractCallEql = await resultContract.methods.name().call()
+            let results = new Result(PredefinedStatus.SUCCESS(contractCallEql))
+            expect(contractCall).to.deep.equal(results)
+        }catch(err){
+            let results = new Result(PredefinedStatus.ERROR_STATE(null))
+            expect(contractCall).to.deep.equal(results)
+        }
+       
     }).timeout(100000)
 
     it('Wrong parameter contract-call', async () => {
@@ -70,9 +73,14 @@ describe('loadContract', () => {
         let Contract = await Action.contract.loadContract(ERC20, '0xf1a249C0675444A989d281dfE262D370AcCa8774');
 
         let contractSend: any = await Action.contract.onChainCall(Contract.data, 'approve', ['0x5B6C6709d1000db91252c8c6E84B8987D1D10829', '0'], { gasPrice: '4000000000', gasLimit: '150000' })
-        if (contractSend.data) expect(contractSend.code).to.equal(0)
+        try{
+            if (contractSend.data) expect(contractSend.data.status).to.be.true
+        }catch(err){
+            let results = new Result(PredefinedStatus.ERROR_STATE(null))
+            expect(contractSend).to.deep.equal(results)
+        }
 
-    }).timeout(100000)
+    }).timeout(10000000)
 
     it('Wallet not installed contract-send', async () => {
 
@@ -101,4 +109,4 @@ describe('loadContract', () => {
 
     }).timeout(100000)
 
-}).timeout(100000)
+}).timeout(100000000)
