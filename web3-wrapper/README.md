@@ -31,8 +31,6 @@ git clone https://github.com/SealSC/multi-chain-js.git
 
 cd multi-chain-js
 
-git checkout web3-wrapper
-
 cd ./web3-wrapper
 
 yarn run test
