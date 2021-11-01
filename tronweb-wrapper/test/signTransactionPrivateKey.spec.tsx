@@ -6,7 +6,7 @@ import TronWeb from 'tronweb'
 describe('signTransactionPrivateKey', () => {
 
   it('Wallet installed signTransactionPrivateKey', async () => {
-    (window as any).isPhantom = await web3InstallisPhantom()
+    (window as any).isTronLink = await web3InstallisPhantom()
     let Action = new Actions();
     let shouldSigntranction = await Action.actions.signTransaction({
       to: "TR4tZXQSn1L5DijAK2rDV2LCnXSgdwVJVF",
@@ -19,7 +19,7 @@ describe('signTransactionPrivateKey', () => {
   }).timeout(100000)
 
   it('Wallet not installed signTransactionPrivateKey', async () => {
-    (window as any).isPhantom = {}
+    (window as any).isTronLink = {}
     let Action = await new Actions();
     let shouldSigntranction = await Action.actions.signTransactionPrivateKey({
       to: "TR4tZXQSn1L5DijAK2rDV2LCnXSgdwVJVF",

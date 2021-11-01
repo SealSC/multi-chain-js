@@ -6,10 +6,10 @@ let detectEthereumProvider = require('@metamask/detect-provider')
 
 describe('getBlock', () => {
   it('Wallet installed getBlockFunction', async () => {
-    (window as any).isPhantom = await web3InstallisPhantom()
+    (window as any).isTronLink = await web3InstallisPhantom()
     let Action = await new Actions()
     let shouldGetBlock = await Action.actions.getBlock(17584567);
-    let blockData = await (window as any).isPhantom.trx.getBlock(17584567);
+    let blockData = await (window as any).isTronLink.trx.getBlock(17584567);
     let data = {
       "number": blockData.block_header.raw_data.number,
       "parentHash": blockData.block_header.raw_data.parentHash,
@@ -38,7 +38,7 @@ describe('getBlock', () => {
 
 
   it('Wallet not installed getBlockFunction', async () => {
-    (window as any).isPhantom = {}
+    (window as any).isTronLink = {}
     let Action = await new Actions();
     let shouldGetBlock = await Action.actions.getBlock(-7);
     let results = new Result(PredefinedStatus.ERROR_STATE(null));

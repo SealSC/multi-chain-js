@@ -8,8 +8,8 @@ async function web3InstallisPhantom() {
   await sleep(1500);
   const provider = window.tronWeb;
   if (provider) {
-    window.isPhantom = window.tronWeb
-    return window.isPhantom;
+    window.isTronLink = window.tronWeb
+    return window.isTronLink;
   }
 }
 

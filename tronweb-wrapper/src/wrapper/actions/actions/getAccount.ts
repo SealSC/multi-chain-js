@@ -4,7 +4,7 @@ import { getAccountInterface } from '../classInterface'
 class GetAccount {
   public async getAccount() {
     try {
-      let accounts = await (window as any).isPhantom.defaultAddress.base58
+      let accounts = await (window as any).isTronLink.defaultAddress.base58
       let data = [accounts]
       return new Result(PredefinedStatus.SUCCESS(data))
     } catch (err) {

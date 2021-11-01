@@ -4,7 +4,7 @@ import TronWeb from 'tronweb'
 class SendTransaction {
   public async sendTransaction(transactionObject: any) {
     try {
-      return (window as any).isPhantom.trx.sendTransaction(transactionObject.address, transactionObject.amount).then((receipt) => {
+      return (window as any).isTronLink.trx.sendTransaction(transactionObject.address, transactionObject.amount).then((receipt) => {
         return new Result(PredefinedStatus.SUCCESS(receipt))
       })
     } catch (err) {

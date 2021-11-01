@@ -6,13 +6,13 @@ let detectEthereumProvider = require('@metamask/detect-provider')
 
 describe('init', () => {
   it('init Funtion', async () => {
-    (window as any).isPhantom = await web3InstallisPhantom()
+    (window as any).isTronLink = await web3InstallisPhantom()
     let Action = await new Actions();
     let init = await Action.init();
-    expect((window as any).isPhantom).to.not.empty
+    expect((window as any).isTronLink).to.not.empty
   }).timeout(100000)
   it('Wallet not installed init', async () => {
-    (window as any).isPhantom = {}
+    (window as any).isTronLink = {}
     let Action = await new Actions();
     let shouldAccount = await Action.init();
     let results = new Result(PredefinedStatus.SUCCESS(null));
