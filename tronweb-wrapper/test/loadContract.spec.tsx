@@ -6,10 +6,17 @@ let ERC20 = require('../src/abis/ERC20-ABI.json')
 
 describe('loadContract', () => {
   it('Wallet installed loadContract', async () => {
-    (window as any).isTronLink = await web3InstallisPhantom()
-    let Action = await new Actions()
-    let ContractIn = await Action.contract.loadContract(ERC20, 'TQaYBj9drxmoW7LfLnDDrvPnuj4zoZbaSS')
-    expect(ContractIn.data).to.not.empty
+    try{
+      (window as any).isTronLink = await web3InstallisPhantom()
+      let Action = await new Actions()
+      let ContractIn = await Action.contract.loadContract(ERC20, 'TQaYBj9drxmoW7LfLnDDrvPnuj4zoZbaSS')
+      expect(ContractIn.data).to.not.empty
+    }catch(err){
+      let Action = await new Actions();
+      let Contract = await Action.contract.loadContract(ERC20, 'TQaYBj9drxmoW7LfLnDDrvPnuj4zoZbaSS');
+      expect(Contract.data).to.be.null
+    }
+    
   }).timeout(100000)
 
   it('Wallet not installed loadContract', async () => {
@@ -57,41 +64,68 @@ describe('loadContract', () => {
 
 
   it('Wallet installed contract-send', async () => {
-    (window as any).isTronLink = await web3InstallisPhantom()
-    let Action = await new Actions()
-    let Contract = await Action.contract.loadContract(ERC20, 'TQaYBj9drxmoW7LfLnDDrvPnuj4zoZbaSS');
-    let contractSend: any = await Action.contract.onChainCall(Contract.data, 'approve', ['TQaYBj9drxmoW7LfLnDDrvPnuj4zoZbaSS', '0'], {
-      callValue: "1000000000",
-      feeLimit: "140000",
-    })
-    if (contractSend.data) expect(contractSend.data.status).to.be.true
+    try{
+      (window as any).isTronLink = await web3InstallisPhantom()
+      let Action = await new Actions()
+      let Contract = await Action.contract.loadContract(ERC20, 'TQaYBj9drxmoW7LfLnDDrvPnuj4zoZbaSS');
+      let contractSend: any = await Action.contract.onChainCall(Contract.data, 'approve', ['TQaYBj9drxmoW7LfLnDDrvPnuj4zoZbaSS', '0'], {
+        callValue: "1000000000",
+        feeLimit: "140000",
+      })
+      if (contractSend.data) expect(contractSend.data.status).to.be.true
+    }catch(err){
+      let Action = await new Actions();
+      let Contract = await Action.contract.loadContract(ERC20, 'TQaYBj9drxmoW7LfLnDDrvPnuj4zoZbaSS');
+      let contractSend: any = await Action.contract.onChainCall(Contract.data, 'approves', ['TQaYBj9drxmoW7LfLnDDrvPnuj4zoZbaSS', '0'], "")
+      let reults = new Result(PredefinedStatus.ERROR_STATE('参数有误'))
+      expect(contractSend).to.deep.equal(reults)
+    }
+    
   }).timeout(100000)
 
 
   it('Wallet installed contract-sends', async () => {
-    (window as any).isTronLink = await web3InstallisPhantom()
-    let Action = await new Actions()
-    let Contract = await Action.contract.loadContract(ERC20, 'TQaYBj9drxmoW7LfLnDDrvPnuj4zoZbaSS');
-    let contractSend: any = await Action.contract.onChainCall(Contract.data, 'approve', ['TQaYBj9drxmoW7LfLnDDrvPnuj4zoZbaSS', '0'], {
-      callValue: "",
-      feeLimit: "140000",
-      shouldPollResponse: false
-    })
-    if (contractSend.data) expect(contractSend.data.status).to.be.true
+    try{
+      (window as any).isTronLink = await web3InstallisPhantom()
+      let Action = await new Actions()
+      let Contract = await Action.contract.loadContract(ERC20, 'TQaYBj9drxmoW7LfLnDDrvPnuj4zoZbaSS');
+      let contractSend: any = await Action.contract.onChainCall(Contract.data, 'approve', ['TQaYBj9drxmoW7LfLnDDrvPnuj4zoZbaSS', '0'], {
+        callValue: "",
+        feeLimit: "140000",
+        shouldPollResponse: false
+      })
+      if (contractSend.data) expect(contractSend.data.status).to.be.true
+    }catch(err){
+      let Action = await new Actions();
+      let Contract = await Action.contract.loadContract(ERC20, 'TQaYBj9drxmoW7LfLnDDrvPnuj4zoZbaSS');
+      let contractSend: any = await Action.contract.onChainCall(Contract.data, 'approves', ['TQaYBj9drxmoW7LfLnDDrvPnuj4zoZbaSS', '0'], "")
+      let reults = new Result(PredefinedStatus.ERROR_STATE('参数有误'))
+      expect(contractSend).to.deep.equal(reults)
+    }
+    
   }).timeout(100000)
 
 
   it('Wallet installeds contract-send', async () => {
-    (window as any).isTronLink = await web3InstallisPhantom()
-    let Action = await new Actions()
-    let Contract = await Action.contract.loadContract(ERC20, 'TQaYBj9drxmoW7LfLnDDrvPnuj4zoZbaSS');
-    let contractSend: any = await Action.contract.onChainCall(Contract.data, 'approve', ['TQaYBj9drxmoW7LfLnDDrvPnuj4zoZbaSS', '0'], {
-      callValue: "11000000000",
-      feeLimit: "",
-      shouldPollResponse: true
-
-    })
-    if (contractSend.data) expect(contractSend.data.status).to.be.true
+    try{
+      (window as any).isTronLink = await web3InstallisPhantom()
+      let Action = await new Actions()
+      let Contract = await Action.contract.loadContract(ERC20, 'TQaYBj9drxmoW7LfLnDDrvPnuj4zoZbaSS');
+      let contractSend: any = await Action.contract.onChainCall(Contract.data, 'approve', ['TQaYBj9drxmoW7LfLnDDrvPnuj4zoZbaSS', '0'], {
+        callValue: "11000000000",
+        feeLimit: "",
+        shouldPollResponse: true
+  
+      })
+      if (contractSend.data) expect(contractSend.data.status).to.be.true
+    }catch(err){
+      let Action = await new Actions();
+      let Contract = await Action.contract.loadContract(ERC20, 'TQaYBj9drxmoW7LfLnDDrvPnuj4zoZbaSS');
+      let contractSend: any = await Action.contract.onChainCall(Contract.data, 'approves', ['TQaYBj9drxmoW7LfLnDDrvPnuj4zoZbaSS', '0'], "")
+      let reults = new Result(PredefinedStatus.ERROR_STATE('参数有误'))
+      expect(contractSend).to.deep.equal(reults)
+    }
+    
   }).timeout(100000)
 
 
