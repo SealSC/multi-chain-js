@@ -8,12 +8,11 @@ let detectEthereumProvider = require('@metamask/detect-provider')
 describe('getTransaction', () => {
    
   it('Wallet installed getTransactionFunction', async ()=>{
-
-    (window as any).web3 = await web3Install()
-    let Action = await new Actions();
-    let shouldGetTransaction = await Action.actions.getTransaction('0x65d3cada398bfcd70098ed955ff645b072c6df0d001f61f4b1c181cfdf7d1309');
-    let Transaction = await (window as any).web3.eth.getTransaction('0x65d3cada398bfcd70098ed955ff645b072c6df0d001f61f4b1c181cfdf7d1309');
     try{
+      (window as any).web3 = await web3Install()
+      let Action = await new Actions();
+      let shouldGetTransaction = await Action.actions.getTransaction('0x65d3cada398bfcd70098ed955ff645b072c6df0d001f61f4b1c181cfdf7d1309');
+      let Transaction = await (window as any).web3.eth.getTransaction('0x65d3cada398bfcd70098ed955ff645b072c6df0d001f61f4b1c181cfdf7d1309');
       let TransactionDataField = new getTransactionField()
       if(Transaction){
         TransactionDataField.hash = Transaction.hash
@@ -31,10 +30,11 @@ describe('getTransaction', () => {
       let results = new Result(PredefinedStatus.SUCCESS(TransactionDataField));
       expect(shouldGetTransaction).to.deep.equal(results)
     }catch(err){
+      let Action = await new Actions();
+      let shouldGetTransaction = await Action.actions.getTransaction('0x65d3cada398bfcd70098ed955ff645b072c6df0d001f61f4b1c181cfdf7d1309');
       let results = new Result(PredefinedStatus.ERROR_STATE(null));
       expect(shouldGetTransaction).to.deep.equal(results)
     }
-
   }).timeout(100000)
 
   it('Wallet not installed getTransactionFunction',async ()=>{

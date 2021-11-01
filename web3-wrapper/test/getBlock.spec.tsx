@@ -7,13 +7,13 @@ let detectEthereumProvider = require('@metamask/detect-provider')
 
 describe('getBlock', () => {
    
-
   it('Wallet installed getBlockFunction', async ()=>{
-    (window as any).web3 = await web3Install()
-    let Action = await new Actions()
-    let shouldGetBlock = await Action.actions.getBlock(9603492);
-    let blockData = await (window as any).web3.eth.getBlock(9603492)
+   
     try{
+      (window as any).web3 = await web3Install()
+      let Action = await new Actions()
+      let shouldGetBlock = await Action.actions.getBlock(9603492);
+      let blockData = await (window as any).web3.eth.getBlock(9603492)
       let blockDataField = new getBlockField()
       blockDataField.number = blockData.number
       blockDataField.hash = blockData.hash
@@ -36,6 +36,8 @@ describe('getBlock', () => {
       let results = new Result(PredefinedStatus.SUCCESS(blockDataField));
       expect(shouldGetBlock).to.deep.equal(results)
     }catch(err){
+      let Action = await new Actions()
+      let shouldGetBlock = await Action.actions.getBlock(9603492);
       let results = new Result(PredefinedStatus.ERROR_STATE(null));
       expect(shouldGetBlock).to.deep.equal(results)
     };
