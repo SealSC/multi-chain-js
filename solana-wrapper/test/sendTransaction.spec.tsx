@@ -9,8 +9,10 @@ describe('sendTransaction', () => {
   it('Wallet installed sendTransaction', async () => {
     (window as any).solanaWeb3 = await web3Install()
     let Action = await new Actions();
+    await (window as any).solana.off().connect()
+    let Account = (window as any).solana.publicKey.toBase58()
     let data = {
-      from: 'BTYUoerzScoXFymLWTowgEVF9Yr2ifpf3z3VRgJUMpNU',
+      from: Account,
       to: '9e1iJpWBYmMJ8GzYBFnNtSoTQ7EHUGWFapnixvAKHKPF',
       amount: 10
     }
@@ -21,8 +23,10 @@ describe('sendTransaction', () => {
   it('Wallet not installed sendSignedTransaction', async () => {
     (window as any).solanaWeb3 = {}
     let Action = await new Actions();
+    await (window as any).solana.off().connect()
+    let Account = (window as any).solana.publicKey.toBase58()
     let data = {
-      from: 'BTYUoerzScoXFymLWTowgEVF9Yr2ifpf3z3VRgJUMpNU',
+      from: Account,
       to: '9e1iJpWBYmMJ8GzYBFnNtSoTQ7EHUGWFapnixvAKHKPF',
       amount: 10
     }

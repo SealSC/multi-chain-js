@@ -8,13 +8,13 @@ describe('getBlockNumber', () => {
   it('Wallet installed getBlockNumberFunction', async () => {
     (window as any).solanaWeb3 = await web3Install()
     let Action = await new Actions()
-    let shouldGetBlockNumber = await Action.actions.getBlockNumber(9603492)
+    let shouldGetBlockNumber = await Action.actions.getBlockNumber(90323674)
     const connection = new (window as any).solanaWeb3.Connection(
 
       (window as any).solanaWeb3.clusterApiUrl("devnet"),
       "confirmed"
     );
-    let getBlockNumber = await connection.getBlock(9603492).blockHeight
+    let getBlockNumber = await connection.getBlock(90323674).blockHeight
     let results = new Result(PredefinedStatus.SUCCESS(getBlockNumber))
     expect(shouldGetBlockNumber).to.deep.equal(results)
   }).timeout(100000)
