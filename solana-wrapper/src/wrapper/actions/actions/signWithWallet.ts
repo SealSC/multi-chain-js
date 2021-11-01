@@ -8,7 +8,7 @@ class SignWithWallet {
       const sign = await (window as any).isPhantom.signMessage(dataToSign, msg);
       return new Result(PredefinedStatus.SUCCESS(sign))
     } catch (err) {
-      return new Result(PredefinedStatus.ERROR_STATE(null))
+      return new Result(PredefinedStatus.ERROR_STATE('Please go and install wallet'));
     }
   }
 }

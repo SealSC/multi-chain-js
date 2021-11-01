@@ -16,9 +16,14 @@ class Actions {
     this.contract = new ContractCall()
   }
   public async init() {
-    (window as any).solanaWeb3 = await web3Install();
-    (window as any).isPhantom = await web3InstallisPhantom()
-    return new Result(PredefinedStatus.SUCCESS(null))
+    try {
+      (window as any).solanaWeb3 = await web3Install();
+      (window as any).isPhantom = await web3InstallisPhantom()
+      return new Result(PredefinedStatus.SUCCESS(null))
+    } catch (error) {
+      console.log(222)
+      return new Result(PredefinedStatus.ERROR_STATE('Please go and install wallet'))
+    }
   }
 }
 

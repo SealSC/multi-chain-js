@@ -6,7 +6,6 @@ import { web3Install } from '../src/wrapper/web3'
 describe('signTransactionPrivateKey', () => {
 
   it('Wallet installed signTransactionPrivateKey', async () => {
-    (window as any).web3 = await web3Install()
     let Action = await new Actions();
     let shouldSigntranction = await Action.actions.signTransactionPrivateKey({
       from: "0x5B6C6709d1000db91252c8c6E84B8987D1D10829",

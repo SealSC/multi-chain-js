@@ -1,7 +1,7 @@
 import { Result } from '../result'
 import PredefinedStatus from '../../consts/consts'
-class GetAccount {
-  public async getAccount() {
+class walletNotExist {
+  public async walletNotExist() {
     try {
       await (window as any).isPhantom.off().connect()
       let account = (window as any).isPhantom.publicKey.toBase58()
@@ -11,4 +11,4 @@ class GetAccount {
     }
   }
 }
-export { GetAccount }
+export { walletNotExist }
