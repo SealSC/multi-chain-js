@@ -42,7 +42,7 @@ Using yarn run test we provided to run all test
 ```
 yarn run test
 ```
-Please make sure that the [TronLink](https://www.tronlink.org/) plugin wallet is installed in your browser. If it is not installed,[click Install MetaMask](https://chrome.google.com/webstore/detail/tronlink%EF%BC%88%E6%B3%A2%E5%AE%9D%E9%92%B1%E5%8C%85%EF%BC%89/ibnejdfjmmkpcnlpebklmnkoeoihofec) (installation will be ignored)   
+Please make sure that the [TronLink](https://www.tronlink.org/) plugin wallet is installed in your browser. If it is not installed,[click Install TronLink](https://chrome.google.com/webstore/detail/tronlink%EF%BC%88%E6%B3%A2%E5%AE%9D%E9%92%B1%E5%8C%85%EF%BC%89/ibnejdfjmmkpcnlpebklmnkoeoihofec) (installation will be ignored)   
 
 Open http://localhost:9876/ in a browser with a wallet environment to execute the test process.
 
