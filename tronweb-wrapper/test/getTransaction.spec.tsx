@@ -10,64 +10,72 @@ describe('getTransaction', () => {
     (window as any).isTronLink = await web3InstallisPhantom()
     let Action = await new Actions();
     let shouldGetTransaction = await Action.actions.getTransaction('950ab60dc678315dfccb3dfa81603133ef790d907395adf5d29e9531bf49a3fa');
-    let Transaction = await (window as any).isTronLink.trx.getTransactionInfo('950ab60dc678315dfccb3dfa81603133ef790d907395adf5d29e9531bf49a3fa')
-    let blockData = await (window as any).isTronLink.trx.getBlock(Transaction.blockNumber)
-    let transactionData = await (window as any).isTronLink.trx.getTransaction('950ab60dc678315dfccb3dfa81603133ef790d907395adf5d29e9531bf49a3fa')
-    let from = await (window as any).isTronLink.address.fromHex(transactionData.raw_data.contract[0].parameter.value.owner_address)
-    let to = await (window as any).isTronLink.address.fromHex(transactionData.raw_data.contract[0].parameter.value.contract_address) ?
-      await (window as any).isTronLink.address.fromHex(transactionData.raw_data.contract[0].parameter.value.contract_address) :
-      await (window as any).isTronLink.address.fromHex(transactionData.raw_data.contract[0].parameter.value.to_address)
-    function getIndex() {
-      if (blockData.transactions) {
-        for (let i = 0; i < blockData.transactions.length; i++) {
-          if (Transaction.id == blockData.transactions[i].txID) {
-            return i
-          } else {
-            return null
+    try{
+      let shouldGetTransaction = await Action.actions.getTransaction('950ab60dc678315dfccb3dfa81603133ef790d907395adf5d29e9531bf49a3fa');
+      let Transaction = await (window as any).isTronLink.trx.getTransactionInfo('950ab60dc678315dfccb3dfa81603133ef790d907395adf5d29e9531bf49a3fa')
+      let blockData = await (window as any).isTronLink.trx.getBlock(Transaction.blockNumber)
+      let transactionData = await (window as any).isTronLink.trx.getTransaction('950ab60dc678315dfccb3dfa81603133ef790d907395adf5d29e9531bf49a3fa')
+      let from = await (window as any).isTronLink.address.fromHex(transactionData.raw_data.contract[0].parameter.value.owner_address)
+      let to = await (window as any).isTronLink.address.fromHex(transactionData.raw_data.contract[0].parameter.value.contract_address) ?
+        await (window as any).isTronLink.address.fromHex(transactionData.raw_data.contract[0].parameter.value.contract_address) :
+        await (window as any).isTronLink.address.fromHex(transactionData.raw_data.contract[0].parameter.value.to_address)
+      function getIndex() {
+        if (blockData.transactions) {
+          for (let i = 0; i < blockData.transactions.length; i++) {
+            if (Transaction.id == blockData.transactions[i].txID) {
+              return i
+            } else {
+              return null
+            }
           }
+        } else {
+          return null
         }
+      }
+      function getAmount() {
+        let amount = 0
+        if (transactionData.raw_data.contract[0].parameter.type == 'TransferAssetContract' ||
+          !transactionData.raw_data.contract[0].parameter.value.amount) {
+          amount = 0
+        } else {
+          amount = transactionData.raw_data.contract[0].parameter.value.amount
+        }
+        return amount
+      }
+      let input = transactionData.raw_data.contract[0].parameter.value.data
+      if (Transaction) {
+        let data = {
+          "hash": Transaction.id,
+          "nonce": null,
+          "blockHash": blockData.blockID,
+          "blockNumber": Transaction.blockNumber,
+          "transactionIndex": getIndex(),
+          "from": from,
+          "to": to,
+          "value": getAmount(),
+          "gas": null,
+          "gasPrice": null,
+          "input": input
+        }
+        let results = new Result(PredefinedStatus.SUCCESS(data));
+        expect(JSON.stringify(shouldGetTransaction)).to.deep.equal(JSON.stringify(results))
       } else {
-        return null
+        return new Result(PredefinedStatus.ERROR_STATE(null))
       }
-    }
-    function getAmount() {
-      let amount = 0
-      if (transactionData.raw_data.contract[0].parameter.type == 'TransferAssetContract' ||
-        !transactionData.raw_data.contract[0].parameter.value.amount) {
-        amount = 0
-      } else {
-        amount = transactionData.raw_data.contract[0].parameter.value.amount
-      }
-      return amount
-    }
-    let input = transactionData.raw_data.contract[0].parameter.value.data
-    if (Transaction) {
-      let data = {
-        "hash": Transaction.id,
-        "nonce": null,
-        "blockHash": blockData.blockID,
-        "blockNumber": Transaction.blockNumber,
-        "transactionIndex": getIndex(),
-        "from": from,
-        "to": to,
-        "value": getAmount(),
-        "gas": null,
-        "gasPrice": null,
-        "input": input
-      }
-      let results = new Result(PredefinedStatus.SUCCESS(data));
-      expect(JSON.stringify(shouldGetTransaction)).to.deep.equal(JSON.stringify(results))
-    } else {
+  
+    }catch(err) {
       return new Result(PredefinedStatus.ERROR_STATE(null))
     }
-
+    
 
   }).timeout(100000)
   it('Wallet wrong installed getTransactionFunction', async () => {
     (window as any).isTronLink = await web3InstallisPhantom()
     let Action = new Actions();
     let shouldGetTransaction = await Action.actions.getTransaction('a36cd70bff2992836ce0d2c8de086b4794b410a7cdae4eb814bbc280a2c53a60');
-    let Transaction = await (window as any).isTronLink.trx.getTransactionInfo('a36cd70bff2992836ce0d2c8de086b4794b410a7cdae4eb814bbc280a2c53a60')
+    try{
+      let shouldGetTransaction = await Action.actions.getTransaction('a36cd70bff2992836ce0d2c8de086b4794b410a7cdae4eb814bbc280a2c53a60');
+      let Transaction = await (window as any).isTronLink.trx.getTransactionInfo('a36cd70bff2992836ce0d2c8de086b4794b410a7cdae4eb814bbc280a2c53a60')
     let blockData = await (window as any).isTronLink.trx.getBlock(Transaction.blockNumber)
     let transactionData = await (window as any).isTronLink.trx.getTransaction('a36cd70bff2992836ce0d2c8de086b4794b410a7cdae4eb814bbc280a2c53a60')
     let from = await (window as any).isTronLink.address.fromHex(transactionData.raw_data.contract[0].parameter.value.owner_address)
@@ -118,6 +126,10 @@ describe('getTransaction', () => {
     } else {
       return new Result(PredefinedStatus.ERROR_STATE(null))
     }
+    }catch(err){
+      return new Result(PredefinedStatus.ERROR_STATE(null))
+    }
+    
 
   }).timeout(100000)
 
