@@ -6,9 +6,9 @@ you only need to implement the business logic once to be able to access differen
 
 supported chains:  
 
-**Polkadot**  
 **Ethereum**  
-**Solana**
+**Polkadot**  
+**Solana**  
 **Tron**    
 
 ### Install
