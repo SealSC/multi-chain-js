@@ -1,6 +1,5 @@
 import { Result } from '../result'
 import PredefinedStatus from '../../consts/consts'
-import TronWeb from 'tronweb'
 class SendTransaction {
   public async sendTransaction(transactionObject: any) {
     try {
