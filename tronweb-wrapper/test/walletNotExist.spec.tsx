@@ -8,8 +8,7 @@ describe('walletNotExist', () => {
     try{
         let Account = await (window as any).isTronLink.defaultAddress.base58
     }catch(err){
-      let results = new Result(PredefinedStatus.ERROR_STATE('Please go and install wallet'))
-      console.log(results)
+      console.log('It is detected that you have not installed the TronLink Wallet, so you cannot reach a certain test coverage')
     }
 
   }).timeout(100000)
