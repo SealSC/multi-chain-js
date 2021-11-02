@@ -21,7 +21,6 @@ class Actions {
       (window as any).isPhantom = await web3InstallisPhantom()
       return new Result(PredefinedStatus.SUCCESS(null))
     } catch (error) {
-      console.log(222)
       return new Result(PredefinedStatus.ERROR_STATE('Please go and install wallet'))
     }
   }
