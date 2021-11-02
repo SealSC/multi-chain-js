@@ -8,8 +8,7 @@ describe('walletNotExist', () => {
     try{
       (window as any).isPhantom = await web3InstallisPhantom()
     }catch(err){
-      let results = new Result(PredefinedStatus.ERROR_STATE('Please go and install wallet'))
-      console.log(results)
+      console.log('It is detected that you have not installed the Phantom wallet, so you cannot reach a certain test coverage')
     }
     
   }).timeout(100000)

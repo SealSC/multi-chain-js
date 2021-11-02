@@ -10,7 +10,6 @@ import { SignWithWallet } from './signWithWallet'
 import { SignTransaction } from './signTransaction'
 import { SignTransactionPrivateKey } from "./signTransactionPrivateKey"
 import { SendTransaction } from './sendTransaction'
-import { walletNotExist } from './walletNotExist'
 class ActionsIn {
   constructor() {
 
@@ -50,9 +49,6 @@ class ActionsIn {
   }
   public async sendTransaction(data) {
     return await new SendTransaction().sendTransaction(data)
-  }
-  public async walletNotExist() {
-    return await new walletNotExist().walletNotExist()
   }
 }
 
