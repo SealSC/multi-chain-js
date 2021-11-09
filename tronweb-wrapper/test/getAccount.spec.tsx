@@ -5,6 +5,7 @@ import { web3InstallisPhantom } from '../src/wrapper/tronweb'
 
 describe('getAccount', () => {
   it('Wallet installed getAccountFunction', async () => {
+    console.log("This test will interact with the TronLink wallet in the browser, please pay attention to the pop-up window in the browser.")
     try{
       (window as any).isTronLink = await web3InstallisPhantom()
       let Action = await new Actions()
