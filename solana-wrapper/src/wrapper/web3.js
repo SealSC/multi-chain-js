@@ -15,7 +15,7 @@ async function web3InstallisPhantom() {
   await sleep(1500);
   const provider = window.solana;
   if (provider.isPhantom) {
-    window.isPhantom = window.solana
+    window.isPhantom = window.solana ? window.solana : {}
     return window.isPhantom;
   }
 }

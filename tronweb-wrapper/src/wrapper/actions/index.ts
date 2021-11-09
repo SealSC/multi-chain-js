@@ -14,7 +14,7 @@ class Actions {
     this.contract = new ContractCall()
   }
   public async init() {
-    (window as any).isPhantom = await web3InstallisPhantom()
+    (window as any).isTronLink = await web3InstallisPhantom()
     return new Result(PredefinedStatus.SUCCESS(null))
   }
 }
