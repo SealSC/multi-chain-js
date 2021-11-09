@@ -16,20 +16,15 @@ class SendSignedTransaction{
       return new Promise((resolve,reject)=>{
         transferExtrinsic.signAndSend(account.address, { signer: signer }, ({ status }) => {
           if (status.isInBlock) {
-            console.log(`Completed at block hash #${status.asInBlock.toString()}`);
             resolve(new Result(PredefinedStatus.SUCCESS(status.asInBlock.toString())))
-          } else {
-            console.log(`Current status: ${status.type}`);
           }
         }).catch((error: any) => {
-            console.log(':( transaction failed', error);
             reject(new Result(PredefinedStatus.ERROR_STATE(null)))
         });
       })
     }catch(error){
       return new Result(PredefinedStatus.ERROR_STATE(null));
     }
-   
   }
 }
 export { SendSignedTransaction }

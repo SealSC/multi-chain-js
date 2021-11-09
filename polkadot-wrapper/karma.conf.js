@@ -22,10 +22,10 @@ module.exports = config => {
       useIframe:false,
       runInParent:true
     },
-    captureTimeout: 210000,
+    captureTimeout: 500000,
     browserDisconnectTolerance: 3,
-    browserDisconnectTimeout: 210000,
-    browserNoActivityTimeout: 210000,
+    browserDisconnectTimeout: 500000,
+    browserNoActivityTimeout: 500000,
     webpackMiddleware: {
       noInfo: true,
       stats: 'errors-only'
