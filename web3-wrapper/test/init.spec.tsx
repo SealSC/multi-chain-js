@@ -7,9 +7,15 @@ let detectEthereumProvider = require('@metamask/detect-provider')
 describe('init', () => {
 
   it('init Funtion', async() => {
-    let Action = await new Actions();
-    let init = await Action.init();
-    expect((window as any).web3).to.not.empty
+    try{
+      let Action = await new Actions();
+      let init = await Action.init();
+      expect((window as any).web3).to.not.empty
+    }catch(error){
+      let Action = await new Actions();
+      let init = await Action.init();
+      expect((window as any).web3).to.be.null
+    }
   }).timeout(100000)
   
 })

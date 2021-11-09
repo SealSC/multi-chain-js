@@ -30,7 +30,7 @@ class SendTransaction {
       );
       return new Result(PredefinedStatus.SUCCESS(signTransaction))
     } catch (err) {
-      new Result(PredefinedStatus.NOT_SUPPORT(null))
+      return new Result(PredefinedStatus.ERROR_STATE('Please go and install wallet'));
     }
   }
 }
