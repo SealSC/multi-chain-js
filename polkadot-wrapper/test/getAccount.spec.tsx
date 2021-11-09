@@ -5,7 +5,7 @@ import { web3Accounts, web3Enable, web3FromSource } from '@polkadot/extension-da
 
 describe('getAccount', () => {
   it('getAccountFunction', async () => {
-
+    console.log('This test will interact with the polkadot{.js} extension wallet in the browser, please pay attention to the pop-up window in the browser.')
     let Action = await new Actions()
     await Action.init('wss://rpc.polkadot.io')
     const extensions = await web3Enable('my cool dapp');
