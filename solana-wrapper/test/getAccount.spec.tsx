@@ -5,7 +5,7 @@ import { web3InstallisPhantom } from '../src/wrapper/web3'
 
 describe('getAccount', () => {
   it('Wallet installed getAccountFunction', async () => {
-    console.log("This test will interact with the xxx wallet in the browser, please pay attention to the pop-up window in the browser.")
+    console.log("This test will interact with the Panatom wallet in the browser, please pay attention to the pop-up window in the browser.")
     try{
       (window as any).isPhantom = await web3InstallisPhantom()
       let Action = await new Actions()
