@@ -6,6 +6,7 @@ let detectEthereumProvider = require('@metamask/detect-provider')
 
 describe('getAccount', () => {
   it('Wallet installed getAccountFunction', async ()=>{
+    console.log('This test will interact with the MetaMask wallet in the browser, please pay attention to the pop-up window in the browser.')
     try{
       (window as any).web3 = await web3Install()
       let Action = await new Actions()
