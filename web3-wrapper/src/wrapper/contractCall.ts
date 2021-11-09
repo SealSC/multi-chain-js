@@ -28,9 +28,9 @@ class ContractCall {
     }
   }
   public async offChainCall(contract: any, methodName: string, param: [], amount, extra) {
-    let account = Object.keys((window as any).web3).length !== 0 ? await (window as any).web3.eth.getAccounts() : [''];
+    let account =  (window as any).web3 ? await (window as any).web3.eth.getAccounts() : [''];
     let method = getContractMethod(contract, methodName, param)
-
+   
     if (!method) {
       return new Result(PredefinedStatus.ERROR_STATE('参数有误'))
     }
@@ -38,7 +38,6 @@ class ContractCall {
       method!.func(...param).call({ from: account[0], gas: '100000000' }, (err, result) => {
         transactionResultGetter(res, result, err)
       }).catch(reason => {
-        console.log(2)
         transactionResultGetter(res, reason, null)
       })
     })
@@ -46,8 +45,7 @@ class ContractCall {
 
   public async onChainCall(contract: any, methodName: string, param: any, extra: any) {
 
-    let account = Object.keys((window as any).web3).length !== 0 ? await (window as any).web3.eth.getAccounts() : [''];
-    console.log(account)
+    let account = (window as any).web3 ? await (window as any).web3.eth.getAccounts() : [''];
 
     let method = getContractMethod(contract, methodName, param)
     if (!method) {
@@ -61,11 +59,11 @@ class ContractCall {
     }
     return await new Promise(res => {
       method!.func(...param).send(sendParam, (err, tx) => {
-        // transactionResultGetter(res, err, tx)
+        
       }).then(receipt => {
         transactionResultGetter(res, receipt, null)
       }).catch(reason => {
-        transactionResultGetter(res, reason, null)
+        transactionResultGetter(res, null, reason)
       })
     })
   }

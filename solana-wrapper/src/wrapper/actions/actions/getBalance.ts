@@ -3,6 +3,7 @@ import PredefinedStatus from '../../consts/consts'
 
 class GetBalance {
   public async getBalance(address: string) {
+    
     try {
       const connection = new (window as any).solanaWeb3.Connection(
         (window as any).solanaWeb3.clusterApiUrl("devnet"),
@@ -14,7 +15,7 @@ class GetBalance {
       });
       return new Result(PredefinedStatus.SUCCESS(Balance.toString()))
     } catch (err) {
-      return new Result(PredefinedStatus.ERROR_STATE(null))
+      return new Result(PredefinedStatus.ERROR_STATE('Please go and install wallet'))
     }
   }
 }

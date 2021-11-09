@@ -31,8 +31,6 @@ git clone https://github.com/SealSC/multi-chain-js.git
 
 cd multi-chain-js
 
-git checkout web3-wrapper
-
 cd ./web3-wrapper
 
 yarn run test
@@ -43,7 +41,9 @@ Using yarn run test we provided to run all test
 ```
 yarn run test
 ```
-Open http://localhost:9876/ in a browser with a wallet environment to execute the test process.  
+Please make sure that the [MetaMask](https://metamask.io/download.html) plugin wallet is installed in your browser. If it is not installed,[click Install MetaMask](https://chrome.google.com/webstore/detail/metamask/nkbihfbeogaeaoehlefnkodbefgpgknn) (installation will be ignored)   
+
+Open http://localhost:9876/ in a browser with a wallet environment, and execute the test process on the (Binance Smart Chain) BSC test network. 
 
 **Note**: yarn run test will try to open the test report with your chrome browser.
 

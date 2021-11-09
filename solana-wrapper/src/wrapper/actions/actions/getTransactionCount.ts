@@ -11,7 +11,7 @@ class GetTransactionCount {
       });
       return new Result(PredefinedStatus.SUCCESS(Transaction.toString()))
     } catch (err) {
-      return new Result(PredefinedStatus.ERROR_STATE(null))
+      return new Result(PredefinedStatus.ERROR_STATE('Please go and install wallet'));
     }
   }
 }
