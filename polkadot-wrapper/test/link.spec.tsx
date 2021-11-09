@@ -12,8 +12,6 @@ import {
 
 describe('link', () => {
   it('linkFunction', async ()=>{
-    const wsProvider = new WsProvider('wss://rpc.polkadot.io');
-    const api = await ApiPromise.create({ provider: wsProvider });
     const extensions = await web3Enable('my cool dapp');
     const allAccounts = await web3Accounts();
     let Account: any[] = []

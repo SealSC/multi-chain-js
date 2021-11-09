@@ -2,15 +2,12 @@ import { Actions } from '../src/wrapper/wrapper'
 import { Result } from '../src/wrapper/actions/result'
 import PredefinedStatus from '../src/wrapper/consts/consts'
 import { getBlockField } from '../src/wrapper/fieldDefinition/getBlockField'
-import { ApiPromise, WsProvider } from '@polkadot/api'
 
 describe('getBlock', () => {
 
   it('getBlockFunction', async () => {
-    const wsProvider = new WsProvider('wss://rpc.polkadot.io');
-    const api = await ApiPromise.create({ provider: wsProvider });
-    const blockHash = await api.rpc.chain.getBlockHash(6521853);
-    const signedBlock = await api.rpc.chain.getBlock(blockHash);
+    const blockHash = await (window as any).api.rpc.chain.getBlockHash(6521853);
+    const signedBlock = await (window as any).api.rpc.chain.getBlock(blockHash);
     let BlockInfo = JSON.parse(`${signedBlock.block.header}`)
     let blockDataField = new getBlockField()
     blockDataField.number = BlockInfo.number
