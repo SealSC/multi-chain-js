@@ -10,7 +10,7 @@ class GetBlock {
       let blockDataField = await connection.getBlock(address)
       return new Result(PredefinedStatus.SUCCESS(blockDataField))
     } catch (err) {
-      return new Result(PredefinedStatus.ERROR_STATE(null))
+      return new Result(PredefinedStatus.ERROR_STATE('Please go and install wallet'));
     }
   }
 }

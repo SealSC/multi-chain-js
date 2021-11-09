@@ -32,8 +32,6 @@ git clone https://github.com/SealSC/multi-chain-js.git
 
 cd multi-chain-js
 
-git checkout solana-wrapper
-
 cd ./solana-wrapper
 
 yarn run test
@@ -44,6 +42,8 @@ Using yarn run test we provided to run all test
 ```
 yarn run test
 ```
+Please make sure that the [Phantom](https://docs.phantom.app/) plugin wallet is installed in your browser. If it is not installed,[click Install Phantom](https://chrome.google.com/webstore/detail/phantom/bfnaelmomeimhlpmgjnjophhpkkoljpa) (installation will be ignored)
+
 Open http://localhost:9876/ in a browser with a wallet environment to execute the test process.  
 
 **Note**: yarn run test will try to open the test report with your chrome browser.
