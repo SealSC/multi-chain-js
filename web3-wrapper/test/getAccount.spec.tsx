@@ -6,14 +6,19 @@ let detectEthereumProvider = require('@metamask/detect-provider')
 
 describe('getAccount', () => {
   it('Wallet installed getAccountFunction', async ()=>{
-
-    (window as any).web3 = await web3Install()
-    let Action = await new Actions()
-    let shouldAccount = await Action.actions.getAccount()
-    let Account = await (window as any).web3.eth.getAccounts()
-    let results = new Result(PredefinedStatus.SUCCESS(Account))
-    expect(shouldAccount).to.deep.equal(results)
-
+    try{
+      (window as any).web3 = await web3Install()
+      let Action = await new Actions()
+      let shouldAccount = await Action.actions.getAccount()
+      let Account = await (window as any).web3.eth.getAccounts()
+      let results = new Result(PredefinedStatus.SUCCESS(Account))
+      expect(shouldAccount).to.deep.equal(results)
+    }catch(error){
+      let Action = await new Actions()
+      let shouldAccount = await Action.actions.getAccount()
+      let results = new Result(PredefinedStatus.ERROR_STATE(null))
+      expect(shouldAccount).to.deep.equal(results)
+    }
   }).timeout(100000)
 
   it('Wallet not installed getAccountFunction',async ()=>{
