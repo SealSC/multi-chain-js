@@ -1,13 +1,9 @@
 import { Actions } from '../src/wrapper/wrapper'
-import { Result } from '../src/wrapper/actions/result'
-import PredefinedStatus from '../src/wrapper/consts/consts'
 import { web3InstallisPhantom } from '../src/wrapper/tronweb'
-
-let detectEthereumProvider = require('@metamask/detect-provider')
 
 describe('sendSignedTransaction', () => {
   it('Wallet installed sendSignedTransaction', async () => {
-    (window as any).isPhantom = await web3InstallisPhantom()
+    (window as any).isTronLink = await web3InstallisPhantom()
     let Action = await new Actions();
     let shouldsendSignedTransaction: any = await Action.actions.sendSignedTransaction(
       "TR4tZXQSn1L5DijAK2rDV2LCnXSgdwVJVF",
@@ -19,7 +15,7 @@ describe('sendSignedTransaction', () => {
   }).timeout(100000)
 
   it('Wallet not installed sendSignedTransaction', async () => {
-    (window as any).isPhantom = {}
+    (window as any).isTronLink = {}
     let Action = await new Actions();
     let shouldsendSignedTransaction = await Action.actions.sendSignedTransaction(
       "TR4tZXQSn1L5DijAK2rDV2LCnXSgdwVJVF",
