@@ -64,6 +64,7 @@ export default {
       this.LoadingIn = Loading.service({ fullscreen: true });
       let init = await this.actionsIn.init();
       this.LoadingIn.close();
+
       this.$alert(init, "Result", {
         confirmButtonText: "Sure",
         callback: (action) => {},
@@ -318,6 +319,7 @@ export default {
         ERC20,
         "TQaYBj9drxmoW7LfLnDDrvPnuj4zoZbaSS"
       );
+
       this.LoadingIn.close();
       this.$alert("Print to the console", "Result", {
         confirmButtonText: "Sure",
@@ -329,6 +331,7 @@ export default {
       this.LoadingIn = Loading.service({ fullscreen: true });
       let link = await this.actionsIn.connector.link();
       this.LoadingIn.close();
+
       this.$alert(link, "Result", {
         confirmButtonText: "Sure",
         callback: (action) => {},
@@ -336,10 +339,12 @@ export default {
     },
     async offChainCall() {
       this.LoadingIn = Loading.service({ fullscreen: true });
+
       let Contract = await this.actionsIn.contract.loadContract(
         ERC20,
         "TQaYBj9drxmoW7LfLnDDrvPnuj4zoZbaSS"
       );
+
       let contractCall = await this.actionsIn.contract
         .offChainCall(Contract.data, "totalSupply", [], "", "")
         .then((result) => {
@@ -359,10 +364,12 @@ export default {
     },
     async onChainCall() {
       this.LoadingIn = Loading.service({ fullscreen: true });
+
       let Contract = await this.actionsIn.contract.loadContract(
         ERC20,
         "TQaYBj9drxmoW7LfLnDDrvPnuj4zoZbaSS"
       );
+
       this.actionsIn.contract
         .onChainCall(
           Contract.data,

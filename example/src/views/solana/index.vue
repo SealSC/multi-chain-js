@@ -64,140 +64,132 @@ export default {
 
   methods: {
     async init() {
-      this.LoadingIn = Loading.service({ fullscreen: true })
+      this.LoadingIn = Loading.service({ fullscreen: true });
       let link = await this.actionsIn.init();
-      this.LoadingIn.close()
+      this.LoadingIn.close();
       this.$alert(link, "Result", {
         confirmButtonText: "Sure",
         callback: (action) => {},
       });
     },
     getAccount() {
-      this.LoadingIn = Loading.service({ fullscreen: true })
-      this.actionsIn.actions.getAccount().then((result)=>{
-        this.LoadingIn.close()
-        this.$alert(result, 'Result', {
-          confirmButtonText: 'Sure',
-          callback: action => {
-
-          }
+      this.LoadingIn = Loading.service({ fullscreen: true });
+      this.actionsIn.actions
+        .getAccount()
+        .then((result) => {
+          this.LoadingIn.close();
+          this.$alert(result, "Result", {
+            confirmButtonText: "Sure",
+            callback: (action) => {},
+          });
+        })
+        .catch((error) => {
+          this.LoadingIn.close();
+          this.$alert(error, "Result", {
+            confirmButtonText: "Sure",
+            callback: (action) => {},
+          });
         });
-      }).catch((error)=>{
-        this.LoadingIn.close()
-        this.$alert(error, 'Result', {
-          confirmButtonText: 'Sure',
-          callback: action => {
-
-          }
-        });
-      })
     },
     getBalance() {
-      this.LoadingIn = Loading.service({ fullscreen: true })
-      this.actionsIn.actions.getBalance(
-        "BTYUoerzScoXFymLWTowgEVF9Yr2ifpf3z3VRgJUMpNU"
-      ).then((result)=>{
-        this.LoadingIn.close()
-        this.$alert(result, 'Result', {
-          confirmButtonText: 'Sure',
-          callback: action => {
-
-          }
+      this.LoadingIn = Loading.service({ fullscreen: true });
+      this.actionsIn.actions
+        .getBalance("BTYUoerzScoXFymLWTowgEVF9Yr2ifpf3z3VRgJUMpNU")
+        .then((result) => {
+          this.LoadingIn.close();
+          this.$alert(result, "Result", {
+            confirmButtonText: "Sure",
+            callback: (action) => {},
+          });
+        })
+        .catch((error) => {
+          this.LoadingIn.close();
+          this.$alert(error, "Result", {
+            confirmButtonText: "Sure",
+            callback: (action) => {},
+          });
         });
-      }).catch((error)=>{
-        this.LoadingIn.close()
-        this.$alert(error, 'Result', {
-          confirmButtonText: 'Sure',
-          callback: action => {
-
-          }
-        });
-      });
     },
     getBlock() {
-      this.LoadingIn = Loading.service({ fullscreen: true })
-      this.actionsIn.actions.getBlock(9603492).then((result)=>{
-        this.LoadingIn.close()
-        this.$alert(result, 'Result', {
-          confirmButtonText: 'Sure',
-          callback: action => {
-
-          }
+      this.LoadingIn = Loading.service({ fullscreen: true });
+      this.actionsIn.actions
+        .getBlock(9603492)
+        .then((result) => {
+          this.LoadingIn.close();
+          this.$alert(result, "Result", {
+            confirmButtonText: "Sure",
+            callback: (action) => {},
+          });
+        })
+        .catch((error) => {
+          this.LoadingIn.close();
+          this.$alert(error, "Result", {
+            confirmButtonText: "Sure",
+            callback: (action) => {},
+          });
         });
-      }).catch((error)=>{
-        this.LoadingIn.close()
-        this.$alert(error, 'Result', {
-          confirmButtonText: 'Sure',
-          callback: action => {
-
-          }
-        });
-      });
     },
     async getBlockNumber() {
-      this.LoadingIn = Loading.service({ fullscreen: true })
-      let BlockNumber = await this.actionsIn.actions.getBlockNumber().then((result)=>{
-        this.LoadingIn.close()
-        this.$alert(result, 'Result', {
-          confirmButtonText: 'Sure',
-          callback: action => {
-
-          }
+      this.LoadingIn = Loading.service({ fullscreen: true });
+      let BlockNumber = await this.actionsIn.actions
+        .getBlockNumber()
+        .then((result) => {
+          this.LoadingIn.close();
+          this.$alert(result, "Result", {
+            confirmButtonText: "Sure",
+            callback: (action) => {},
+          });
+        })
+        .catch((error) => {
+          this.LoadingIn.close();
+          this.$alert(error, "Result", {
+            confirmButtonText: "Sure",
+            callback: (action) => {},
+          });
         });
-      }).catch((error)=>{
-        this.LoadingIn.close()
-        this.$alert(error, 'Result', {
-          confirmButtonText: 'Sure',
-          callback: action => {
-
-          }
-        });
-      });
     },
     getTransaction() {
-      this.LoadingIn = Loading.service({ fullscreen: true })
-      this.actionsIn.actions.getTransaction(
-        "5CgLYCuDbLZQnraR8jrSYQGetwyYLNGcnckgw3ukbuSeujCwDp1wW7XULMqoQEd5eYNyeoGMV56WvjrZVmKVQbT"
-      ).then((result)=>{
-        this.LoadingIn.close()
-        this.$alert(result, 'Result', {
-          confirmButtonText: 'Sure',
-          callback: action => {
-
-          }
+      this.LoadingIn = Loading.service({ fullscreen: true });
+      this.actionsIn.actions
+        .getTransaction(
+          "5CgLYCuDbLZQnraR8jrSYQGetwyYLNGcnckgw3ukbuSeujCwDp1wW7XULMqoQEd5eYNyeoGMV56WvjrZVmKVQbT"
+        )
+        .then((result) => {
+          this.LoadingIn.close();
+          this.$alert(result, "Result", {
+            confirmButtonText: "Sure",
+            callback: (action) => {},
+          });
+        })
+        .catch((error) => {
+          this.LoadingIn.close();
+          this.$alert(error, "Result", {
+            confirmButtonText: "Sure",
+            callback: (action) => {},
+          });
         });
-      }).catch((error)=>{
-        this.LoadingIn.close()
-        this.$alert(error, 'Result', {
-          confirmButtonText: 'Sure',
-          callback: action => {
-
-          }
-        });
-      });
     },
     getTransactionCount() {
-      this.LoadingIn = Loading.service({ fullscreen: true })
-      this.actionsIn.actions.getTransactionCount().then((result)=>{
-        this.LoadingIn.close()
-        this.$alert(result, 'Result', {
-          confirmButtonText: 'Sure',
-          callback: action => {
-
-          }
-        });
-      }).catch((error)=>{
-        this.LoadingIn.close()
-        this.$alert(error, 'Result', {
-          confirmButtonText: 'Sure',
-          callback: action => {
-
-          }
+      this.LoadingIn = Loading.service({ fullscreen: true });
+      this.actionsIn.actions
+        .getTransactionCount()
+        .then((result) => {
+          this.LoadingIn.close();
+          this.$alert(result, "Result", {
+            confirmButtonText: "Sure",
+            callback: (action) => {},
+          });
         })
-      })
+        .catch((error) => {
+          this.LoadingIn.close();
+          this.$alert(error, "Result", {
+            confirmButtonText: "Sure",
+            callback: (action) => {},
+          });
+        });
     },
     sendSignedTransaction() {
-      this.LoadingIn = Loading.service({ fullscreen: true })
+      this.LoadingIn = Loading.service({ fullscreen: true });
 
       this.actionsIn.actions
         .sendSignedTransaction({
@@ -208,14 +200,14 @@ export default {
         .then((res) => {
           console.log(res);
 
-          this.LoadingIn.close()
+          this.LoadingIn.close();
           this.$alert(res, "Result", {
             confirmButtonText: "Sure",
             callback: (action) => {},
           });
         })
         .catch((error) => {
-          this.LoadingIn.close()
+          this.LoadingIn.close();
           this.$alert(error, "Result", {
             confirmButtonText: "Sure",
             callback: (action) => {},
@@ -223,20 +215,19 @@ export default {
         });
     },
     signWithWallet() {
-      this.LoadingIn = Loading.service({ fullscreen: true })
-      this.actionsIn.actions.signWithWallet(
-        "utf8",
-        "BTYUoerzScoXFymLWTowgEVF9Yr2ifpf3z3VRgJUMpNU"
-      ).then((res) => {
+      this.LoadingIn = Loading.service({ fullscreen: true });
+      this.actionsIn.actions
+        .signWithWallet("utf8", "BTYUoerzScoXFymLWTowgEVF9Yr2ifpf3z3VRgJUMpNU")
+        .then((res) => {
           console.log(res);
-          this.LoadingIn.close()
+          this.LoadingIn.close();
           this.$alert(res, "Result", {
             confirmButtonText: "Sure",
             callback: (action) => {},
           });
         })
         .catch((error) => {
-          this.LoadingIn.close()
+          this.LoadingIn.close();
           this.$alert(error, "Result", {
             confirmButtonText: "Sure",
             callback: (action) => {},
@@ -244,20 +235,22 @@ export default {
         });
     },
     signWithPrivateKey() {
-      this.LoadingIn = Loading.service({ fullscreen: true })
-      this.actionsIn.actions.signWithPrivateKey(
-        "3",
-        "4349054ad0a292657a316300d5112b48f0633c2cb3d8ece672077aa852635890"
-      ).then((res) => {
+      this.LoadingIn = Loading.service({ fullscreen: true });
+      this.actionsIn.actions
+        .signWithPrivateKey(
+          "3",
+          "4349054ad0a292657a316300d5112b48f0633c2cb3d8ece672077aa852635890"
+        )
+        .then((res) => {
           console.log(res);
-          this.LoadingIn.close()
+          this.LoadingIn.close();
           this.$alert(res, "Result", {
             confirmButtonText: "Sure",
             callback: (action) => {},
           });
         })
         .catch((error) => {
-          this.LoadingIn.close()
+          this.LoadingIn.close();
           this.$alert(error, "Result", {
             confirmButtonText: "Sure",
             callback: (action) => {},
@@ -265,52 +258,51 @@ export default {
         });
     },
     async signTransaction() {
-      this.LoadingIn = Loading.service({ fullscreen: true })
-      let Signtranction = await this.actionsIn.actions.signTransaction(
-        "BTYUoerzScoXFymLWTowgEVF9Yr2ifpf3z3VRgJUMpNU"
-      ).then((res) => {
+      this.LoadingIn = Loading.service({ fullscreen: true });
+      let Signtranction = await this.actionsIn.actions
+        .signTransaction("BTYUoerzScoXFymLWTowgEVF9Yr2ifpf3z3VRgJUMpNU")
+        .then((res) => {
           console.log(res);
-          this.LoadingIn.close()
+          this.LoadingIn.close();
           this.$alert(res, "Result", {
             confirmButtonText: "Sure",
             callback: (action) => {},
           });
         })
         .catch((error) => {
-          this.LoadingIn.close()
+          this.LoadingIn.close();
           this.$alert(error, "Result", {
             confirmButtonText: "Sure",
             callback: (action) => {},
           });
         });
-     
     },
     async signTransactionPrivateKey() {
-      this.LoadingIn = Loading.service({ fullscreen: true })
-      this.actionsIn.actions.signTransactionPrivateKey(
-
+      this.LoadingIn = Loading.service({ fullscreen: true });
+      this.actionsIn.actions
+        .signTransactionPrivateKey(
           {
             from: "0x5B6C6709d1000db91252c8c6E84B8987D1D10829",
             gas: "100000",
             value: "1",
           },
           "4349054ad0a292657a316300d5112b48f0633c2cb3d8ece672077aa852635890"
-
-        ).then((res) => {
+        )
+        .then((res) => {
           console.log(res);
-          this.LoadingIn.close()
+          this.LoadingIn.close();
           this.$alert(res, "Result", {
             confirmButtonText: "Sure",
             callback: (action) => {},
           });
         })
         .catch((error) => {
-          this.LoadingIn.close()
+          this.LoadingIn.close();
           this.$alert(error, "Result", {
             confirmButtonText: "Sure",
             callback: (action) => {},
           });
-        })
+        });
     },
     sendTransaction() {
       this.LoadingIn = Loading.service({ fullscreen: true });
@@ -332,7 +324,6 @@ export default {
           });
         })
         .catch((error) => {
-
           this.LoadingIn.close();
           this.$alert(error, "Result", {
             confirmButtonText: "Sure",
@@ -356,9 +347,8 @@ export default {
       });
     },
     async link() {
-
       this.LoadingIn = Loading.service({ fullscreen: true });
-      let links =  await this.actionsIn.connector.link();
+      let links = await this.actionsIn.connector.link();
       this.LoadingIn.close();
       this.$alert(links, "Result", {
         confirmButtonText: "Sure",
@@ -373,15 +363,9 @@ export default {
         "0x98445c06f7D3D9a6EEA7C6e8E96d4a7aEF7E9513"
       );
 
-      this.actionsIn.contract.offChainCall(
-
-        Contract.data,
-        "name",
-        [],
-        "",
-        ""
-
-      ).then((res) => {
+      this.actionsIn.contract
+        .offChainCall(Contract.data, "name", [], "", "")
+        .then((res) => {
           console.log(res);
           this.LoadingIn.close();
           this.$alert(res, "Result", {
@@ -399,18 +383,18 @@ export default {
     },
     async onChainCall() {
       this.LoadingIn = Loading.service({ fullscreen: true });
-
       let Contract = await this.actionsIn.contract.loadContract(
         ERC20,
         "0x98445c06f7D3D9a6EEA7C6e8E96d4a7aEF7E9513"
       );
-      let onChainCall = await this.actionsIn.contract.onChainCall(
-        Contract.data,
-        "approve",
-        ["0x5B6C6709d1000db91252c8c6E84B8987D1D10829", "0"],
-        { gasPrice: "4000000000", gasLimit: "150000" }
-
-      ).then((res) => {
+      let onChainCall = await this.actionsIn.contract
+        .onChainCall(
+          Contract.data,
+          "approve",
+          ["0x5B6C6709d1000db91252c8c6E84B8987D1D10829", "0"],
+          { gasPrice: "4000000000", gasLimit: "150000" }
+        )
+        .then((res) => {
           console.log(res);
           this.LoadingIn.close();
           this.$alert(res, "Result", {
@@ -425,8 +409,6 @@ export default {
             callback: (action) => {},
           });
         });
-     
-
     },
   },
 };
