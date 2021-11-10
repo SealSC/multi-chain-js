@@ -1,6 +1,6 @@
 {
   "name": "@sealsc/tronweb-wrapper",
-  "version": "0.1.2",
+  "version": "0.1.4",
   "keywords": [
     "tronweb",
     "@sealsc/tronweb-wrapper",
@@ -16,8 +16,8 @@
     "serve": "vue-cli-service serve",
     "test": "karma start"
   },
-  "main": "src/wrapper/wrapper.ts",
-  "module": "dist/tronweb-build.es.js",
+  "main": "dist/bundle.js",
+  "module": "dist/bundle.es.js",
   "files": [
     "dist"
   ],
