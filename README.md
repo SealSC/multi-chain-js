@@ -29,6 +29,14 @@ yarn add @sealsc/***-wrapper
 npm install @sealsc/***-wrapper 
 ```    
 
+### dependencies
+The SDK is using extension wallets for the blockchain RPC interact, so you must install the extension wallet of the blockchain you want to access.
+
+[polkadot{.js} for Polkadot](https://chrome.google.com/webstore/detail/polkadot%7Bjs%7D-extension/mopnmbcafieddcagagdcbnhejhlodfdd)  
+[MetaMask for Ethereum](https://chrome.google.com/webstore/detail/metamask/nkbihfbeogaeaoehlefnkodbefgpgknn)  
+[Phantom for Solana](https://chrome.google.com/webstore/detail/phantom/bfnaelmomeimhlpmgjnjophhpkkoljpa)  
+[TronLink for Tron](https://chrome.google.com/webstore/detail/tronlink%EF%BC%88%E6%B3%A2%E5%AE%9D%E9%92%B1%E5%8C%85%EF%BC%89/ibnejdfjmmkpcnlpebklmnkoeoihofec)    
+
 ### Usage  
 
 ```js
